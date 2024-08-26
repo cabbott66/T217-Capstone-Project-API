@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using T217_Capstone_Project_API.Models;
+using T217_Capstone_Project_API.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,43 @@ namespace T217_Capstone_Project_API.Controllers
     [ApiController]
     public class StakeholderController : ControllerBase
     {
+        private readonly JsonStakeholderRepository _repo = new JsonStakeholderRepository();
+
         // GET: api/<StakeholderController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Stakeholder> Get()
         {
-            return new string[] { "value1", "value2" };
+            var stakeholderList = _repo.GetStakeHoldersList();
+            return stakeholderList;
         }
 
         // GET api/<StakeholderController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Stakeholder Get(int id)
         {
-            return "value";
+            var stakeholder = _repo.GetStakeHolder(id);
+            return stakeholder;
         }
 
         // POST api/<StakeholderController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Stakeholder value)
         {
+            _repo.CreateStakeholder(value);
         }
 
         // PUT api/<StakeholderController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Stakeholder value)
         {
+            throw new NotImplementedException();
         }
 
         // DELETE api/<StakeholderController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _repo.DeleteStakeholder(id);
         }
     }
 }
