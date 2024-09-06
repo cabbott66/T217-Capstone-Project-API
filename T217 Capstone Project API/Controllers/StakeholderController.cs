@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using T217_Capstone_Project_API.Models;
+using T217_Capstone_Project_API.Models.Projects;
 using T217_Capstone_Project_API.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

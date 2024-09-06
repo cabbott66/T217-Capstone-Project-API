@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.Json;
 using System.Text.Json;
-using T217_Capstone_Project_API.Models;
+using T217_Capstone_Project_API.Models.Projects;
 
 namespace T217_Capstone_Project_API.Controllers
 {
