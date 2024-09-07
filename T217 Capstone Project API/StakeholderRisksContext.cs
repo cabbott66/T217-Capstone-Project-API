@@ -12,7 +12,7 @@ namespace T217_Capstone_Project_API
         public StakeholderRisksContext()
         {
             var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
+            var path = Environment.GetFolderPath(folder);           
             DbPath = System.IO.Path.Join(path, "stakeholderRisks.db");
         }
 

@@ -5,7 +5,7 @@
 namespace T217_Capstone_Project_API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,8 +16,11 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     UserID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserName = table.Column<string>(type: "TEXT", nullable: false),
-                    Password = table.Column<string>(type: "TEXT", nullable: false)
+                    UserEmail = table.Column<string>(type: "TEXT", nullable: false),
+                    UserFirstName = table.Column<string>(type: "TEXT", nullable: false),
+                    UserLastName = table.Column<string>(type: "TEXT", nullable: false),
+                    Password = table.Column<string>(type: "TEXT", nullable: false),
+                    ApiKey = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

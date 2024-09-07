@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Sqlite.Query.Internal;
+using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models;
+using T217_Capstone_Project_API.Models.DTO;
 using T217_Capstone_Project_API.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,10 +14,11 @@ namespace T217_Capstone_Project_API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly SqliteRepository _repo = new SqliteRepository();
+        private readonly UserAuthRepository _repo = new UserAuthRepository();
 
         // GET: api/<UserController>
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<User> Get()
         {
             var userList = _repo.GetUserList();
@@ -31,7 +35,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] User value)
+        public void Post([FromBody] UserDTO value)
         {
             _repo.CreateUser(value);
         }
