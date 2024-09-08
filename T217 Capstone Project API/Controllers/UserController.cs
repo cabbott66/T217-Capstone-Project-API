@@ -18,7 +18,6 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        [AllowAnonymous]
         public IEnumerable<User> Get()
         {
             var userList = _repo.GetUserList();
@@ -33,8 +32,16 @@ namespace T217_Capstone_Project_API.Controllers
             return user;
         }
 
+        [HttpPost("getApiKey")]
+        [AllowAnonymous]
+        public string GetApiKey([FromBody] LoginDTO login)
+        {
+            return _repo.GetApiKey(login.Email, login.Password);
+        }
+
         // POST api/<UserController>
         [HttpPost]
+        [AllowAnonymous]
         public void Post([FromBody] UserDTO value)
         {
             _repo.CreateUser(value);

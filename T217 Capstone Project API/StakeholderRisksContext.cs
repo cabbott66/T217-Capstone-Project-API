@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using T217_Capstone_Project_API.Models;
+using T217_Capstone_Project_API.Models.Projects;
 
 namespace T217_Capstone_Project_API
 {
     public class StakeholderRisksContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectUser> ProjectUsers { get; set; }
 
         public string DbPath { get; }
 
