@@ -2,6 +2,7 @@
 using Microsoft.OpenApi.Models;
 using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Repositories;
+using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API
 {
@@ -18,6 +19,9 @@ namespace T217_Capstone_Project_API
                 options.Filters.Add(new UserAuthenticationFilterAdmin());
             });
             builder.Services.AddDbContext<StakeholderRisksContext>();
+
+            // Repositories.
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

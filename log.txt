@@ -1,0 +1,53 @@
+commit f56693af89aad93e04ab1dbd1f4de3b3ac32c3b1
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Mon Sep 16 20:57:32 2024 +1000
+
+    Begun refactoring API to be asynchronous.
+
+commit 9dcdd1ee41629cee69391225338cbbe9e53570f7
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Sun Sep 8 17:42:02 2024 +1000
+
+    Project Table started
+
+commit 845e78cd05a54680194d6822c5eaab1429c63165
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Sun Sep 8 04:48:04 2024 +1000
+
+    Basic API authentication implemented.
+
+commit 5e63f01a870d2a365b1114a4637fa904cbda1fae
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Sat Sep 7 02:18:28 2024 +1000
+
+    Basic Sqlite functionality implemented.
+
+commit e04e3347ca904dc5d9dea1d76005a5587a739a4d
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Fri Sep 6 23:08:30 2024 +1000
+
+    Models started
+
+commit a6e6fce8788d9500417bb2766b39c5f12178b39d
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Mon Aug 26 20:10:30 2024 +1000
+
+    API CRUDs implemented
+
+commit ead9cc33cdf11797924f6d90c42c4fe4a00fae63
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Mon Aug 26 18:27:10 2024 +1000
+
+    Scuff backend data management
+
+commit f06d7c56e15b6c6c948da256b2a0de9853d10187
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Wed Aug 14 16:27:46 2024 +1000
+
+    Add project files.
+
+commit ae39de76a1bc9c8fa11dbd3505dafca5d3c344fa
+Author: Meara1179 <xenon1179@gmail.com>
+Date:   Wed Aug 14 16:27:44 2024 +1000
+
+    Add .gitattributes and .gitignore.
