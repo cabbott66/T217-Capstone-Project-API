@@ -8,10 +8,10 @@ namespace T217_Capstone_Project_API.Authentication
 {
     public class UserAuthenticationFilterAdmin : IAuthorizationFilter
     {
-        private readonly UserAuthRepository _repo = new UserAuthRepository();
+        private readonly UserRepository _repo = new UserRepository();
         private readonly IConfiguration _configuration;
 
-        public void OnAuthorization(AuthorizationFilterContext context)
+        public async void OnAuthorization(AuthorizationFilterContext context)
         {
             bool hasAllowAnonymous = context.ActionDescriptor.EndpointMetadata
                                  .Any(x => x.GetType() == typeof(AllowAnonymousAttribute));
@@ -24,7 +24,7 @@ namespace T217_Capstone_Project_API.Authentication
                 return;
             }
 
-            User user = _repo.GetUserByApiKey(extractedApiKey);
+            var user = await _repo.GetUserByApiKeyAsync(extractedApiKey);
 
             if (user.UserID != 1)
             {
