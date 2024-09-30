@@ -18,10 +18,13 @@ namespace T217_Capstone_Project_API
             {
                 options.Filters.Add(new UserAuthenticationFilterAdmin());
             });
+
+            // Database Context.
             builder.Services.AddDbContext<StakeholderRisksContext>();
 
             // Repositories.
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -50,8 +53,6 @@ namespace T217_Capstone_Project_API
                 };
                 x.AddSecurityRequirement(requirement);
             });
-
-            //builder.Services.AddScoped<UserAuthenticationFilterAdmin>();
 
             var app = builder.Build();
 

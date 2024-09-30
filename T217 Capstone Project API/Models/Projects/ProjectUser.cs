@@ -1,13 +1,42 @@
-﻿namespace T217_Capstone_Project_API.Models.Projects
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
+namespace T217_Capstone_Project_API.Models.Projects
 {
     public class ProjectUser
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public int ProjectUserID { get; set; }
+
+        [Required]
         public int UserID { get; set; }
+
+        // Foreign Key
+        [ForeignKey(nameof(Project.ProjectID))]
+        [Required]
+        public int ProjectId { get; set; }
+
+        [Required]
         public Project Project { get; set; }
 
-        // [Read][Write][Edit]
-        public IEnumerable<int> PermissionLevel { get; set; }
+        // Permissions
+        [Required]
+        [DefaultValue(false)]
+        public bool CanRead { get; set; } = false;
+
+        [Required]
+        [DefaultValue(false)]
+        public bool CanWrite { get; set; } = false;
+
+        [Required]
+        [DefaultValue(false)]
+        public bool CanEdit { get; set; } = false;
+
+        [Required]
+        [DefaultValue(false)]
         public bool IsAdmin { get; set; }
     }
 }

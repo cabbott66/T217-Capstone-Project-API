@@ -28,7 +28,6 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/Users
         [HttpGet]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             var user = await _repo.GetUserListAsync();
@@ -54,6 +53,20 @@ namespace T217_Capstone_Project_API.Controllers
             }
 
             return user;
+        }
+
+        [HttpPost("GetApiKey")]
+        [AllowAnonymous]
+        public async Task<ActionResult<string>> GetApiKey(LoginDTO login)
+        {
+            var apiKey = await _repo.GetApiKeyAsync(login.Email, login.Password);
+
+            if (apiKey == "")
+            {
+                return Unauthorized();
+            }
+
+            return apiKey;
         }
 
         // PUT: api/Users/5
@@ -90,13 +103,13 @@ namespace T217_Capstone_Project_API.Controllers
         {
             var newUser = await _repo.CreateUserAsync(user);
 
-            return CreatedAtAction("GetUser", new { id = newUser.UserID }, newUser);
+            return CreatedAtAction(nameof(GetUser), new { id = newUser.UserID }, newUser);
         }
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> DeleteUser(int id)
+        public async Task<ActionResult> DeleteUser(int id)
         {
             var wasDeleted = await _repo.DeleteUserAsync(id);
 

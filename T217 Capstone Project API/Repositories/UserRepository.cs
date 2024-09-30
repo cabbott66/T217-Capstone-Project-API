@@ -45,11 +45,7 @@ namespace T217_Capstone_Project_API.Repositories
             var user = await _context.Users.Where(x => x.UserEmail == email).FirstOrDefaultAsync();
             string key = "";
 
-            if (user == null)
-            {
-                key = "USER NOT FOUND";
-            }
-            else
+            if (user != null)
             {
                 bool passwordCorrect = BCrypt.Net.BCrypt.EnhancedVerify(password, user.Password);
 
@@ -57,8 +53,8 @@ namespace T217_Capstone_Project_API.Repositories
                 {
                     key = user.ApiKey;
                 }
-                else key = "PASSWORD INCORRECT";
             }
+
             return key;
         }
 
@@ -66,10 +62,6 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefaultAsync();
 
-            if (user == null)
-            {
-                user = new User();
-            }
             return user;
         }
 
@@ -77,10 +69,6 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userList = await _context.Users.OrderBy(x => x.UserID).ToListAsync();
 
-            if (userList == null)
-            {
-                userList = new List<User>();
-            }
             return userList;
         }
 
@@ -140,6 +128,7 @@ namespace T217_Capstone_Project_API.Repositories
             return true;
         }
 
+        // Checks the database if a User with the matching ID exists.
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.UserID == id);
