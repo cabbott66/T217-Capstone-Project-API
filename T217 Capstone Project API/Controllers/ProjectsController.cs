@@ -14,10 +14,14 @@ namespace T217_Capstone_Project_API.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly IProjectRepository _repo;
+        private readonly IUserRepository _userRepo;
+        private readonly IProjectUserRepository _projectUserRepo;
 
-        public ProjectsController(IProjectRepository repo)
+        public ProjectsController(IProjectRepository repo, IUserRepository userRepo, IProjectUserRepository projectUserRepo)
         {
-            _repo = repo;
+            _repo = repo;   
+            _userRepo = userRepo;
+            _projectUserRepo = projectUserRepo;
         }
 
         // GET: api/<ProjectsController>
@@ -98,6 +102,17 @@ namespace T217_Capstone_Project_API.Controllers
             }
 
             return NoContent();
+        }
+
+        private async Task<int> GetCurrentUserID()
+        {
+            string apiKey = Request.Headers["x-api-key"];
+            if (apiKey == null)
+            {
+                return 0;
+            }
+            var user = await _userRepo.GetUserByApiKeyAsync(apiKey);
+            return user.UserID;
         }
     }
 }
