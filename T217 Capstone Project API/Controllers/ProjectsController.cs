@@ -59,7 +59,23 @@ namespace T217_Capstone_Project_API.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<Project>> PostProject(ProjectDTO project)
         {
+            int currentUserId = await GetCurrentUserID();
+            if (currentUserId == 0)
+            {
+                return BadRequest();
+            }
+
             var newProject = await _repo.CreateProjectAsync(project);
+
+            ProjectUserDTO projectUser = new ProjectUserDTO();
+            projectUser.UserID = currentUserId;
+            projectUser.ProjectID = newProject.ProjectID;
+            projectUser.CanRead = true;
+            projectUser.CanWrite = true;
+            projectUser.CanEdit = true;
+            projectUser.IsAdmin = true;
+
+            var newProjectUser = await _projectUserRepo.CreateProjectUserAsync(projectUser);
 
             return CreatedAtAction(nameof(GetProject), new { id = newProject.ProjectID }, newProject);
         }

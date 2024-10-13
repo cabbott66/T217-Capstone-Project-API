@@ -44,6 +44,13 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUserList;
         }
 
+        public async Task<ProjectUser> GetProjectUserByUserAndProjectAsync(int userId, int projectId)
+        {
+            var projectUser = await _context.ProjectUsers.Where(x => x.UserID == userId && x.ProjectId == projectId).FirstAsync();
+
+            return projectUser;
+        }
+
         public async Task<ProjectUser> CreateProjectUserAsync(ProjectUserDTO projectUser)
         {
             ProjectUser newProjectUser = new ProjectUser();

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using T217_Capstone_Project_API;
 
@@ -10,9 +11,11 @@ using T217_Capstone_Project_API;
 namespace T217_Capstone_Project_API.Migrations
 {
     [DbContext(typeof(StakeholderRisksContext))]
-    partial class StakeholderRisksContextModelSnapshot : ModelSnapshot
+    [Migration("20241013103317_ProjectUser_UserFK")]
+    partial class ProjectUser_UserFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -70,8 +73,6 @@ namespace T217_Capstone_Project_API.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.HasIndex("UserID");
-
                     b.ToTable("ProjectUsers");
                 });
 
@@ -114,15 +115,7 @@ namespace T217_Capstone_Project_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("T217_Capstone_Project_API.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Project");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

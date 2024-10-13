@@ -11,8 +11,12 @@ namespace T217_Capstone_Project_API.Models.Projects
         [Required]
         public int ProjectUserID { get; set; }
 
+        [ForeignKey(nameof(User.UserID))]
         [Required]
         public int UserID { get; set; }
+
+        [Required]
+        public User User { get; set; }
 
         // Foreign Key
         [ForeignKey(nameof(Project.ProjectID))]

@@ -13,6 +13,8 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
 
         public abstract Task<List<ProjectUser>> GetProjectUserListByProjectAsync(int id);
 
+        public abstract Task<ProjectUser> GetProjectUserByUserAndProjectAsync(int userId, int projectId);
+
         public abstract Task<ProjectUser> CreateProjectUserAsync(ProjectUserDTO projectUser);
 
         public abstract Task<int> UpdateProjectUserAsync(int id, ProjectUser user);
