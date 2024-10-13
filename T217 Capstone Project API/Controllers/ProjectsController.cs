@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models;
 using T217_Capstone_Project_API.Models.DTO;
 using T217_Capstone_Project_API.Models.Projects;
@@ -26,7 +27,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/<ProjectsController>
         [HttpGet]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
             var projects = await _repo.GetProjectListAsync();
@@ -39,9 +40,24 @@ namespace T217_Capstone_Project_API.Controllers
             return projects;
         }
 
+        [HttpGet("GetProjectsForUser")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsForUser()
+        {
+            int userId = await GetCurrentUserID();
+            var projects = await _repo.GetProjectListByUserAsync(userId);
+
+            if (projects == null)
+            {
+                return NotFound();
+            }
+
+            return projects;
+        }
+
         // GET api/<ProjectsController>/5
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> GetProject(int id)
         {
             var project = await _repo.GetProjectAsync(id);
@@ -56,7 +72,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<ProjectsController>
         [HttpPost]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> PostProject(ProjectDTO project)
         {
             int currentUserId = await GetCurrentUserID();
@@ -67,7 +83,7 @@ namespace T217_Capstone_Project_API.Controllers
 
             var newProject = await _repo.CreateProjectAsync(project);
 
-            ProjectUserDTO projectUser = new ProjectUserDTO();
+            ProjectUser projectUser = new ProjectUser();
             projectUser.UserID = currentUserId;
             projectUser.ProjectID = newProject.ProjectID;
             projectUser.CanRead = true;
@@ -82,7 +98,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT api/<ProjectsController>/5
         [HttpPut("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutProject(int id, Project project)
         {
             int updateStatus = await _repo.UpdateProjectAsync(id, project);
@@ -107,7 +123,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE api/<ProjectsController>/5
         [HttpDelete("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteProject(int id)
         {
             var wasDeleted = await _repo.DeleteProjectAsync(id);

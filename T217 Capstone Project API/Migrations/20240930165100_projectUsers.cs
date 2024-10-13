@@ -21,7 +21,7 @@ namespace T217_Capstone_Project_API.Migrations
             migrationBuilder.RenameColumn(
                 name: "ProjectID",
                 table: "ProjectUsers",
-                newName: "ProjectId");
+                newName: "ProjectID");
 
             migrationBuilder.RenameIndex(
                 name: "IX_ProjectUsers_ProjectID",
@@ -52,7 +52,7 @@ namespace T217_Capstone_Project_API.Migrations
             migrationBuilder.AddForeignKey(
                 name: "FK_ProjectUsers_Projects_ProjectId",
                 table: "ProjectUsers",
-                column: "ProjectId",
+                column: "ProjectID",
                 principalTable: "Projects",
                 principalColumn: "ProjectID",
                 onDelete: ReferentialAction.Cascade);
@@ -78,7 +78,7 @@ namespace T217_Capstone_Project_API.Migrations
                 table: "ProjectUsers");
 
             migrationBuilder.RenameColumn(
-                name: "ProjectId",
+                name: "ProjectID",
                 table: "ProjectUsers",
                 newName: "ProjectID");
 

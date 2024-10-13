@@ -19,6 +19,13 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<List<Project>> GetProjectListAsync();
 
         /// <summary>
+        /// Returns a list of all Projects that the User has access to.
+        /// </summary>
+        /// <param name="id">The ID of the current User.</param>
+        /// <returns></returns>
+        public abstract Task<List<Project>> GetProjectListByUserAsync(int id);
+
+        /// <summary>
         /// Creates a new Project in the database.
         /// </summary>
         /// <param name="project">The ProjectDTO to be added.</param>

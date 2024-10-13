@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using T217_Capstone_Project_API;
+using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models;
 using T217_Capstone_Project_API.Models.DTO;
 using T217_Capstone_Project_API.Repositories;
@@ -28,6 +29,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/Users
         [HttpGet]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             var user = await _repo.GetUserListAsync();
@@ -42,7 +44,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _repo.GetUserAsync(id);
@@ -72,7 +74,7 @@ namespace T217_Capstone_Project_API.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             int updateStatus = await _repo.UpdateUserAsync(id, user);
@@ -108,7 +110,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        [AllowAnonymous]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult> DeleteUser(int id)
         {
             var wasDeleted = await _repo.DeleteUserAsync(id);

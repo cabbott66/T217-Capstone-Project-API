@@ -63,7 +63,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProjectId")
+                    b.Property<int>("ProjectID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("UserID")
@@ -71,7 +71,7 @@ namespace T217_Capstone_Project_API.Migrations
 
                     b.HasKey("ProjectUserID");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectID");
 
                     b.ToTable("ProjectUsers");
                 });
@@ -111,7 +111,7 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("ProjectId")
+                        .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

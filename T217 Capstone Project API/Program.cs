@@ -14,10 +14,7 @@ namespace T217_Capstone_Project_API
 
             // Add services to the container.
 
-            builder.Services.AddControllers(options =>
-            {
-                options.Filters.Add(new UserAuthenticationFilterAdmin());
-            });
+            builder.Services.AddControllers();
 
             // Database Context.
             builder.Services.AddDbContext<StakeholderRisksContext>();
@@ -26,6 +23,10 @@ namespace T217_Capstone_Project_API
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
             builder.Services.AddScoped<IProjectUserRepository, ProjectUserRepository>();
+
+            // Filters
+            builder.Services.AddScoped<UserAuthenticationFilterAdmin>();
+            builder.Services.AddScoped<UserAuthenticationFilter>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

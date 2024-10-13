@@ -32,6 +32,27 @@ namespace T217_Capstone_Project_API.Repositories
             return projectList;
         }
 
+        public async Task<List<Project>> GetProjectListByUserAsync(int id)
+        {
+            List<Project> projects = new List<Project>();
+
+            var projectUsers = await _context.ProjectUsers.Where(x => x.UserID == id).OrderBy(x => x.ProjectUserID).ToListAsync();
+
+            foreach (var projectUser in projectUsers)
+            {
+                if (projectUser.CanRead == true)
+                {
+                    var project = await _context.Projects.FindAsync(id);
+                    if (project != null)
+                    {
+                        projects.Add(project);
+                    }
+                }
+            }
+
+            return projects;
+        }
+
         public async Task<Project> CreateProjectAsync(ProjectDTO project)
         {
             Project newProject = new Project();

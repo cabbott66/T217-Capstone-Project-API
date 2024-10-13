@@ -21,7 +21,7 @@ namespace T217_Capstone_Project_API.Models.Projects
         // Foreign Key
         [ForeignKey(nameof(Project.ProjectID))]
         [Required]
-        public int ProjectId { get; set; }
+        public int ProjectID { get; set; }
 
         [Required]
         public Project Project { get; set; }
@@ -41,6 +41,6 @@ namespace T217_Capstone_Project_API.Models.Projects
 
         [Required]
         [DefaultValue(false)]
-        public bool IsAdmin { get; set; }
+        public bool IsAdmin { get; set; } = false;
     }
 }

@@ -39,33 +39,24 @@ namespace T217_Capstone_Project_API.Repositories
 
         public async Task<List<ProjectUser>> GetProjectUserListByProjectAsync(int id)
         {
-            var projectUserList = await _context.ProjectUsers.Where(x => x.ProjectId == id).OrderBy(x => x.ProjectUserID).ToListAsync();
+            var projectUserList = await _context.ProjectUsers.Where(x => x.ProjectID == id).OrderBy(x => x.ProjectUserID).ToListAsync();
 
             return projectUserList;
         }
 
         public async Task<ProjectUser> GetProjectUserByUserAndProjectAsync(int userId, int projectId)
         {
-            var projectUser = await _context.ProjectUsers.Where(x => x.UserID == userId && x.ProjectId == projectId).FirstAsync();
+            var projectUser = await _context.ProjectUsers.Where(x => x.UserID == userId && x.ProjectID == projectId).FirstAsync();
 
             return projectUser;
         }
 
-        public async Task<ProjectUser> CreateProjectUserAsync(ProjectUserDTO projectUser)
+        public async Task<ProjectUser> CreateProjectUserAsync(ProjectUser projectUser)
         {
-            ProjectUser newProjectUser = new ProjectUser();
-
-            newProjectUser.UserID = projectUser.UserID;
-            newProjectUser.ProjectId = projectUser.ProjectID;
-            newProjectUser.CanRead = projectUser.CanRead;
-            newProjectUser.CanWrite = projectUser.CanWrite;
-            newProjectUser.CanEdit = projectUser.CanEdit;
-            newProjectUser.IsAdmin = projectUser.IsAdmin;
-
-            _context.ProjectUsers.Add(newProjectUser);
+            _context.ProjectUsers.Add(projectUser);
             await _context.SaveChangesAsync();
             
-            return newProjectUser;
+            return projectUser;
         }
 
         public async Task<int> UpdateProjectUserAsync(int id, ProjectUser projectUser)
