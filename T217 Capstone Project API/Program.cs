@@ -65,6 +65,13 @@ namespace T217_Capstone_Project_API
                 app.UseSwaggerUI();
             }
 
+            app.UseCors(policy =>
+                policy.WithOrigins("http://localhost:3000")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+            );
+
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
