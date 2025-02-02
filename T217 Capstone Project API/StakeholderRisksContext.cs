@@ -16,8 +16,10 @@ namespace T217_Capstone_Project_API
         // Stakeholder DbSets
         public DbSet<StakeholderGroup> StakeholderGroups { get; set; }
         public DbSet<Stakeholder> Stakeholders { get; set; }
+
+        // Risks DbSets
         public DbSet<EnvironmentalRisk> EnvironmentalRisks { get; set; }
-        public DbSet<InterpersonalRisk> interpersonalRisks { get; set; }
+        public DbSet<InterpersonalRisk> InterpersonalRisks { get; set; }
         public DbSet<PersonalRisk> PersonalRisks { get; set; }
         public DbSet<ProjectRisk> ProjectRisks { get; set; }
 
