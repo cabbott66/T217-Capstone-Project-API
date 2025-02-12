@@ -28,9 +28,9 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <summary>
         /// Creates a new StakeholderGroup in the database.
         /// </summary>
-        /// <param name="id">The id of the project the StakeholderGroup is associated with.</param>
+        /// <param name="stakeholderGroupDTO">The StakeholderDTO to be added..</param>
         /// <returns></returns>
-        public abstract Task<StakeholderGroup> CreateStakeholderGroupAsync(int id);
+        public abstract Task<StakeholderGroup> CreateStakeholderGroupAsync(StakeholderGroupDTO stakeholderGroupDTO);
 
         /// <summary>
         /// Updates the StakeholderGroup with the matching ID with new values.

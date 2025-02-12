@@ -32,7 +32,7 @@ namespace T217_Capstone_Project_API.Controllers
         {
             var projects = await _repo.GetProjectListAsync();
 
-            if (projects == null)
+            if (!projects.Any())
             {
                 return NotFound();
             }

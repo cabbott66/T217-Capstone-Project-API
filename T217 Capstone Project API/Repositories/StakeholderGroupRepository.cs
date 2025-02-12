@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using T217_Capstone_Project_API.Models.DTO;
 using T217_Capstone_Project_API.Models.Projects;
 using T217_Capstone_Project_API.Repositories.Interfaces;
 
@@ -36,11 +37,12 @@ namespace T217_Capstone_Project_API.Repositories
             return stakeholderGroupList;
         }
 
-        public async Task<StakeholderGroup> CreateStakeholderGroupAsync(int id)
+        public async Task<StakeholderGroup> CreateStakeholderGroupAsync(StakeholderGroupDTO stakeholderGroupDTO)
         {
             StakeholderGroup newStakeholderGroup = new StakeholderGroup();
 
-            newStakeholderGroup.ProjectID = id;
+            newStakeholderGroup.StakeholderGroupName = stakeholderGroupDTO.StakeholderGroupName;
+            newStakeholderGroup.ProjectID = stakeholderGroupDTO.ProjectID;
 
             _context.Add(newStakeholderGroup);
             await _context.SaveChangesAsync();

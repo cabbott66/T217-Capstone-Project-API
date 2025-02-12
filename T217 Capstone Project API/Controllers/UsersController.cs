@@ -32,14 +32,14 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            var user = await _repo.GetUserListAsync();
+            var users = await _repo.GetUserListAsync();
 
-            if (user == null)
+            if (!users.Any())
             {
                 return NotFound();
             }
 
-            return user;
+            return users;
         }
 
         // GET: api/Users/5

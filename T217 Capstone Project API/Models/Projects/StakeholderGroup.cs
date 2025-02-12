@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using T217_Capstone_Project_API.Models.Risks;
+using System.Text.Json.Serialization;
 
 namespace T217_Capstone_Project_API.Models.Projects
 {
@@ -11,10 +12,15 @@ namespace T217_Capstone_Project_API.Models.Projects
         [Required]
         public int StakeholderGroupID { get; set; }
 
+        [Required]
+        public string StakeholderGroupName { get; set; }
+
         [ForeignKey(nameof(Project.ProjectID))]
         [Required]
         public int ProjectID { get; set; }
 
+        [Required]
+        [JsonIgnore]
         public Project Project { get; set; }
     }
 }

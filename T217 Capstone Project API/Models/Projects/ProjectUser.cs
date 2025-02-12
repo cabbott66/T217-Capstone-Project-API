@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace T217_Capstone_Project_API.Models.Projects
 {
@@ -16,6 +17,7 @@ namespace T217_Capstone_Project_API.Models.Projects
         public int UserID { get; set; }
 
         [Required]
+        [JsonIgnore]
         public User User { get; set; }
 
         // Foreign Key
@@ -24,6 +26,7 @@ namespace T217_Capstone_Project_API.Models.Projects
         public int ProjectID { get; set; }
 
         [Required]
+        [JsonIgnore]
         public Project Project { get; set; }
 
         // Permissions
