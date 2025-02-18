@@ -12,8 +12,6 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Controllers
 {
-    // TODO: Refactor default controller code for the StakeholderGroupsController.
-
     [Route("api/[controller]")]
     [ApiController]
     public class StakeholderGroupsController : ControllerBase

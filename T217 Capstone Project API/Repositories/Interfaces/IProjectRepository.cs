@@ -23,7 +23,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the current User.</param>
         /// <returns></returns>
-        public abstract Task<List<Project>> GetProjectListByUserAsync(int id);
+        public abstract Task<List<Project>> GetProjectListUserReadAccessAsync(int id);
+
+        /// <summary>
+        /// Returns a list of all Projects that match the supplied list of IDs.
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public abstract Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids);
 
         /// <summary>
         /// Creates a new Project in the database.

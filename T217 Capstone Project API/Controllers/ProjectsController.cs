@@ -27,10 +27,22 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/<ProjectsController>
         [HttpGet]
-        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
-            var projects = await _repo.GetProjectListAsync();
+            int userId = await GetCurrentUserID();
+            var projectUsers = await _projectUserRepo.GetProjectUserListByUserAsync(userId);
+            List<int> projectIds = new List<int>();
+
+            foreach (var projectUser in projectUsers)
+            {
+                if (projectUser.CanRead == true || projectUser.IsAdmin == true)
+                {
+                    projectIds.Add(projectUser.ProjectID);
+                }
+            }
+
+            var projects = await _repo.GetProjectListByBatchIdsAsync(projectIds);
 
             if (!projects.Any())
             {
@@ -38,16 +50,16 @@ namespace T217_Capstone_Project_API.Controllers
             }
 
             return projects;
+
         }
 
-        [HttpGet("GetProjectsForUser")]
-        [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsForUser()
+        [HttpGet("GetProjectsAdmin")]
+        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsAdmin()
         {
-            int userId = await GetCurrentUserID();
-            var projects = await _repo.GetProjectListByUserAsync(userId);
+            var projects = await _repo.GetProjectListAsync();
 
-            if (projects == null)
+            if (!projects.Any())
             {
                 return NotFound();
             }

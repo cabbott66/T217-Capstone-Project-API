@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Repositories;
 using T217_Capstone_Project_API.Repositories.Interfaces;
@@ -42,6 +43,7 @@ namespace T217_Capstone_Project_API
                     In = ParameterLocation.Header,
                     Scheme = "ApiKeyScheme"
                 });
+
                 var scheme = new OpenApiSecurityScheme
                 {
                     Reference = new OpenApiReference

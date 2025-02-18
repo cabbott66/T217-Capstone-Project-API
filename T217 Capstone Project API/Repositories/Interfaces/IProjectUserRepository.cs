@@ -5,6 +5,7 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
     public interface IProjectUserRepository
     {
+        // TODO: Add XML commenting.
         public abstract Task<ProjectUser> GetProjectUserAsync(int id);
 
         public abstract Task<List<ProjectUser>> GetProjectUserListAsync();

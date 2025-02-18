@@ -28,6 +28,10 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // GET: api/Users
+        /// <summary>
+        /// Test
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()

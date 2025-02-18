@@ -32,7 +32,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectList;
         }
 
-        public async Task<List<Project>> GetProjectListByUserAsync(int id)
+        public async Task<List<Project>> GetProjectListUserReadAccessAsync(int id)
         {
             List<Project> projects = new List<Project>();
 
@@ -40,7 +40,7 @@ namespace T217_Capstone_Project_API.Repositories
 
             foreach (var projectUser in projectUsers)
             {
-                if (projectUser.CanRead == true)
+                if (projectUser.CanRead == true || projectUser.IsAdmin == true)
                 {
                     var project = await _context.Projects.FindAsync(id);
                     if (project != null)
@@ -51,6 +51,23 @@ namespace T217_Capstone_Project_API.Repositories
             }
 
             return projects;
+        }
+
+        public async Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids)
+        {
+            List<Project> projectList = new List<Project>();
+
+            foreach (var id in ids)
+            {
+                var project = await _context.Projects.FindAsync(id);
+                if (project != null)
+                {
+                    projectList.Add(project);
+                }
+            }
+
+            projectList = projectList.OrderBy(x => x.ProjectID).ToList();
+            return projectList;
         }
 
         public async Task<Project> CreateProjectAsync(ProjectDTO project)
