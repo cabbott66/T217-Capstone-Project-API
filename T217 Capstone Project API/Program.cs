@@ -68,13 +68,12 @@ namespace T217_Capstone_Project_API
                 dbContext.Database.Migrate();
             }
 
-            // TODO: Remove Swagger before final deployment.
             // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
-            //{
+            if (app.Environment.IsDevelopment())
+            {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            //}
+            }
 
             app.UseCors(policy =>
                 policy.WithOrigins("http://localhost:3000")
