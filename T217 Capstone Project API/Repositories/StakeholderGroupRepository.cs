@@ -37,6 +37,13 @@ namespace T217_Capstone_Project_API.Repositories
             return stakeholderGroupList;
         }
 
+        public async Task<List<StakeholderGroup>> GetStakeholderGroupListByBatchProjectId(List<int> projectIds)
+        {
+            var stakeholderGroups = await _context.StakeholderGroups.Where(x => projectIds.Contains(x.ProjectID)).ToListAsync();
+
+            return stakeholderGroups;
+        }
+
         public async Task<StakeholderGroup> CreateStakeholderGroupAsync(StakeholderGroupDTO stakeholderGroupDTO)
         {
             StakeholderGroup newStakeholderGroup = new StakeholderGroup();

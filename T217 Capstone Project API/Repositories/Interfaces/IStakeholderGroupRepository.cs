@@ -26,6 +26,13 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<List<StakeholderGroup>> GetStakeholderGroupListByProjectAsync(int id);
 
         /// <summary>
+        /// Returns a list of all StakeholderGroup that are connected to the supplied list of Project Ids.
+        /// </summary>
+        /// <param name="projectIds"></param>
+        /// <returns></returns>
+        public abstract Task<List<StakeholderGroup>> GetStakeholderGroupListByBatchProjectId(List<int> projectIds);
+
+        /// <summary>
         /// Creates a new StakeholderGroup in the database.
         /// </summary>
         /// <param name="stakeholderGroupDTO">The StakeholderDTO to be added..</param>

@@ -17,15 +17,45 @@ namespace T217_Capstone_Project_API.Controllers
     public class StakeholderGroupsController : ControllerBase
     {
         private readonly IStakeholderGroupRepository _repo;
+        private readonly IUserRepository _userRepo;
+        private readonly IProjectUserRepository _projectUserRepo;
 
-        public StakeholderGroupsController(IStakeholderGroupRepository repo)
+        public StakeholderGroupsController(IStakeholderGroupRepository repo, IUserRepository userRepo, IProjectUserRepository projectUserRepo)
         {
             _repo = repo;
+            _userRepo = userRepo;
+            _projectUserRepo = projectUserRepo;
         }
 
         // GET: api/StakeholderGroups
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StakeholderGroup>>> GetStakeholderGroups()
+        {
+            int userId = await GetCurrentUserID();
+            var projectUsers = await _projectUserRepo.GetProjectUserListByUserAsync(userId);
+            List<int> projectIds = new List<int>();
+
+            foreach (var projectUser in projectUsers)
+            {
+                if (projectUser.CanRead == true || projectUser.IsAdmin == true)
+                {
+                    projectIds.Add(projectUser.ProjectID);
+                }
+            }
+
+            var stakeholderGroups = await _repo.GetStakeholderGroupListByBatchProjectId(projectIds);
+
+            if (!stakeholderGroups.Any())
+            {
+                return NotFound();
+            }
+
+            return stakeholderGroups;
+        }
+
+        // GET: api/StakeholderGroups
+        [HttpGet("GetStakeholderGroupsAdmin")]
+        public async Task<ActionResult<IEnumerable<StakeholderGroup>>> GetStakeholderGroupsAdmin()
         {
             var stakeholderGroups = await _repo.GetStakeholderGroupListAsync();
 
@@ -98,6 +128,17 @@ namespace T217_Capstone_Project_API.Controllers
             }
 
             return NoContent();
+        }
+
+        private async Task<int> GetCurrentUserID()
+        {
+            string apiKey = Request.Headers["x-api-key"];
+            if (apiKey == null)
+            {
+                return 0;
+            }
+            var user = await _userRepo.GetUserByApiKeyAsync(apiKey);
+            return user.UserID;
         }
     }
 }
