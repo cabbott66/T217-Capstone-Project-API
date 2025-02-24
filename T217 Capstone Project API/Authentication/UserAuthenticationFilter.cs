@@ -8,7 +8,7 @@ namespace T217_Capstone_Project_API.Authentication
     public class UserAuthenticationFilter : IAuthorizationFilter
     {
         private readonly IConfiguration _configuration;
-        private readonly IUserRepository _repo = new UserRepository();
+        private readonly IUserRepository _repo;
 
         public UserAuthenticationFilter(IConfiguration configuration, IUserRepository repo)
         {

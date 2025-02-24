@@ -14,7 +14,12 @@ namespace T217_Capstone_Project_API.Repositories
             NotFound
         }
 
-        private readonly StakeholderRisksContext _context = new StakeholderRisksContext();
+        private readonly StakeholderRisksContext _context;
+
+        public ProjectUserRepository(StakeholderRisksContext context)
+        {
+            _context = context;
+        }
 
         public async Task<ProjectUser> GetProjectUserAsync(int id)
         {

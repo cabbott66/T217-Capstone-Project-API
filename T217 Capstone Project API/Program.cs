@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using T217_Capstone_Project_API.Authentication;
@@ -19,7 +20,12 @@ namespace T217_Capstone_Project_API
             builder.Services.AddControllers();
 
             // Database Context.
-            builder.Services.AddDbContext<StakeholderRisksContext>();
+            var connectionString = builder.Configuration.GetConnectionString("stakeholderRisksDb");
+            var serverVersion = ServerVersion.AutoDetect(connectionString);
+
+            builder.Services.AddDbContext<StakeholderRisksContext>(
+                dbContextOptions => dbContextOptions
+                .UseMySql(connectionString, serverVersion));
 
             // Repositories.
             builder.Services.AddScoped<IUserRepository, UserRepository>();

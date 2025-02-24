@@ -16,7 +16,12 @@ namespace T217_Capstone_Project_API.Repositories
             NotAuthorized
         }
 
-        private readonly StakeholderRisksContext _context = new StakeholderRisksContext();
+        private readonly StakeholderRisksContext _context;
+
+        public StakeholderGroupRepository(StakeholderRisksContext context) 
+        {
+            _context = context;
+        }
 
         public async Task<StakeholderGroup> GetStakeholderGroupAsync(int id, string apiKey)
         {
