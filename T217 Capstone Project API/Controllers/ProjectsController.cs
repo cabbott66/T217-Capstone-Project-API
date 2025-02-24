@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models;
 using T217_Capstone_Project_API.Models.DTO;
@@ -30,19 +31,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
-            int userId = await GetCurrentUserID();
-            var projectUsers = await _projectUserRepo.GetProjectUserListByUserAsync(userId);
-            List<int> projectIds = new List<int>();
+            string apiKey = Request.Headers["x-api-key"];
 
-            foreach (var projectUser in projectUsers)
-            {
-                if (projectUser.CanRead == true || projectUser.IsAdmin == true)
-                {
-                    projectIds.Add(projectUser.ProjectID);
-                }
-            }
-
-            var projects = await _repo.GetProjectListByBatchIdsAsync(projectIds);
+            var projects = await _repo.GetProjectListAsync(apiKey);
 
             if (!projects.Any())
             {
@@ -57,7 +48,8 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjectsAdmin()
         {
-            var projects = await _repo.GetProjectListAsync();
+            string apiKey = Request.Headers["x-api-key"];
+            var projects = await _repo.GetProjectListAsync(apiKey);
 
             if (!projects.Any())
             {
@@ -72,9 +64,10 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> GetProject(int id)
         {
-            var project = await _repo.GetProjectAsync(id);
+            string apiKey = Request.Headers["x-api-key"];
+            var project = await _repo.GetProjectAsync(id, apiKey);
 
-            if (project == null)
+            if (project.ProjectID == 0)
             {
                 return NotFound();
             }
@@ -87,23 +80,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> PostProject(ProjectDTO project)
         {
-            int currentUserId = await GetCurrentUserID();
-            if (currentUserId == 0)
-            {
-                return BadRequest();
-            }
+            string apiKey = Request.Headers["x-api-key"];
 
-            var newProject = await _repo.CreateProjectAsync(project);
-
-            ProjectUser projectUser = new ProjectUser();
-            projectUser.UserID = currentUserId;
-            projectUser.ProjectID = newProject.ProjectID;
-            projectUser.CanRead = true;
-            projectUser.CanWrite = true;
-            projectUser.CanEdit = true;
-            projectUser.IsAdmin = true;
-
-            var newProjectUser = await _projectUserRepo.CreateProjectUserAsync(projectUser);
+            var newProject = await _repo.CreateProjectAsync(project, apiKey);
 
             return CreatedAtAction(nameof(GetProject), new { id = newProject.ProjectID }, newProject);
         }
@@ -113,12 +92,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutProject(int id, Project project)
         {
-            int updateStatus = await _repo.UpdateProjectAsync(id, project);
+            string apiKey = Request.Headers["x-api-key"];
 
-            if (id != project.ProjectID)
-            {
-                return BadRequest();
-            }
+            int updateStatus = await _repo.UpdateProjectAsync(id, project, apiKey);
 
             switch (updateStatus)
             {
@@ -128,6 +104,8 @@ namespace T217_Capstone_Project_API.Controllers
                     return BadRequest();
                 case 2:
                     return NotFound();
+                case 3:
+                    return StatusCode(StatusCodes.Status403Forbidden);
                 default:
                     return BadRequest();
             }
@@ -138,14 +116,22 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteProject(int id)
         {
-            var wasDeleted = await _repo.DeleteProjectAsync(id);
+            string apiKey = Request.Headers["x-api-key"];
+            var deleteStatus = await _repo.DeleteProjectAsync(id, apiKey);
 
-            if (!wasDeleted)
+            switch (deleteStatus)
             {
-                return NotFound();
+                case 0:
+                    return NoContent();
+                case 1:
+                    return BadRequest();
+                case 2:
+                    return NotFound();
+                case 3:
+                    return StatusCode(StatusCodes.Status403Forbidden);
+                default:
+                    return BadRequest();
             }
-
-            return NoContent();
         }
 
         private async Task<int> GetCurrentUserID()

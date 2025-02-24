@@ -10,34 +10,34 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the desired Project.</param>
         /// <returns></returns>
-        public abstract Task<Project> GetProjectAsync(int id);
+        public abstract Task<Project> GetProjectAsync(int id, string apiKey);
 
         /// <summary>
         /// Returns a list of all Projects from the database.
         /// </summary>
         /// <returns></returns>
-        public abstract Task<List<Project>> GetProjectListAsync();
+        public abstract Task<List<Project>> GetProjectListAsync(string apiKey);
 
         /// <summary>
         /// Returns a list of all Projects that the User has access to.
         /// </summary>
         /// <param name="id">The ID of the current User.</param>
         /// <returns></returns>
-        public abstract Task<List<Project>> GetProjectListUserReadAccessAsync(int id);
+        //public abstract Task<List<Project>> GetProjectListUserReadAccessAsync(int id);
 
         /// <summary>
         /// Returns a list of all Projects that match the supplied list of IDs.
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        public abstract Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids);
+        //public abstract Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids);
 
         /// <summary>
         /// Creates a new Project in the database.
         /// </summary>
         /// <param name="project">The ProjectDTO to be added.</param>
         /// <returns></returns>
-        public abstract Task<Project> CreateProjectAsync(ProjectDTO project);
+        public abstract Task<Project> CreateProjectAsync(ProjectDTO project, string apiKey);
 
         /// <summary>
         /// Updates the Project with the matching ID with new values.
@@ -45,13 +45,13 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <param name="id">The ID of the project to be updated.</param>
         /// <param name="project">The replacement Project.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateProjectAsync(int id, Project project);
+        public abstract Task<int> UpdateProjectAsync(int id, Project project, string apiKey);
 
         /// <summary>
         /// Deletes a Project from the database.
         /// </summary>
         /// <param name="id">The ID of the Project to be deleted.</param>
         /// <returns></returns>
-        public abstract Task<bool> DeleteProjectAsync(int id);
+        public abstract Task<int> DeleteProjectAsync(int id, string apiKey);
     }
 }

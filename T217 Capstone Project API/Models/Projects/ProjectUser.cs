@@ -45,5 +45,31 @@ namespace T217_Capstone_Project_API.Models.Projects
         [Required]
         [DefaultValue(false)]
         public bool IsAdmin { get; set; } = false;
+
+        public ProjectUser()
+        {
+
+        }
+
+        public ProjectUser(int projectUserID, int userID, int projectID, bool canRead, bool canWrite, bool canEdit, bool isAdmin)
+        {
+            ProjectUserID = projectUserID;
+            UserID = userID;
+            ProjectID = projectID;
+            CanRead = canRead;
+            CanWrite = canWrite;
+            CanEdit = canEdit;
+            IsAdmin = isAdmin;
+        }
+
+        public ProjectUser(int userID, int projectID, bool canRead, bool canWrite, bool canEdit, bool isAdmin)
+        {
+            UserID = userID;
+            ProjectID = projectID;
+            CanRead = canRead;
+            CanWrite = canWrite;
+            CanEdit = canEdit;
+            IsAdmin = isAdmin;
+        }
     }
 }
