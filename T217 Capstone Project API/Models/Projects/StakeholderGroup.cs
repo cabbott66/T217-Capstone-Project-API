@@ -19,8 +19,7 @@ namespace T217_Capstone_Project_API.Models.Projects
         [Required]
         public int ProjectID { get; set; }
 
-        [Required]
         [JsonIgnore]
-        public Project Project { get; set; }
+        public Project? Project { get; set; }
     }
 }

@@ -60,43 +60,6 @@ namespace T217_Capstone_Project_API.Repositories
             return projects;
         }
 
-        //public async Task<List<Project>> GetProjectListUserReadAccessAsync(int id)
-        //{
-        //    List<Project> projects = new List<Project>();
-
-        //    var projectUsers = await _context.ProjectUsers.Where(x => x.UserID == id).OrderBy(x => x.ProjectUserID).ToListAsync();
-
-        //    foreach (var projectUser in projectUsers)
-        //    {
-        //        if (projectUser.CanRead == true || projectUser.IsAdmin == true)
-        //        {
-        //            var project = await _context.Projects.FindAsync(id);
-        //            if (project != null)
-        //            {
-        //                projects.Add(project);
-        //            }
-        //        }
-        //    }
-
-        //    return projects;
-        //}
-
-        //public async Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids)
-        //{
-        //    List<Project> projectList = new List<Project>();
-
-        //    foreach (var id in ids)
-        //    {
-        //        var project = await _context.Projects.FindAsync(id);
-        //        if (project != null)
-        //        {
-        //            projectList.Add(project);
-        //        }
-        //    }
-
-        //    projectList = projectList.OrderBy(x => x.ProjectID).ToList();
-        //    return projectList;
-        //}
 
         public async Task<Project> CreateProjectAsync(ProjectDTO project, string apiKey)
         {

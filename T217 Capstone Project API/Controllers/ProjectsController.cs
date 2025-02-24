@@ -16,14 +16,10 @@ namespace T217_Capstone_Project_API.Controllers
     public class ProjectsController : ControllerBase
     {
         private readonly IProjectRepository _repo;
-        private readonly IUserRepository _userRepo;
-        private readonly IProjectUserRepository _projectUserRepo;
 
-        public ProjectsController(IProjectRepository repo, IUserRepository userRepo, IProjectUserRepository projectUserRepo)
+        public ProjectsController(IProjectRepository repo)
         {
             _repo = repo;   
-            _userRepo = userRepo;
-            _projectUserRepo = projectUserRepo;
         }
 
         // GET: api/<ProjectsController>
@@ -31,9 +27,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
-            string apiKey = Request.Headers["x-api-key"];
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var projects = await _repo.GetProjectListAsync(apiKey);
+            var projects = await _repo.GetProjectListAsync(apiKey!);
 
             if (!projects.Any())
             {
@@ -48,8 +44,8 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjectsAdmin()
         {
-            string apiKey = Request.Headers["x-api-key"];
-            var projects = await _repo.GetProjectListAsync(apiKey);
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+            var projects = await _repo.GetProjectListAsync(apiKey!);
 
             if (!projects.Any())
             {
@@ -64,8 +60,8 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> GetProject(int id)
         {
-            string apiKey = Request.Headers["x-api-key"];
-            var project = await _repo.GetProjectAsync(id, apiKey);
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+            var project = await _repo.GetProjectAsync(id, apiKey!);
 
             if (project.ProjectID == 0)
             {
@@ -80,9 +76,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Project>> PostProject(ProjectDTO project)
         {
-            string apiKey = Request.Headers["x-api-key"];
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var newProject = await _repo.CreateProjectAsync(project, apiKey);
+            var newProject = await _repo.CreateProjectAsync(project, apiKey!);
 
             return CreatedAtAction(nameof(GetProject), new { id = newProject.ProjectID }, newProject);
         }
@@ -92,9 +88,9 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutProject(int id, Project project)
         {
-            string apiKey = Request.Headers["x-api-key"];
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            int updateStatus = await _repo.UpdateProjectAsync(id, project, apiKey);
+            int updateStatus = await _repo.UpdateProjectAsync(id, project, apiKey!);
 
             switch (updateStatus)
             {
@@ -116,8 +112,8 @@ namespace T217_Capstone_Project_API.Controllers
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteProject(int id)
         {
-            string apiKey = Request.Headers["x-api-key"];
-            var deleteStatus = await _repo.DeleteProjectAsync(id, apiKey);
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+            var deleteStatus = await _repo.DeleteProjectAsync(id, apiKey!);
 
             switch (deleteStatus)
             {
@@ -132,17 +128,6 @@ namespace T217_Capstone_Project_API.Controllers
                 default:
                     return BadRequest();
             }
-        }
-
-        private async Task<int> GetCurrentUserID()
-        {
-            string apiKey = Request.Headers["x-api-key"];
-            if (apiKey == null)
-            {
-                return 0;
-            }
-            var user = await _userRepo.GetUserByApiKeyAsync(apiKey);
-            return user.UserID;
         }
     }
 }

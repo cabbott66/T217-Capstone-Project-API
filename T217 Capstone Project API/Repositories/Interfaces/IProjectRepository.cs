@@ -5,6 +5,8 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
     public interface IProjectRepository
     {
+        // TODO: Update XML commenting.
+
         /// <summary>
         /// Returns the Project from the database with the matching ID.
         /// </summary>
@@ -17,13 +19,6 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <returns></returns>
         public abstract Task<List<Project>> GetProjectListAsync(string apiKey);
-
-        /// <summary>
-        /// Returns a list of all Projects that the User has access to.
-        /// </summary>
-        /// <param name="id">The ID of the current User.</param>
-        /// <returns></returns>
-        //public abstract Task<List<Project>> GetProjectListUserReadAccessAsync(int id);
 
         /// <summary>
         /// Returns a list of all Projects that match the supplied list of IDs.
