@@ -63,9 +63,9 @@ namespace T217_Capstone_Project_API.Repositories
             return key;
         }
 
-        public async Task<User> GetUserByApiKeyAsync(string apiKey)
+        public User GetUserByApiKeyAsync(string apiKey)
         {
-            var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefaultAsync();
+            var user = _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefault();
 
             return user;
         }

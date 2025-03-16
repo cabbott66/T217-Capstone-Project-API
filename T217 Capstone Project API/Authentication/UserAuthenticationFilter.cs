@@ -16,15 +16,15 @@ namespace T217_Capstone_Project_API.Authentication
             _repo = repo;
         }
 
-        public async void OnAuthorization(AuthorizationFilterContext context)
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
-            if (!context.HttpContext.Request.Headers.TryGetValue("x-api-key", out var extractedApiKey))
+            if (!context.HttpContext.Request.Headers.TryGetValue("x-api-key", out var apiKey))
             {
                 context.Result = new UnauthorizedObjectResult("Api Key is missing");
                 return;
             }
 
-            var user = await _repo.GetUserByApiKeyAsync(extractedApiKey);
+            var user = _repo.GetUserByApiKeyAsync(apiKey!);
 
             if (user == null)
             {

@@ -49,7 +49,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _repo.GetUserAsync(id);
@@ -63,12 +63,12 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         [HttpGet("GetUserDetails")]
-        [ServiceFilter(typeof(UserAuthenticationFilter))]
+
         public async Task<ActionResult<UserDetailsDTO>> GetUserDetails()
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var user = await _repo.GetUserByApiKeyAsync(apiKey!);
+            var user = _repo.GetUserByApiKeyAsync(apiKey!);
 
             UserDetailsDTO userDetails = new UserDetailsDTO(user.UserEmail, user.UserFirstName, user.UserLastName);
 

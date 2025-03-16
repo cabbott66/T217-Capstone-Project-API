@@ -33,7 +33,7 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="apiKey">The API key of the desired User.</param>
         /// <returns></returns>
-        public abstract Task<User> GetUserByApiKeyAsync(string apiKey);
+        public abstract User GetUserByApiKeyAsync(string apiKey);
 
         /// <summary>
         /// Returns a list of all Users from the database.
