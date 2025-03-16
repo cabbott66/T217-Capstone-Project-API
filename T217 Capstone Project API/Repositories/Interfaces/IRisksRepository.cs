@@ -10,14 +10,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the desired PersonalRisk.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> GetPersonalRiskAsync(int id);
+        public abstract Task<PersonalRisk> GetPersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
         /// Creates a new PersonalRisk in the database.
         /// </summary>
         /// <param name="personalRisk">The PersonalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRisk personalRisk);
+        public abstract Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRisk personalRisk, string apiKey);
 
         /// <summary>
         /// Updates the PersonalRisk with the matching ID with new values.
@@ -25,14 +25,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <param name="id">The ID of the PersonalRisk to be updated.</param>
         /// <param name="personalRisk">The replacement PersonalRisk.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdatePersonalRiskAsync(int id, PersonalRisk personalRisk);
+        public abstract Task<int> UpdatePersonalRiskAsync(int id, PersonalRisk personalRisk, string apiKey);
 
         /// <summary>
         /// Deletes a PersonalRisk from the database.
         /// </summary>
         /// <param name="id">The ID of the PersonalRisk to be deleted.</param>
         /// <returns></returns>
-        public abstract Task<bool> DeletePersonalRiskAsync(int id);
+        public abstract Task<int> DeletePersonalRiskAsync(int id, string apiKey);
         #endregion
 
         #region ProjectRisk
@@ -41,14 +41,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the desired ProjectRisk.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> GetProjectRiskAsync(int id);
+        public abstract Task<ProjectRisk> GetProjectRiskAsync(int id, string apiKey);
 
         /// <summary>
         /// Creates a new ProjectRisk in the database.
         /// </summary>
         /// <param name="projectRisk">The ProjectRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> CreateProjectRiskAsync(ProjectRisk projectRisk);
+        public abstract Task<ProjectRisk> CreateProjectRiskAsync(ProjectRisk projectRisk, string apiKey);
 
         /// <summary>
         /// Updates the ProjectRisk with the matching ID with new values.
@@ -56,14 +56,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <param name="id">The ID of the ProjectRisk to be updated.</param>
         /// <param name="projectRisk">The replacement ProjectRisk.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateProjectRiskAsync(int id, ProjectRisk projectRisk);
+        public abstract Task<int> UpdateProjectRiskAsync(int id, ProjectRisk projectRisk, string apiKey);
 
         /// <summary>
         /// Deletes a ProjectRisk from the database.
         /// </summary>
         /// <param name="id">The ID of the ProjectRisk to be deleted.</param>
         /// <returns></returns>
-        public abstract Task<bool> DeleteProjectRiskAsync(int id);
+        public abstract Task<int> DeleteProjectRiskAsync(int id, string apiKey);
         #endregion
 
         #region InterpersonalRisk
@@ -72,14 +72,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the desired InterpersonalRisk.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> GetInterpersonalRiskAsync(int id);
+        public abstract Task<InterpersonalRisk> GetInterpersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
         /// Creates a new InterpersonalRisk in the database.
         /// </summary>
         /// <param name="interpersonalRisk">The InterpersonalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRisk interpersonalRisk);
+        public abstract Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRisk interpersonalRisk, string apiKey);
 
         /// <summary>
         /// Updates the InterpersonalRisk with the matching ID with new values.
@@ -87,14 +87,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <param name="id">The ID of the InterpersonalRisk to be updated.</param>
         /// <param name="interpersonalRisk">The replacement InterpersonalRisk.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisk interpersonalRisk);
+        public abstract Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisk interpersonalRisk, string apiKey);
 
         /// <summary>
         /// Deletes a InterpersonalRisk from the database.
         /// </summary>
         /// <param name="id">The ID of the InterpersonalRisk to be deleted.</param>
         /// <returns></returns>
-        public abstract Task<bool> DeleteInterpersonalRiskAsync(int id);
+        public abstract Task<int> DeleteInterpersonalRiskAsync(int id, string apiKey);
         #endregion
 
         #region EnvironmentalRisk
@@ -103,14 +103,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="id">The ID of the desired EnvironmentalRisk.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskAsync(int id);
+        public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskAsync(int id, string apiKey);
 
         /// <summary>
         /// Creates a new EnvironmentalRisk in the database.
         /// </summary>
         /// <param name="environmentalRisk">The EnvironmentalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRisk environmentalRisk);
+        public abstract Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRisk environmentalRisk, string apiKey);
 
         /// <summary>
         /// Updates the EnvironmentalRisk with the matching ID with new values.
@@ -118,14 +118,14 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// <param name="id">The ID of the EnvironmentalRisk to be updated.</param>
         /// <param name="environmentalRisk">The replacement EnvironmentalRisk.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisk environmentalRisk);
+        public abstract Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisk environmentalRisk, string apiKey);
 
         /// <summary>
         /// Deletes a EnvironmentalRisk from the database.
         /// </summary>
         /// <param name="id">The ID of the EnvironmentalRisk to be deleted.</param>
         /// <returns></returns>
-        public abstract Task<bool> DeleteEnvironmentalRiskAsync(int id);
+        public abstract Task<int> DeleteEnvironmentalRiskAsync(int id, string apiKey);
         #endregion
     }
 }

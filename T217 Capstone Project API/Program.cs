@@ -25,7 +25,8 @@ namespace T217_Capstone_Project_API
 
             builder.Services.AddDbContext<StakeholderRisksContext>(
                 dbContextOptions => dbContextOptions
-                .UseMySql(connectionString, serverVersion));
+                .UseMySql(connectionString, serverVersion),
+                ServiceLifetime.Transient);
 
             // Repositories.
             builder.Services.AddScoped<IUserRepository, UserRepository>();

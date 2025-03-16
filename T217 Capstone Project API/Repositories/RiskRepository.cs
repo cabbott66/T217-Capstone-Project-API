@@ -3,8 +3,23 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
-    public class RisksRepository : IRisksRepository
+    public class RiskRepository : IRisksRepository
     {
+        enum UpdateStatus
+        {
+            Success,
+            BadRequest,
+            NotFound,
+            NotAuthorized
+        }
+
+        private readonly StakeholderRisksContext _context;
+
+        public RiskRepository(StakeholderRisksContext context)
+        {
+            _context = context;
+        }
+
         public Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRisk environmentalRisk, string apiKey)
         {
             throw new NotImplementedException();

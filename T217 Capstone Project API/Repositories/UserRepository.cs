@@ -1,5 +1,4 @@
-﻿using T217_Capstone_Project_API.Models.DTO;
-using T217_Capstone_Project_API.Models;
+﻿using T217_Capstone_Project_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +7,7 @@ using T217_Capstone_Project_API.Authentication;
 using Microsoft.CodeAnalysis.Elfie.Model.Strings;
 using System.Runtime.CompilerServices;
 using T217_Capstone_Project_API.Repositories.Interfaces;
+using T217_Capstone_Project_API.Models.DTO.UserDTOs;
 
 namespace T217_Capstone_Project_API.Repositories
 {
@@ -77,7 +77,7 @@ namespace T217_Capstone_Project_API.Repositories
             return userList;
         }
 
-        public async Task<User> CreateUserAsync(UserDTO user)
+        public async Task<User> CreateUserAsync(UserLoginDTO user)
         {
             User newUser = new User();
 
