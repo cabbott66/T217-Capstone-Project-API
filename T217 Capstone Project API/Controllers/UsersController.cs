@@ -123,6 +123,11 @@ namespace T217_Capstone_Project_API.Controllers
         {
             var newUser = await _repo.CreateUserAsync(user);
 
+            if (newUser.UserEmail == "DUPLICATE")
+            {
+                return StatusCode(StatusCodes.Status409Conflict);
+            }
+
             return CreatedAtAction(nameof(GetUser), new { id = newUser.UserID }, newUser);
         }
 

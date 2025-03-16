@@ -81,6 +81,13 @@ namespace T217_Capstone_Project_API.Repositories
         {
             User newUser = new User();
 
+            var existingUser = await _context.Users.Where(x => x.UserEmail == user.UserEmail).FirstOrDefaultAsync();
+            if (existingUser != null)
+            {
+                newUser.UserEmail = "DUPLICATE";
+                return newUser;
+            }
+
             newUser.UserEmail = user.UserEmail;
             newUser.UserFirstName = user.UserFirstName;
             newUser.UserLastName = user.UserLastName;
