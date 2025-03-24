@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace T217_Capstone_Project_API.Migrations
 {
     /// <inheritdoc />
-    public partial class initial_create : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,6 +54,32 @@ namespace T217_Capstone_Project_API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UserID);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ProjectRisks",
+                columns: table => new
+                {
+                    ProjectRiskID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProjectID = table.Column<int>(type: "int", nullable: false),
+                    TypeOfChange = table.Column<int>(type: "int", nullable: false),
+                    ProjectLength = table.Column<int>(type: "int", nullable: false),
+                    Culture = table.Column<int>(type: "int", nullable: false),
+                    CulturalAlignment = table.Column<int>(type: "int", nullable: false),
+                    Resourcing = table.Column<int>(type: "int", nullable: false),
+                    ProjectGoals = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProjectRisks", x => x.ProjectRiskID);
+                    table.ForeignKey(
+                        name: "FK_ProjectRisks_Projects_ProjectID",
+                        column: x => x.ProjectID,
+                        principalTable: "Projects",
+                        principalColumn: "ProjectID",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -196,32 +222,6 @@ namespace T217_Capstone_Project_API.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "ProjectRisks",
-                columns: table => new
-                {
-                    ProjectRiskID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false),
-                    TypeOfChange = table.Column<int>(type: "int", nullable: false),
-                    ProjectLength = table.Column<int>(type: "int", nullable: false),
-                    Culture = table.Column<int>(type: "int", nullable: false),
-                    CulturalAlignment = table.Column<int>(type: "int", nullable: false),
-                    Resourcing = table.Column<int>(type: "int", nullable: false),
-                    ProjectGoals = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProjectRisks", x => x.ProjectRiskID);
-                    table.ForeignKey(
-                        name: "FK_ProjectRisks_StakeholderGroups_StakeholderGroupID",
-                        column: x => x.StakeholderGroupID,
-                        principalTable: "StakeholderGroups",
-                        principalColumn: "StakeholderGroupID",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Stakeholders",
                 columns: table => new
                 {
@@ -265,9 +265,9 @@ namespace T217_Capstone_Project_API.Migrations
                 column: "StakeholderGroupID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjectRisks_StakeholderGroupID",
+                name: "IX_ProjectRisks_ProjectID",
                 table: "ProjectRisks",
-                column: "StakeholderGroupID");
+                column: "ProjectID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectUsers_ProjectID",

@@ -12,8 +12,8 @@ using T217_Capstone_Project_API;
 namespace T217_Capstone_Project_API.Migrations
 {
     [DbContext(typeof(StakeholderRisksContext))]
-    [Migration("20250224105226_initial_create")]
-    partial class initial_create
+    [Migration("20250323161911_idk")]
+    partial class idk
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -288,7 +288,13 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("Culture")
                         .HasColumnType("int");
 
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProjectGoals")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectID")
                         .HasColumnType("int");
 
                     b.Property<int>("ProjectLength")
@@ -297,15 +303,12 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("Resourcing")
                         .HasColumnType("int");
 
-                    b.Property<int>("StakeholderGroupID")
-                        .HasColumnType("int");
-
                     b.Property<int>("TypeOfChange")
                         .HasColumnType("int");
 
                     b.HasKey("ProjectRiskID");
 
-                    b.HasIndex("StakeholderGroupID");
+                    b.HasIndex("ProjectID");
 
                     b.ToTable("ProjectRisks");
                 });
@@ -419,13 +422,13 @@ namespace T217_Capstone_Project_API.Migrations
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisk", b =>
                 {
-                    b.HasOne("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", "StakeholderGroup")
+                    b.HasOne("T217_Capstone_Project_API.Models.Projects.Project", "Project")
                         .WithMany()
-                        .HasForeignKey("StakeholderGroupID")
+                        .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("StakeholderGroup");
+                    b.Navigation("Project");
                 });
 #pragma warning restore 612, 618
         }

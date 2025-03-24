@@ -11,11 +11,11 @@ namespace T217_Capstone_Project_API.Models.Risks
         [Required]
         public int ProjectRiskID { get; set; }
 
-        [ForeignKey(nameof(StakeholderGroup.StakeholderGroupID))]
+        [ForeignKey(nameof(Project.ProjectID))]
         [Required]
-        public int StakeholderGroupID { get; set; }
+        public int ProjectID { get; set; }
 
-        public StakeholderGroup StakeholderGroup { get; set; }
+        public Project Project { get; set; }
 
         public int TypeOfChange { get; set; }
 
@@ -28,5 +28,6 @@ namespace T217_Capstone_Project_API.Models.Risks
         public int Resourcing {  get; set; }
 
         public int ProjectGoals { get; set; }
+        public int Priority { get; set; }
     }
 }

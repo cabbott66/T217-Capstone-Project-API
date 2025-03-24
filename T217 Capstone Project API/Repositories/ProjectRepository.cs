@@ -29,13 +29,14 @@ namespace T217_Capstone_Project_API.Repositories
             
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var query = from project in _context.Projects
-                        join projectUser in _context.ProjectUsers
-                            on project.ProjectID equals projectUser.ProjectID
-                        where project.ProjectID == id
-                        where projectUser.UserID == userId
-                        where projectUser.CanRead == true
-                        select project;
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == id
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select projects;
 
             var selectedProject = query.FirstOrDefault();
 
@@ -51,18 +52,17 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var projectUsers = await _context.ProjectUsers.Where(x => x.UserID == userId && x.CanRead == true).ToListAsync();
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select projects;
 
-            var query = from project in _context.Projects
-                        join projectUser in _context.ProjectUsers
-                            on project.ProjectID equals projectUser.ProjectID
-                            where projectUser.UserID == userId
-                            where projectUser.CanRead == true
-                        select project;
+            var projectsList = await query.OrderBy(x => x.ProjectID).ToListAsync();
 
-            var projects = await query.OrderBy(x => x.ProjectID).ToListAsync();
-
-            return projects;
+            return projectsList;
         }
 
 
@@ -94,7 +94,16 @@ namespace T217_Capstone_Project_API.Repositories
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var projectUser = await _context.ProjectUsers.Where(x => x.ProjectID == id && x.UserID == userId && x.CanEdit == true).FirstOrDefaultAsync();
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == id
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanEdit == true
+                        select projectUsers;
+
+            var projectUser = await query.FirstOrDefaultAsync();
 
             if (projectUser == null)
             {
@@ -127,7 +136,16 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var projectUser = await _context.ProjectUsers.Where(x => x.ProjectID == id && x.UserID == userId && x.IsAdmin == true).FirstOrDefaultAsync();
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == id
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.IsAdmin == true
+                        select projectUsers;
+
+            var projectUser = await query.FirstOrDefaultAsync();
 
             if (projectUser == null)
             {

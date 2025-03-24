@@ -27,13 +27,10 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var query = from projects in _context.Projects
-                        join projectUsers in _context.ProjectUsers
-                            on projects.ProjectID equals projectUsers.ProjectID
+            var query = from projectUsers in _context.ProjectUsers
                         join stakeholderGroups in _context.StakeholderGroups
-                            on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.StakeholderGroupID == id
-                        where stakeholderGroups.ProjectID == projects.ProjectID
+                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
+                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select stakeholderGroups;
@@ -52,12 +49,10 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var query = from projects in _context.Projects
-                        join projectUsers in _context.ProjectUsers
-                            on projects.ProjectID equals projectUsers.ProjectID
+            var query = from projectUsers in _context.ProjectUsers
                         join stakeholderGroups in _context.StakeholderGroups
-                            on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.ProjectID == projects.ProjectID
+                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
+                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select stakeholderGroups;
@@ -71,13 +66,11 @@ namespace T217_Capstone_Project_API.Repositories
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
-            var query = from projects in _context.Projects
-                        join projectUsers in _context.ProjectUsers
-                            on projects.ProjectID equals projectUsers.ProjectID
+            var query = from projectUsers in _context.ProjectUsers
                         join stakeholderGroups in _context.StakeholderGroups
-                            on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.ProjectID == projects.ProjectID
-                        where projects.ProjectID == id
+                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
+                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
+                        where stakeholderGroups.ProjectID == id
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select stakeholderGroups;
