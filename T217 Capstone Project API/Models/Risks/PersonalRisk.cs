@@ -11,11 +11,11 @@ namespace T217_Capstone_Project_API.Models.Risks
         [Required]
         public int PersonalRiskID { get; set; }
 
-        [ForeignKey(nameof(StakeholderGroup.StakeholderGroupID))]
+        [ForeignKey(nameof(Stakeholder.StakeholderID))]
         [Required]
-        public int StakeholderGroupID { get; set; }
+        public int StakeholderID { get; set; }
 
-        public StakeholderGroup StakeholderGroup { get; set; }
+        public Stakeholder Stakeholder { get; set; }
 
         public int Location {  get; set; }
 

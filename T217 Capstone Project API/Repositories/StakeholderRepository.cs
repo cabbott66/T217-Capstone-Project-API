@@ -6,7 +6,7 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
-    public class StakeholderGroupRepository : IStakeholderGroupRepository
+    public class StakeholderRepository : IStakeholderRepository
     {
         enum UpdateStatus
         {
@@ -18,98 +18,98 @@ namespace T217_Capstone_Project_API.Repositories
 
         private readonly StakeholderRisksContext _context;
 
-        public StakeholderGroupRepository(StakeholderRisksContext context) 
+        public StakeholderRepository(StakeholderRisksContext context) 
         {
             _context = context;
         }
 
-        public async Task<StakeholderGroup> GetStakeholderGroupAsync(int id, string apiKey)
+        public async Task<Stakeholder> GetStakeholderAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholderGroups in _context.StakeholderGroups
-                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
+                        join stakeholders in _context.Stakeholders
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        where stakeholders.ProjectID == projectUsers.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
-                        select stakeholderGroups;
+                        select stakeholders;
 
-            var stakeholderGroup = await query.FirstOrDefaultAsync();
+            var stakeholder = await query.FirstOrDefaultAsync();
 
-            if (stakeholderGroup != null)
+            if (stakeholder != null)
             {
-                return stakeholderGroup;
+                return stakeholder;
             }
 
-            return new StakeholderGroup();
+            return new Stakeholder();
         }
 
-        public async Task<List<StakeholderGroup>> GetStakeholderGroupListAsync(string apiKey)
+        public async Task<List<Stakeholder>> GetStakeholderListAsync(string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholderGroups in _context.StakeholderGroups
-                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
+                        join stakeholders in _context.Stakeholders
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        where stakeholders.ProjectID == projectUsers.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
-                        select stakeholderGroups;
+                        select stakeholders;
 
-            var stakeholderGroupList = await query.OrderBy(x => x.StakeholderGroupID).ToListAsync();
+            var stakeholderList = await query.OrderBy(x => x.StakeholderID).ToListAsync();
 
-            return stakeholderGroupList;
+            return stakeholderList;
         }
 
-        public async Task<List<StakeholderGroup>> GetStakeholderGroupListByProjectAsync(int id, string apiKey)
+        public async Task<List<Stakeholder>> GetStakeholderListByProjectAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholderGroups in _context.StakeholderGroups
-                            on projectUsers.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.ProjectID == projectUsers.ProjectID
-                        where stakeholderGroups.ProjectID == id
+                        join stakeholders in _context.Stakeholders
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        where stakeholders.ProjectID == projectUsers.ProjectID
+                        where stakeholders.ProjectID == id
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
-                        select stakeholderGroups;
+                        select stakeholders;
 
-            var stakeholderGroupList = await query.OrderBy(x => x.StakeholderGroupID).ToListAsync();
+            var stakeholderList = await query.OrderBy(x => x.StakeholderID).ToListAsync();
 
-            return stakeholderGroupList;
+            return stakeholderList;
         }
 
 
-        public async Task<StakeholderGroup> CreateStakeholderGroupAsync(StakeholderGroupDTO stakeholderGroupDTO, string apiKey)
+        public async Task<Stakeholder> CreateStakeholderAsync(StakeholderDTO stakeholderDTO, string apiKey)
         {
-            StakeholderGroup stakeholderGroup = new StakeholderGroup();
+            Stakeholder stakeholder = new Stakeholder();
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        where projectUsers.ProjectID == stakeholderGroupDTO.ProjectID
+                        where projectUsers.ProjectID == stakeholderDTO.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanWrite == true
                         select projectUsers;
 
             if (await query.FirstOrDefaultAsync() != null)
             {
-                stakeholderGroup.StakeholderGroupName = stakeholderGroupDTO.StakeholderGroupName;
-                stakeholderGroup.ProjectID = stakeholderGroupDTO.ProjectID;
+                stakeholder.StakeholderName = stakeholderDTO.StakeholderName;
+                stakeholder.ProjectID = stakeholderDTO.ProjectID;
 
-                _context.Add(stakeholderGroup);
+                _context.Add(stakeholder);
                 await _context.SaveChangesAsync();
 
-                return stakeholderGroup;
+                return stakeholder;
             }
 
-            return stakeholderGroup;
+            return stakeholder;
         }
 
-        public async Task<int> UpdateStakeholderGroupAsync(int id, StakeholderGroup stakeholderGroup, string apiKey)
+        public async Task<int> UpdateStakeholderAsync(int id, Stakeholder stakeholder, string apiKey)
         {
-            if (id != stakeholderGroup.StakeholderGroupID)
+            if (id != stakeholder.StakeholderID)
             {
                 return (int)UpdateStatus.BadRequest;
             }
@@ -117,7 +117,7 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var projectUser = await _context.ProjectUsers
-                .Where(x => x.ProjectID == stakeholderGroup.ProjectID && x.UserID == userId && x.CanEdit == true)
+                .Where(x => x.ProjectID == stakeholder.ProjectID && x.UserID == userId && x.CanEdit == true)
                 .FirstOrDefaultAsync();
 
             if (projectUser == null)
@@ -125,7 +125,7 @@ namespace T217_Capstone_Project_API.Repositories
                 return (int)UpdateStatus.NotAuthorized;
             }
 
-            _context.StakeholderGroups.Entry(stakeholderGroup).State = EntityState.Modified;
+            _context.Stakeholders.Entry(stakeholder).State = EntityState.Modified;
 
             try
             {
@@ -133,7 +133,7 @@ namespace T217_Capstone_Project_API.Repositories
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StakeholderGroupExists(id))
+                if (!StakeholderExists(id))
                 {
                     return (int)UpdateStatus.NotFound;
                 }
@@ -145,17 +145,17 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<int> DeleteStakeholderGroupAsync(int id, string apiKey)
+        public async Task<int> DeleteStakeholderAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projects in _context.Projects
                         join projectUsers in _context.ProjectUsers
                             on projects.ProjectID equals projectUsers.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
-                            on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.StakeholderGroupID == id
-                        where stakeholderGroups.ProjectID == projects.ProjectID
+                        join stakeholders in _context.Stakeholders
+                            on projects.ProjectID equals stakeholders.ProjectID
+                        where stakeholders.StakeholderID == id
+                        where stakeholders.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.IsAdmin == true
                         select projectUsers;
@@ -167,22 +167,22 @@ namespace T217_Capstone_Project_API.Repositories
                 return (int)UpdateStatus.NotAuthorized;
             }
 
-            var stakeholderGroup = await _context.StakeholderGroups.FindAsync(id);
-            if (stakeholderGroup == null)
+            var stakeholder = await _context.Stakeholders.FindAsync(id);
+            if (stakeholder == null)
             {
                 return (int)UpdateStatus.NotFound;
             }
 
-            _context.Remove(stakeholderGroup);
+            _context.Remove(stakeholder);
             await _context.SaveChangesAsync();
 
             return (int)UpdateStatus.Success;
         }
 
-        // Checks the database if a StakeholderGroup with the matching ID exists.
-        private bool StakeholderGroupExists(int id)
+        // Checks the database if a Stakeholder with the matching ID exists.
+        private bool StakeholderExists(int id)
         {
-            return _context.StakeholderGroups.Any(e => e.StakeholderGroupID == id);
+            return _context.Stakeholders.Any(e => e.StakeholderID == id);
         }
 
         // Finds the User with the matching API key and returns their UserID.
