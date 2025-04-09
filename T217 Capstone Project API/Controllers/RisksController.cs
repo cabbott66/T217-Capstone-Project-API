@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models.DTO.RisksDTOs;
 using T217_Capstone_Project_API.Models.Risks;
 using T217_Capstone_Project_API.Repositories.Interfaces;
@@ -20,6 +21,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/<RisksController>
         [HttpGet("GetStakeholderRisks/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<StakeholderRisksDTO>> GetStakeholderRisks(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -43,6 +45,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // GET: api/<RisksController>
         [HttpGet("GetEnvironmentalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> GetEnvironmentalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -58,6 +61,7 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         [HttpGet("GetPersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<PersonalRisk>> GetPersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -73,6 +77,7 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         [HttpGet("GetProjectRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<ProjectRisk>> GetProjectRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -88,6 +93,7 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         [HttpGet("GetInterpersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -104,6 +110,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<RisksController>
         [HttpPost("PostEnvironmentalRisk")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> PostEnvironmentalRisk(EnvironmentalRiskDTO envRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -115,6 +122,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<RisksController>
         [HttpPost("PostInterpersonalRisk")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> PostInterpersonalRisk(InterpersonalRiskDTO interRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -126,6 +134,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<RisksController>
         [HttpPost("PostPersonalRisk")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> PostPersonalRisk(PersonalRiskDTO personRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -137,6 +146,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST api/<RisksController>
         [HttpPost("PostProjectRisk")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> PostProjectRisk(ProjectRiskDTO projectRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -148,6 +158,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT api/<RisksController>/5
         [HttpPut("PutEnvironmentalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutEnvironmentalRisk(int id, EnvironmentalRisk environmentalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -171,6 +182,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT api/<RisksController>/5
         [HttpPut("PutInterpersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutInterpersonalRisk(int id, InterpersonalRisk interpersonalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -194,6 +206,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT api/<RisksController>/5
         [HttpPut("PutPersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutPersonalRisk(int id, PersonalRisk personalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -217,6 +230,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT api/<RisksController>/5
         [HttpPut("PutProjectRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> PutProjectRisk(int id, ProjectRisk projectRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -240,6 +254,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE api/<RisksController>/5
         [HttpDelete("DeleteEnvironmentalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteEnvironmentalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -262,6 +277,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE api/<RisksController>/5
         [HttpDelete("DeleteInterpersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteInterpersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -284,6 +300,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE api/<RisksController>/5
         [HttpDelete("DeletePersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeletePersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
@@ -306,6 +323,7 @@ namespace T217_Capstone_Project_API.Controllers
 
         // DELETE api/<RisksController>/5
         [HttpDelete("DeleteProjectRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteProjectRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
