@@ -23,8 +23,10 @@ namespace T217_Capstone_Project_API.Repositories
             _context = context;
         }
 
-        public async Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRisk environmentalRisk, string apiKey)
+        public async Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRiskDTO environmentalRisk, string apiKey)
         {
+            EnvironmentalRisk newEnvRisk = new EnvironmentalRisk();
+
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
@@ -41,17 +43,25 @@ namespace T217_Capstone_Project_API.Repositories
 
             if (await query.FirstOrDefaultAsync() != null)
             {
-                _context.Add(environmentalRisk);
+                newEnvRisk.StakeholderGroupID = environmentalRisk.StakeholderGroupID;
+                newEnvRisk.ChangeVolume= environmentalRisk.ChangeVolume;
+                newEnvRisk.Infrastructure = environmentalRisk.Infrastructure;
+                newEnvRisk.Industry = environmentalRisk.Industry;
+                newEnvRisk.OfficePolitics = environmentalRisk.OfficePolitics;
+
+                _context.Add(newEnvRisk);
                 await _context.SaveChangesAsync();
 
-                return environmentalRisk;
+                return newEnvRisk;
             }
 
             return new EnvironmentalRisk();
         }
 
-        public async Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRisk interpersonalRisk, string apiKey)
+        public async Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRiskDTO interpersonalRisk, string apiKey)
         {
+            InterpersonalRisk newInterRisk = new InterpersonalRisk();
+
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
@@ -68,17 +78,27 @@ namespace T217_Capstone_Project_API.Repositories
 
             if (await query.FirstOrDefaultAsync() != null)
             {
-                _context.Add(interpersonalRisk);
+                newInterRisk.StakeholderGroupID = interpersonalRisk.StakeholderGroupID;
+                newInterRisk.Support = interpersonalRisk.Support;
+                newInterRisk.SupportiveManagement = interpersonalRisk.SupportiveManagement;
+                newInterRisk.Trust = interpersonalRisk.Trust;
+                newInterRisk.Respect = interpersonalRisk.Respect;
+                newInterRisk.Communication = interpersonalRisk.Communication;
+                newInterRisk.SharingSuccess = interpersonalRisk.SharingSuccess;
+
+                _context.Add(newInterRisk);
                 await _context.SaveChangesAsync();
 
-                return interpersonalRisk;
+                return newInterRisk;
             }
 
             return new InterpersonalRisk();
         }
 
-        public async Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRisk personalRisk, string apiKey)
+        public async Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRiskDTO personalRisk, string apiKey)
         {
+            PersonalRisk newPersonRisk = new PersonalRisk();
+
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
@@ -95,17 +115,36 @@ namespace T217_Capstone_Project_API.Repositories
 
             if (await query.FirstOrDefaultAsync() != null)
             {
-                _context.Add(personalRisk);
+                newPersonRisk.StakeholderGroupID = personalRisk.StakeholderGroupID;
+                newPersonRisk.Location = personalRisk.Location;
+                newPersonRisk.Workload = personalRisk.Workload;
+                newPersonRisk.Involvement = personalRisk.Involvement;
+                newPersonRisk.EducationTraining = personalRisk.EducationTraining;
+                newPersonRisk.Kpi = personalRisk.Kpi;
+                newPersonRisk.Impact = personalRisk.Impact;
+                newPersonRisk.RoleType = personalRisk.RoleType;
+                newPersonRisk.ServiceLength = personalRisk.ServiceLength;
+                newPersonRisk.Age = personalRisk.Age;
+                newPersonRisk.Status = personalRisk.Status;
+                newPersonRisk.Experience = personalRisk.Experience;
+                newPersonRisk.Interest = personalRisk.Interest;
+                newPersonRisk.History = personalRisk.History;
+                newPersonRisk.Personalities = personalRisk.Personalities;
+                newPersonRisk.PriorRole = personalRisk.PriorRole;
+
+                _context.Add(newPersonRisk);
                 await _context.SaveChangesAsync();
 
-                return personalRisk;
+                return newPersonRisk;
             }
 
             return new PersonalRisk();
         }
 
-        public async Task<ProjectRisk> CreateProjectRiskAsync(ProjectRisk projectRisk, string apiKey)
+        public async Task<ProjectRisk> CreateProjectRiskAsync(ProjectRiskDTO projectRisk, string apiKey)
         {
+            ProjectRisk newProjectRisk = new ProjectRisk(); 
+
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
@@ -119,10 +158,19 @@ namespace T217_Capstone_Project_API.Repositories
 
             if (await query.FirstOrDefaultAsync() != null)
             {
-                _context.Add(projectRisk);
+                newProjectRisk.ProjectID = projectRisk.ProjectID;
+                newProjectRisk.TypeOfChange = projectRisk.TypeOfChange;
+                newProjectRisk.ProjectLength = projectRisk.ProjectLength;
+                newProjectRisk.Culture = projectRisk.Culture;
+                newProjectRisk.CulturalAlignment = projectRisk.CulturalAlignment;
+                newProjectRisk.Resourcing = projectRisk.Resourcing;
+                newProjectRisk.ProjectGoals = projectRisk.ProjectGoals;
+                newProjectRisk.Priority = projectRisk.Priority;
+
+                _context.Add(newProjectRisk);
                 await _context.SaveChangesAsync();
 
-                return projectRisk;
+                return newProjectRisk;
             }
 
             return new ProjectRisk();
@@ -378,6 +426,107 @@ namespace T217_Capstone_Project_API.Repositories
             return new ProjectRisk();
         }
 
+        public async Task<EnvironmentalRisk> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        {
+            var userId = await GetUserIdFromApiKey(apiKey);
+
+            var query = from projectUsers in _context.ProjectUsers
+                        join stakeholders in _context.StakeholderGroups
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        join envRisks in _context.EnvironmentalRisks
+                            on stakeholders.StakeholderGroupID equals envRisks.StakeholderGroupID
+                        where envRisks.StakeholderGroupID == stakeholderId
+                        where projectUsers.ProjectID == stakeholders.ProjectID
+                        where envRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select envRisks;
+
+            var envRisk = await query.FirstOrDefaultAsync();
+
+            if (envRisk != null)
+            {
+                return envRisk;
+            }
+
+            return new EnvironmentalRisk();
+        }
+
+        public async Task<InterpersonalRisk> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        {
+            var userId = await GetUserIdFromApiKey(apiKey);
+
+            var query = from projectUsers in _context.ProjectUsers
+                        join stakeholders in _context.StakeholderGroups
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        join interRisks in _context.InterpersonalRisks
+                            on stakeholders.StakeholderGroupID equals interRisks.StakeholderGroupID
+                        where interRisks.StakeholderGroupID == stakeholderId
+                        where projectUsers.ProjectID == stakeholders.ProjectID
+                        where interRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select interRisks;
+
+            var interRisk = await query.FirstOrDefaultAsync();
+
+            if (interRisk != null)
+            {
+                return interRisk;
+            }
+
+            return new InterpersonalRisk();
+        }
+
+        public async Task<PersonalRisk> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        {
+            var userId = await GetUserIdFromApiKey(apiKey);
+
+            var query = from projectUsers in _context.ProjectUsers
+                        join stakeholders in _context.StakeholderGroups
+                            on projectUsers.ProjectID equals stakeholders.ProjectID
+                        join personRisks in _context.PersonalRisks
+                            on stakeholders.StakeholderGroupID equals personRisks.StakeholderGroupID
+                        where personRisks.StakeholderGroupID == stakeholderId
+                        where projectUsers.ProjectID == stakeholders.ProjectID
+                        where personRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select personRisks;
+
+            var personRisk = await query.FirstOrDefaultAsync();
+
+            if (personRisk != null)
+            {
+                return personRisk;
+            }
+
+            return new PersonalRisk();
+        }
+
+        public async Task<ProjectRisk> GetProjectRiskFromProjectAsync(int projectId, string apiKey)
+        {
+            var userId = await GetUserIdFromApiKey(apiKey);
+
+            var query = from projectUsers in _context.ProjectUsers
+                        join projectRisks in _context.ProjectRisks
+                            on projectUsers.ProjectID equals projectRisks.ProjectID
+                        where projectRisks.ProjectID == projectId
+                        where projectUsers.ProjectID == projectRisks.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.CanRead == true
+                        select projectRisks;
+
+            var projectRisk = await query.FirstOrDefaultAsync();
+
+            if (projectRisk != null)
+            {
+                return projectRisk;
+            }
+
+            return new ProjectRisk();
+        }
+
         // TODO: Update project edit datetime on update.
 
         public async Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisk environmentalRisk, string apiKey)
@@ -571,7 +720,7 @@ namespace T217_Capstone_Project_API.Repositories
 
         private async Task<int> GetUserIdFromApiKey(string apiKey)
         {
-            var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstAsync();
+            var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefaultAsync();
 
             if (user == null)
             {
@@ -580,7 +729,7 @@ namespace T217_Capstone_Project_API.Repositories
             else
             {
                 return user.UserID;
-            }
+            } 
         }
     }
 }

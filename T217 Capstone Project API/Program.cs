@@ -33,6 +33,7 @@ namespace T217_Capstone_Project_API
             builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
             builder.Services.AddScoped<IProjectUserRepository, ProjectUserRepository>();
             builder.Services.AddScoped<IStakeholderGroupRepository, StakeholderGroupRepository>();
+            builder.Services.AddScoped<IRisksRepository, RisksRepository>();
 
             // Filters
             builder.Services.AddScoped<UserAuthenticationFilterAdmin>();

@@ -13,11 +13,18 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<PersonalRisk> GetPersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
+        /// Returns the PersonalRisk from the database with the matching StakeholderID.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder.</param>
+        /// <returns></returns>
+        public abstract Task<PersonalRisk> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+
+        /// <summary>
         /// Creates a new PersonalRisk in the database.
         /// </summary>
         /// <param name="personalRisk">The PersonalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRisk personalRisk, string apiKey);
+        public abstract Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRiskDTO personalRisk, string apiKey);
 
         /// <summary>
         /// Updates the PersonalRisk with the matching ID with new values.
@@ -44,11 +51,18 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<ProjectRisk> GetProjectRiskAsync(int id, string apiKey);
 
         /// <summary>
+        /// Returns the ProjectRisk from the database with the matching ProjectID.
+        /// </summary>
+        /// <param name="id">The ID of the Project.</param>
+        /// <returns></returns>
+        public abstract Task<ProjectRisk> GetProjectRiskFromProjectAsync(int projectId, string apiKey);
+
+        /// <summary>
         /// Creates a new ProjectRisk in the database.
         /// </summary>
         /// <param name="projectRisk">The ProjectRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> CreateProjectRiskAsync(ProjectRisk projectRisk, string apiKey);
+        public abstract Task<ProjectRisk> CreateProjectRiskAsync(ProjectRiskDTO projectRisk, string apiKey);
 
         /// <summary>
         /// Updates the ProjectRisk with the matching ID with new values.
@@ -75,11 +89,18 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<InterpersonalRisk> GetInterpersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
+        /// Returns the InterpersonalRisk from the database with the matching StakeholderID.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder.</param>
+        /// <returns></returns>
+        public abstract Task<InterpersonalRisk> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+
+        /// <summary>
         /// Creates a new InterpersonalRisk in the database.
         /// </summary>
         /// <param name="interpersonalRisk">The InterpersonalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRisk interpersonalRisk, string apiKey);
+        public abstract Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRiskDTO interpersonalRisk, string apiKey);
 
         /// <summary>
         /// Updates the InterpersonalRisk with the matching ID with new values.
@@ -106,11 +127,18 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskAsync(int id, string apiKey);
 
         /// <summary>
+        /// Returns the EnvironmentalRisk from the database with the matching StakeholderID.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder.</param>
+        /// <returns></returns>
+        public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+
+        /// <summary>
         /// Creates a new EnvironmentalRisk in the database.
         /// </summary>
         /// <param name="environmentalRisk">The EnvironmentalRisk to be added.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRisk environmentalRisk, string apiKey);
+        public abstract Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRiskDTO environmentalRisk, string apiKey);
 
         /// <summary>
         /// Updates the EnvironmentalRisk with the matching ID with new values.
