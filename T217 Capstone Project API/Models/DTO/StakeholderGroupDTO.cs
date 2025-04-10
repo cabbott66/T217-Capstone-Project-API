@@ -6,5 +6,6 @@ namespace T217_Capstone_Project_API.Models.DTO
     {
         public string StakeholderGroupName { get; set; }
         public int ProjectID { get; set; }
+        public int BlobID { get; set; }
     }
 }

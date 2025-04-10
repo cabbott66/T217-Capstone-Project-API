@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using T217_Capstone_Project_API.Models.Projects;
+using System.Text.Json.Serialization;
 
 namespace T217_Capstone_Project_API.Models.Risks
 {
@@ -15,6 +16,7 @@ namespace T217_Capstone_Project_API.Models.Risks
         [Required]
         public int ProjectID { get; set; }
 
+        [JsonIgnore]
         public Project Project { get; set; }
 
         public int TypeOfChange { get; set; }
@@ -25,7 +27,7 @@ namespace T217_Capstone_Project_API.Models.Risks
 
         public int CulturalAlignment { get; set; }
 
-        public int Resourcing {  get; set; }
+        public int Resourcing { get; set; }
 
         public int ProjectGoals { get; set; }
         public int Priority { get; set; }

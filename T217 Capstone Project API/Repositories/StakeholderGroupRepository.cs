@@ -97,6 +97,7 @@ namespace T217_Capstone_Project_API.Repositories
             {
                 stakeholderGroup.StakeholderGroupName = stakeholderGroupDTO.StakeholderGroupName;
                 stakeholderGroup.ProjectID = stakeholderGroupDTO.ProjectID;
+                stakeholderGroup.BlobID = stakeholderGroupDTO.BlobID;
 
                 _context.Add(stakeholderGroup);
                 await _context.SaveChangesAsync();

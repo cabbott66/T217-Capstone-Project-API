@@ -15,6 +15,9 @@ namespace T217_Capstone_Project_API.Models.Projects
         public string ProjectName { get; set; }
 
         [Required]
+        public string ProjectDescription { get; set; }
+
+        [Required]
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
 
         [Required]

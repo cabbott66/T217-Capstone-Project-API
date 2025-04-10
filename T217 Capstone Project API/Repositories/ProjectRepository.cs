@@ -72,6 +72,7 @@ namespace T217_Capstone_Project_API.Repositories
             Project newProject = new Project();
 
             newProject.ProjectName = project.ProjectName;
+            newProject.ProjectDescription = project.ProjectDescription;
             newProject.Status = project.Status;
 
             _context.Projects.Add(newProject);

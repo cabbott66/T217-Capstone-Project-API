@@ -21,5 +21,7 @@ namespace T217_Capstone_Project_API.Models.Projects
 
         [JsonIgnore]
         public Project? Project { get; set; }
+
+        public int BlobID { get; set; }
     }
 }

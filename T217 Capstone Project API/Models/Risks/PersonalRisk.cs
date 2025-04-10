@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using T217_Capstone_Project_API.Models.Projects;
+using System.Text.Json.Serialization;
 
 namespace T217_Capstone_Project_API.Models.Risks
 {
@@ -15,6 +16,7 @@ namespace T217_Capstone_Project_API.Models.Risks
         [Required]
         public int StakeholderGroupID { get; set; }
 
+        [JsonIgnore]
         public StakeholderGroup StakeholderGroup { get; set; }
 
         public int Location {  get; set; }
