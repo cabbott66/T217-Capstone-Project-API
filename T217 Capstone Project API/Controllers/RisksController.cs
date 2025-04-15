@@ -20,44 +20,36 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // GET: api/<RisksController>
-        [HttpGet("GetStakeholderRisks/{id}")]
-        [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<StakeholderRisksDTO>> GetStakeholderRisks(int id)
-        {
-            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
-
-            var envRisk = await _repo.GetEnvironmentalRiskFromStakeholderAsync(id, apiKey!);
-            var interRisk = await _repo.GetInterpersonalRiskAsync(id, apiKey!);
-            var personRisk = await _repo.GetPersonalRiskAsync(id, apiKey!);
-
-            if (envRisk.EnvironmentalRiskID == 0 && interRisk.InterpersonalRiskID == 0 && personRisk.PersonalRiskID == 0)
-            {
-                return NotFound();
-            }
-
-            StakeholderRisksDTO stakeholderRisks = new StakeholderRisksDTO();
-            stakeholderRisks.EnvironmentalRisk = envRisk;
-            stakeholderRisks.InterpersonalRisk = interRisk;
-            stakeholderRisks.PersonalRisk = personRisk;
-
-            return stakeholderRisks;
-        }
-
-        // GET: api/<RisksController>
         [HttpGet("GetEnvironmentalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<EnvironmentalRisk>> GetEnvironmentalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var envRisk = await _repo.GetEnvironmentalRiskFromStakeholderAsync(id, apiKey!);
+            var envRisk = await _repo.GetEnvironmentalRiskAsync(id, apiKey!);
 
             if (envRisk.EnvironmentalRiskID == 0)
-            { 
-                return NotFound(); 
+            {
+                return NotFound();
             }
 
             return envRisk;
+        }
+
+        [HttpGet("GetInterpersonalRisk/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRisk(int id)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var interRisk = await _repo.GetInterpersonalRiskAsync(id, apiKey!);
+
+            if (interRisk.InterpersonalRiskID == 0)
+            {
+                return NotFound();
+            }
+
+            return interRisk;
         }
 
         [HttpGet("GetPersonalRisk/{id}")]
@@ -92,13 +84,54 @@ namespace T217_Capstone_Project_API.Controllers
             return projectRisk;
         }
 
-        [HttpGet("GetInterpersonalRisk/{id}")]
+        // GET: api/<RisksController>
+        [HttpGet("GetStakeholderRisksByStakeholder/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRisk(int id)
+        public async Task<ActionResult<StakeholderRisksDTO>> GetStakeholderRisksByStakeholder(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var interRisk = await _repo.GetInterpersonalRiskAsync(id, apiKey!);
+            var envRisk = await _repo.GetEnvironmentalRiskFromStakeholderAsync(id, apiKey!);
+            var interRisk = await _repo.GetInterpersonalRiskFromStakeholderAsync(id, apiKey!);
+            var personRisk = await _repo.GetPersonalRiskFromStakeholderAsync(id, apiKey!);
+
+            if (envRisk.EnvironmentalRiskID == 0 && interRisk.InterpersonalRiskID == 0 && personRisk.PersonalRiskID == 0)
+            {
+                return NotFound();
+            }
+
+            StakeholderRisksDTO stakeholderRisks = new StakeholderRisksDTO();
+            stakeholderRisks.EnvironmentalRisk = envRisk;
+            stakeholderRisks.InterpersonalRisk = interRisk;
+            stakeholderRisks.PersonalRisk = personRisk;
+
+            return stakeholderRisks;
+        }
+
+        // GET: api/<RisksController>
+        [HttpGet("GetEnvironmentalRiskByStakeholder/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<EnvironmentalRisk>> GetEnvironmentalRiskByStakeholder(int id)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var envRisk = await _repo.GetEnvironmentalRiskFromStakeholderAsync(id, apiKey!);
+
+            if (envRisk.EnvironmentalRiskID == 0)
+            { 
+                return NotFound(); 
+            }
+
+            return envRisk;
+        }
+
+        [HttpGet("GetInterpersonalRiskByStakeholder/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRiskByStakeholder(int id)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var interRisk = await _repo.GetInterpersonalRiskFromStakeholderAsync(id, apiKey!);
 
             if (interRisk.InterpersonalRiskID == 0)
             {
@@ -106,6 +139,38 @@ namespace T217_Capstone_Project_API.Controllers
             }
 
             return interRisk;
+        }
+
+        [HttpGet("GetPersonalRiskByStakeholder/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<PersonalRisk>> GetPersonalRiskByStakeholder(int id)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var personRisk = await _repo.GetPersonalRiskFromStakeholderAsync(id, apiKey!);
+
+            if (personRisk.PersonalRiskID == 0)
+            {
+                return NotFound();
+            }
+
+            return personRisk;
+        }
+
+        [HttpGet("GetProjectRiskByStakeholder/{id}")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<ProjectRisk>> GetProjectRiskByStakeholder(int id)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var projectRisk = await _repo.GetProjectRiskFromProjectAsync(id, apiKey!);
+
+            if (projectRisk.ProjectRiskID == 0)
+            {
+                return NotFound();
+            }
+
+            return projectRisk;
         }
 
         // POST api/<RisksController>
@@ -123,7 +188,7 @@ namespace T217_Capstone_Project_API.Controllers
         // POST api/<RisksController>
         [HttpPost("PostInterpersonalRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> PostInterpersonalRisk(InterpersonalRiskDTO interRisk)
+        public async Task<ActionResult<InterpersonalRisk>> PostInterpersonalRisk(InterpersonalRiskDTO interRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -135,25 +200,25 @@ namespace T217_Capstone_Project_API.Controllers
         // POST api/<RisksController>
         [HttpPost("PostPersonalRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> PostPersonalRisk(PersonalRiskDTO personRisk)
+        public async Task<ActionResult<PersonalRisk>> PostPersonalRisk(PersonalRiskDTO personRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
             var newPersonalRisk = await _repo.CreatePersonalRiskAsync(personRisk, apiKey!);
 
-            return CreatedAtAction(nameof(GetInterpersonalRisk), new { id = newPersonalRisk.PersonalRiskID }, newPersonalRisk);
+            return CreatedAtAction(nameof(GetPersonalRisk), new { id = newPersonalRisk.PersonalRiskID }, newPersonalRisk);
         }
 
         // POST api/<RisksController>
         [HttpPost("PostProjectRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> PostProjectRisk(ProjectRiskDTO projectRisk)
+        public async Task<ActionResult<ProjectRisk>> PostProjectRisk(ProjectRiskDTO projectRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
             var newProjectRisk = await _repo.CreateProjectRiskAsync(projectRisk, apiKey!);
 
-            return CreatedAtAction(nameof(GetInterpersonalRisk), new { id = newProjectRisk.ProjectRiskID }, newProjectRisk);
+            return CreatedAtAction(nameof(GetPersonalRisk), new { id = newProjectRisk.ProjectRiskID }, newProjectRisk);
         }
 
         // PUT api/<RisksController>/5
