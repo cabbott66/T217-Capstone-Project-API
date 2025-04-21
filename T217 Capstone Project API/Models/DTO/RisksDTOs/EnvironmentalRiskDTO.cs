@@ -6,7 +6,7 @@ namespace T217_Capstone_Project_API.Models.Risks
 {
     public class EnvironmentalRiskDTO
     {
-        public int StakeholderGroupID { get; set; }
+        public int StakeholderID { get; set; }
 
         public int ChangeVolume { get; set; }
 

@@ -6,7 +6,7 @@ namespace T217_Capstone_Project_API.Models.Risks
 {
     public class PersonalRiskDTO
     {
-        public int StakeholderGroupID { get; set; }
+        public int StakeholderID { get; set; }
 
         public int Location {  get; set; }
 

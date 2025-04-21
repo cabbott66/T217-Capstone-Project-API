@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace T217_Capstone_Project_API.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class intiital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,8 @@ namespace T217_Capstone_Project_API.Migrations
                     ProjectID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ProjectName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProjectDescription = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     EditDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -69,7 +71,8 @@ namespace T217_Capstone_Project_API.Migrations
                     Culture = table.Column<int>(type: "int", nullable: false),
                     CulturalAlignment = table.Column<int>(type: "int", nullable: false),
                     Resourcing = table.Column<int>(type: "int", nullable: false),
-                    ProjectGoals = table.Column<int>(type: "int", nullable: false)
+                    ProjectGoals = table.Column<int>(type: "int", nullable: false),
+                    Priority = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -84,20 +87,25 @@ namespace T217_Capstone_Project_API.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "StakeholderGroups",
+                name: "Stakeholders",
                 columns: table => new
                 {
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false)
+                    StakeholderID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupName = table.Column<string>(type: "longtext", nullable: false)
+                    StakeholderName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProjectID = table.Column<int>(type: "int", nullable: false)
+                    ProjectID = table.Column<int>(type: "int", nullable: false),
+                    CaFI = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    BlobID = table.Column<int>(type: "int", nullable: false),
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    EditDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StakeholderGroups", x => x.StakeholderGroupID);
+                    table.PrimaryKey("PK_Stakeholders", x => x.StakeholderID);
                     table.ForeignKey(
-                        name: "FK_StakeholderGroups_Projects_ProjectID",
+                        name: "FK_Stakeholders_Projects_ProjectID",
                         column: x => x.ProjectID,
                         principalTable: "Projects",
                         principalColumn: "ProjectID",
@@ -142,7 +150,7 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     EnvironmentalRiskID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false),
+                    StakeholderID = table.Column<int>(type: "int", nullable: false),
                     ChangeVolume = table.Column<int>(type: "int", nullable: false),
                     Infrastructure = table.Column<int>(type: "int", nullable: false),
                     Industry = table.Column<int>(type: "int", nullable: false),
@@ -152,10 +160,10 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     table.PrimaryKey("PK_EnvironmentalRisks", x => x.EnvironmentalRiskID);
                     table.ForeignKey(
-                        name: "FK_EnvironmentalRisks_StakeholderGroups_StakeholderGroupID",
-                        column: x => x.StakeholderGroupID,
-                        principalTable: "StakeholderGroups",
-                        principalColumn: "StakeholderGroupID",
+                        name: "FK_EnvironmentalRisks_Stakeholders_StakeholderID",
+                        column: x => x.StakeholderID,
+                        principalTable: "Stakeholders",
+                        principalColumn: "StakeholderID",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -166,7 +174,7 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     InterpersonalRiskID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false),
+                    StakeholderID = table.Column<int>(type: "int", nullable: false),
                     Support = table.Column<int>(type: "int", nullable: false),
                     SupportiveManagement = table.Column<int>(type: "int", nullable: false),
                     Trust = table.Column<int>(type: "int", nullable: false),
@@ -178,10 +186,10 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     table.PrimaryKey("PK_InterpersonalRisks", x => x.InterpersonalRiskID);
                     table.ForeignKey(
-                        name: "FK_InterpersonalRisks_StakeholderGroups_StakeholderGroupID",
-                        column: x => x.StakeholderGroupID,
-                        principalTable: "StakeholderGroups",
-                        principalColumn: "StakeholderGroupID",
+                        name: "FK_InterpersonalRisks_Stakeholders_StakeholderID",
+                        column: x => x.StakeholderID,
+                        principalTable: "Stakeholders",
+                        principalColumn: "StakeholderID",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -192,7 +200,7 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     PersonalRiskID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false),
+                    StakeholderID = table.Column<int>(type: "int", nullable: false),
                     Location = table.Column<int>(type: "int", nullable: false),
                     Workload = table.Column<int>(type: "int", nullable: false),
                     Involvement = table.Column<int>(type: "int", nullable: false),
@@ -213,56 +221,28 @@ namespace T217_Capstone_Project_API.Migrations
                 {
                     table.PrimaryKey("PK_PersonalRisks", x => x.PersonalRiskID);
                     table.ForeignKey(
-                        name: "FK_PersonalRisks_StakeholderGroups_StakeholderGroupID",
-                        column: x => x.StakeholderGroupID,
-                        principalTable: "StakeholderGroups",
-                        principalColumn: "StakeholderGroupID",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Stakeholders",
-                columns: table => new
-                {
-                    StakeholderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StakeholderGroupID = table.Column<int>(type: "int", nullable: false),
-                    StakeholderName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreatedDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    EditDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    CaFI = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    TestData = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Stakeholders", x => x.StakeholderID);
-                    table.ForeignKey(
-                        name: "FK_Stakeholders_StakeholderGroups_StakeholderGroupID",
-                        column: x => x.StakeholderGroupID,
-                        principalTable: "StakeholderGroups",
-                        principalColumn: "StakeholderGroupID",
+                        name: "FK_PersonalRisks_Stakeholders_StakeholderID",
+                        column: x => x.StakeholderID,
+                        principalTable: "Stakeholders",
+                        principalColumn: "StakeholderID",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EnvironmentalRisks_StakeholderGroupID",
+                name: "IX_EnvironmentalRisks_StakeholderID",
                 table: "EnvironmentalRisks",
-                column: "StakeholderGroupID");
+                column: "StakeholderID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InterpersonalRisks_StakeholderGroupID",
+                name: "IX_InterpersonalRisks_StakeholderID",
                 table: "InterpersonalRisks",
-                column: "StakeholderGroupID");
+                column: "StakeholderID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonalRisks_StakeholderGroupID",
+                name: "IX_PersonalRisks_StakeholderID",
                 table: "PersonalRisks",
-                column: "StakeholderGroupID");
+                column: "StakeholderID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectRisks_ProjectID",
@@ -280,14 +260,9 @@ namespace T217_Capstone_Project_API.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StakeholderGroups_ProjectID",
-                table: "StakeholderGroups",
-                column: "ProjectID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Stakeholders_StakeholderGroupID",
+                name: "IX_Stakeholders_ProjectID",
                 table: "Stakeholders",
-                column: "StakeholderGroupID");
+                column: "ProjectID");
         }
 
         /// <inheritdoc />
@@ -313,9 +288,6 @@ namespace T217_Capstone_Project_API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "StakeholderGroups");
 
             migrationBuilder.DropTable(
                 name: "Projects");
