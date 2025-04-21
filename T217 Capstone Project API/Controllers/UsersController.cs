@@ -44,7 +44,7 @@ namespace T217_Capstone_Project_API.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }

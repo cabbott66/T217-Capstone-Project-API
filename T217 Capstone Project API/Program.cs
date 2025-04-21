@@ -36,7 +36,6 @@ namespace T217_Capstone_Project_API
             builder.Services.AddScoped<IRisksRepository, RisksRepository>();
 
             // Filters
-            builder.Services.AddScoped<UserAuthenticationFilterAdmin>();
             builder.Services.AddScoped<UserAuthenticationFilter>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
