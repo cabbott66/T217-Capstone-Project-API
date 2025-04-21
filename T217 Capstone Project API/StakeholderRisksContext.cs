@@ -14,7 +14,6 @@ namespace T217_Capstone_Project_API
         public DbSet<ProjectUser> ProjectUsers { get; set; }
 
         // Stakeholder DbSets
-        public DbSet<StakeholderGroup> StakeholderGroups { get; set; }
         public DbSet<Stakeholder> Stakeholders { get; set; }
 
         // Risks DbSets

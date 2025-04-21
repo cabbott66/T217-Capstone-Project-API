@@ -2,10 +2,10 @@
 
 namespace T217_Capstone_Project_API.Models.DTO
 {
-    public class StakeholderGroupDTO
+    public class StakeholderDTO
     {
-        public string StakeholderGroupName { get; set; }
+        public string StakeholderName { get; set; }
         public int ProjectID { get; set; }
-        public int BlobID { get; set; }
+        public string CaFI {  get; set; }
     }
 }

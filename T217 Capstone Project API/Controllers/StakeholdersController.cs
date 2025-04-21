@@ -16,77 +16,60 @@ namespace T217_Capstone_Project_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StakeholderGroupsController : ControllerBase
+    public class StakeholdersController : ControllerBase
     {
-        private readonly IStakeholderGroupRepository _repo;
+        private readonly IStakeholderRepository _repo;
 
-        public StakeholderGroupsController(IStakeholderGroupRepository repo)
+        public StakeholdersController(IStakeholderRepository repo)
         {
             _repo = repo;
         }
 
-        // GET: api/StakeholderGroups
+        // GET: api/Stakeholders
         [HttpGet]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<IEnumerable<StakeholderGroup>>> GetStakeholderGroups()
+        public async Task<ActionResult<IEnumerable<Stakeholder>>> GetStakeholders()
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var stakeholderGroups = await _repo.GetStakeholderGroupListAsync(apiKey!);
+            var stakeholders = await _repo.GetStakeholderListAsync(apiKey!);
 
-            if (!stakeholderGroups.Any())
+            if (!stakeholders.Any())
             {
                 return NotFound();
             }
 
-            return stakeholderGroups;
+            return stakeholders;
         }
 
-        [HttpGet("GetByProjectID")]
-        [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<IEnumerable<StakeholderGroup>>> GetStakeholderGroupsByProjectID(int projectId)
-        {
-            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
-
-            var stakeholderGroups = await _repo.GetStakeholderGroupListByProjectAsync(projectId, apiKey!);
-
-            if (!stakeholderGroups.Any())
-            {
-                return NotFound();
-            }
-
-            return stakeholderGroups;
-        }
-
-
-        // GET: api/StakeholderGroups/5
+        // GET: api/Stakeholders/5
         [HttpGet("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<StakeholderGroup>> GetStakeholderGroup(int id)
+        public async Task<ActionResult<Stakeholder>> GetStakeholder(int id)
         {
             if(!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var stakeholderGroup = await _repo.GetStakeholderGroupAsync(id, apiKey!);
+            var stakeholder = await _repo.GetStakeholderAsync(id, apiKey!);
 
-            if (stakeholderGroup == null)
+            if (stakeholder == null)
             {
                 return NotFound();
             }
 
-            return stakeholderGroup;
+            return stakeholder;
         }
 
-        // PUT: api/StakeholderGroups/5
+        // PUT: api/Stakeholders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<IActionResult> PutStakeholderGroup(int id, StakeholderGroup stakeholderGroup)
+        public async Task<IActionResult> PutStakeholder(int id, Stakeholder stakeholder)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            int updateStatus = await _repo.UpdateStakeholderGroupAsync(id, stakeholderGroup, apiKey!);
+            int updateStatus = await _repo.UpdateStakeholderAsync(id, stakeholder, apiKey!);
 
-            if (id != stakeholderGroup.StakeholderGroupID)
+            if (id != stakeholder.StakeholderID)
             {
                 return BadRequest();
             }
@@ -106,27 +89,27 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // POST: api/StakeholderGroups
+        // POST: api/Stakeholders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<StakeholderGroup>> PostStakeholderGroup(StakeholderGroupDTO stakeholderGroup)
+        public async Task<ActionResult<Stakeholder>> PostStakeholder(StakeholderDTO stakeholder)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var newStakeholderGroup = await _repo.CreateStakeholderGroupAsync(stakeholderGroup, apiKey!);
+            var newStakeholder = await _repo.CreateStakeholderAsync(stakeholder, apiKey!);
 
-            return CreatedAtAction("GetStakeholderGroup", new { id = newStakeholderGroup.StakeholderGroupID }, newStakeholderGroup);
+            return CreatedAtAction("GetStakeholder", new { id = newStakeholder.StakeholderID }, newStakeholder);
         }
 
-        // DELETE: api/StakeholderGroups/5
+        // DELETE: api/Stakeholders/5
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<IActionResult> DeleteStakeholderGroup(int id)
+        public async Task<IActionResult> DeleteStakeholder(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
-            var deleteStatus = await _repo.DeleteStakeholderGroupAsync(id, apiKey!);
+            var deleteStatus = await _repo.DeleteStakeholderAsync(id, apiKey!);
 
             switch (deleteStatus)
             {

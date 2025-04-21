@@ -32,14 +32,14 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projectUsers in _context.ProjectUsers
                         join projects in _context.Projects
                             on projectUsers.ProjectID equals projects.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
-                            on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.StakeholderGroupID == environmentalRisk.StakeholderGroupID
-                        where stakeholderGroups.ProjectID == projects.ProjectID
+                        join stakeholders in _context.Stakeholders
+                            on projects.ProjectID equals stakeholders.ProjectID
+                        where stakeholders.StakeholderID == environmentalRisk.StakeholderID
+                        where stakeholders.ProjectID == projects.ProjectID
                         where projectUsers.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.CanWrite == true
-                        select stakeholderGroups;
+                        select stakeholders;
 
             if (await query.FirstOrDefaultAsync() != null)
             {
@@ -67,9 +67,9 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projectUsers in _context.ProjectUsers
                         join projects in _context.Projects
                             on projectUsers.ProjectID equals projects.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
+                        join stakeholderGroups in _context.Stakeholders
                             on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.StakeholderGroupID == interpersonalRisk.StakeholderGroupID
+                        where stakeholderGroups.StakeholderID == interpersonalRisk.StakeholderID
                         where stakeholderGroups.ProjectID == projects.ProjectID
                         where projectUsers.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
@@ -104,9 +104,9 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projectUsers in _context.ProjectUsers
                         join projects in _context.Projects
                             on projectUsers.ProjectID equals projects.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
+                        join stakeholderGroups in _context.Stakeholders
                             on projects.ProjectID equals stakeholderGroups.ProjectID
-                        where stakeholderGroups.StakeholderGroupID == personalRisk.StakeholderGroupID
+                        where stakeholderGroups.StakeholderID == personalRisk.StakeholderID
                         where stakeholderGroups.ProjectID == projects.ProjectID
                         where projectUsers.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
@@ -183,13 +183,13 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projects in _context.Projects
                         join projectUsers in _context.ProjectUsers
                             on projects.ProjectID equals projectUsers.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
+                        join stakeholderGroups in _context.Stakeholders
                             on projects.ProjectID equals stakeholderGroups.ProjectID
                         join envRisks in _context.EnvironmentalRisks
-                            on stakeholderGroups.StakeholderGroupID equals envRisks.StakeholderGroupID
+                            on stakeholderGroups.StakeholderID equals envRisks.StakeholderID
                         where envRisks.EnvironmentalRiskID == id
-                        where envRisks.StakeholderGroupID == stakeholderGroups.StakeholderGroupID
-                                                where projectUsers.ProjectID == projects.ProjectID
+                        where envRisks.StakeholderID == stakeholderGroups.StakeholderID
+                        where projectUsers.ProjectID == projects.ProjectID
                         where stakeholderGroups.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
                         where projectUsers.IsAdmin == true
@@ -221,12 +221,12 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projects in _context.Projects
                         join projectUsers in _context.ProjectUsers
                             on projects.ProjectID equals projectUsers.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
+                        join stakeholderGroups in _context.Stakeholders
                             on projects.ProjectID equals stakeholderGroups.ProjectID
                         join interpRisks in _context.InterpersonalRisks
-                            on stakeholderGroups.StakeholderGroupID equals interpRisks.StakeholderGroupID
+                            on stakeholderGroups.StakeholderID equals interpRisks.StakeholderID
                         where interpRisks.InterpersonalRiskID == id
-                        where interpRisks.StakeholderGroupID == stakeholderGroups.StakeholderGroupID
+                        where interpRisks.StakeholderID == stakeholderGroups.StakeholderID
                         where projectUsers.ProjectID == projects.ProjectID
                         where stakeholderGroups.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
@@ -259,12 +259,12 @@ namespace T217_Capstone_Project_API.Repositories
             var query = from projects in _context.Projects
                         join projectUsers in _context.ProjectUsers
                             on projects.ProjectID equals projectUsers.ProjectID
-                        join stakeholderGroups in _context.StakeholderGroups
+                        join stakeholderGroups in _context.Stakeholders
                             on projects.ProjectID equals stakeholderGroups.ProjectID
                         join personRisks in _context.PersonalRisks
-                            on stakeholderGroups.StakeholderGroupID equals personRisks.StakeholderGroupID
+                            on stakeholderGroups.StakeholderID equals personRisks.StakeholderID
                         where personRisks.PersonalRiskID == id
-                        where personRisks.StakeholderGroupID == stakeholderGroups.StakeholderGroupID
+                        where personRisks.StakeholderID == stakeholderGroups.StakeholderID
                         where projectUsers.ProjectID == projects.ProjectID
                         where stakeholderGroups.ProjectID == projects.ProjectID
                         where projectUsers.UserID == userId
@@ -330,13 +330,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join envRisks in _context.EnvironmentalRisks
-                            on stakeholders.StakeholderGroupID equals envRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals envRisks.StakeholderID
                         where envRisks.EnvironmentalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where envRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where envRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select envRisks;
@@ -356,13 +356,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join interRisks in _context.InterpersonalRisks
-                            on stakeholders.StakeholderGroupID equals interRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals interRisks.StakeholderID
                         where interRisks.InterpersonalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where interRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where interRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select interRisks;
@@ -382,13 +382,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join personRisks in _context.PersonalRisks
-                            on stakeholders.StakeholderGroupID equals personRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals personRisks.StakeholderID
                         where personRisks.PersonalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where personRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where personRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.CanRead == true
                         select personRisks;
@@ -539,13 +539,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join envRisks in _context.EnvironmentalRisks
-                            on stakeholders.StakeholderGroupID equals envRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals envRisks.StakeholderID
                         where envRisks.EnvironmentalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where envRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where envRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.IsAdmin == true
                         select projectUsers;
@@ -587,13 +587,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join interRisks in _context.InterpersonalRisks
-                            on stakeholders.StakeholderGroupID equals interRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals interRisks.StakeholderID
                         where interRisks.InterpersonalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where interRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where interRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.IsAdmin == true
                         select projectUsers;
@@ -635,13 +635,13 @@ namespace T217_Capstone_Project_API.Repositories
             var userId = await GetUserIdFromApiKey(apiKey);
 
             var query = from projectUsers in _context.ProjectUsers
-                        join stakeholders in _context.StakeholderGroups
+                        join stakeholders in _context.Stakeholders
                             on projectUsers.ProjectID equals stakeholders.ProjectID
                         join personRisks in _context.PersonalRisks
-                            on stakeholders.StakeholderGroupID equals personRisks.StakeholderGroupID
+                            on stakeholders.StakeholderID equals personRisks.StakeholderID
                         where personRisks.PersonalRiskID == id
                         where projectUsers.ProjectID == stakeholders.ProjectID
-                        where personRisks.StakeholderGroupID == stakeholders.StakeholderGroupID
+                        where personRisks.StakeholderID == stakeholders.StakeholderID
                         where projectUsers.UserID == userId
                         where projectUsers.IsAdmin == true
                         select projectUsers;
