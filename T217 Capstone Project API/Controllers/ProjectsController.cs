@@ -40,21 +40,6 @@ namespace T217_Capstone_Project_API.Controllers
 
         }
 
-        [HttpGet("GetProjectsAdmin")]
-        [ServiceFilter(typeof(UserAuthenticationFilterAdmin))]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsAdmin()
-        {
-            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
-            var projects = await _repo.GetProjectListAsync(apiKey!);
-
-            if (!projects.Any())
-            {
-                return NotFound();
-            }
-
-            return projects;
-        }
-
         // GET api/<ProjectsController>/5
         [HttpGet("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]

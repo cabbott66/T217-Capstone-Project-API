@@ -42,6 +42,22 @@ namespace T217_Capstone_Project_API.Controllers
             return stakeholders;
         }
 
+        [HttpGet("GetByProjectID")]
+        [ServiceFilter(typeof(UserAuthenticationFilter))]
+        public async Task<ActionResult<IEnumerable<Stakeholder>>> GetStakeholderGroupsByProjectID(int projectId)
+        {
+            if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
+
+            var stakeholderGroups = await _repo.GetStakeholderListByProjectAsync(projectId, apiKey!);
+
+            if (!stakeholderGroups.Any())
+            {
+                return NotFound();
+            }
+
+            return stakeholderGroups;
+        }
+
         // GET: api/Stakeholders/5
         [HttpGet("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
