@@ -97,6 +97,9 @@ namespace T217_Capstone_Project_API.Repositories
             {
                 stakeholder.StakeholderName = stakeholderDTO.StakeholderName;
                 stakeholder.ProjectID = stakeholderDTO.ProjectID;
+                stakeholder.CaFI = stakeholderDTO.CaFI;
+                stakeholder.CreatedDateTime = DateTime.Now;
+                stakeholder.EditDateTime = DateTime.Now;
 
                 _context.Add(stakeholder);
                 await _context.SaveChangesAsync();
@@ -125,6 +128,7 @@ namespace T217_Capstone_Project_API.Repositories
                 return (int)UpdateStatus.NotAuthorized;
             }
 
+            stakeholder.EditDateTime = DateTime.Now;
             _context.Stakeholders.Entry(stakeholder).State = EntityState.Modified;
 
             try

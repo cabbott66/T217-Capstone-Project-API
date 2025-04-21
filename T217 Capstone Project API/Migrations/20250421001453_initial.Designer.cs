@@ -12,8 +12,8 @@ using T217_Capstone_Project_API;
 namespace T217_Capstone_Project_API.Migrations
 {
     [DbContext(typeof(StakeholderRisksContext))]
-    [Migration("20250323161911_idk")]
-    partial class idk
+    [Migration("20250421001453_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,7 +105,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<DateTime>("EditDateTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("StakeholderGroupID")
+                    b.Property<int>("ProjectID")
                         .HasColumnType("int");
 
                     b.Property<string>("StakeholderName")
@@ -118,31 +118,9 @@ namespace T217_Capstone_Project_API.Migrations
 
                     b.HasKey("StakeholderID");
 
-                    b.HasIndex("StakeholderGroupID");
-
-                    b.ToTable("Stakeholders");
-                });
-
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", b =>
-                {
-                    b.Property<int>("StakeholderGroupID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("StakeholderGroupID"));
-
-                    b.Property<int>("ProjectID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StakeholderGroupName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("StakeholderGroupID");
-
                     b.HasIndex("ProjectID");
 
-                    b.ToTable("StakeholderGroups");
+                    b.ToTable("Stakeholders");
                 });
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisk", b =>
@@ -165,12 +143,12 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("OfficePolitics")
                         .HasColumnType("int");
 
-                    b.Property<int>("StakeholderGroupID")
+                    b.Property<int>("StakeholderID")
                         .HasColumnType("int");
 
                     b.HasKey("EnvironmentalRiskID");
 
-                    b.HasIndex("StakeholderGroupID");
+                    b.HasIndex("StakeholderID");
 
                     b.ToTable("EnvironmentalRisks");
                 });
@@ -192,7 +170,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("SharingSuccess")
                         .HasColumnType("int");
 
-                    b.Property<int>("StakeholderGroupID")
+                    b.Property<int>("StakeholderID")
                         .HasColumnType("int");
 
                     b.Property<int>("Support")
@@ -206,7 +184,7 @@ namespace T217_Capstone_Project_API.Migrations
 
                     b.HasKey("InterpersonalRiskID");
 
-                    b.HasIndex("StakeholderGroupID");
+                    b.HasIndex("StakeholderID");
 
                     b.ToTable("InterpersonalRisks");
                 });
@@ -258,7 +236,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("ServiceLength")
                         .HasColumnType("int");
 
-                    b.Property<int>("StakeholderGroupID")
+                    b.Property<int>("StakeholderID")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
@@ -269,7 +247,7 @@ namespace T217_Capstone_Project_API.Migrations
 
                     b.HasKey("PersonalRiskID");
 
-                    b.HasIndex("StakeholderGroupID");
+                    b.HasIndex("StakeholderID");
 
                     b.ToTable("PersonalRisks");
                 });
@@ -367,17 +345,6 @@ namespace T217_Capstone_Project_API.Migrations
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Projects.Stakeholder", b =>
                 {
-                    b.HasOne("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", "StakeholderGroup")
-                        .WithMany()
-                        .HasForeignKey("StakeholderGroupID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("StakeholderGroup");
-                });
-
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", b =>
-                {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Project", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectID")
@@ -389,35 +356,35 @@ namespace T217_Capstone_Project_API.Migrations
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisk", b =>
                 {
-                    b.HasOne("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", "StakeholderGroup")
+                    b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
-                        .HasForeignKey("StakeholderGroupID")
+                        .HasForeignKey("StakeholderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("StakeholderGroup");
+                    b.Navigation("Stakeholder");
                 });
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.InterpersonalRisk", b =>
                 {
-                    b.HasOne("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", "StakeholderGroup")
+                    b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
-                        .HasForeignKey("StakeholderGroupID")
+                        .HasForeignKey("StakeholderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("StakeholderGroup");
+                    b.Navigation("Stakeholder");
                 });
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.PersonalRisk", b =>
                 {
-                    b.HasOne("T217_Capstone_Project_API.Models.Projects.StakeholderGroup", "StakeholderGroup")
+                    b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
-                        .HasForeignKey("StakeholderGroupID")
+                        .HasForeignKey("StakeholderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("StakeholderGroup");
+                    b.Navigation("Stakeholder");
                 });
 
             modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisk", b =>
