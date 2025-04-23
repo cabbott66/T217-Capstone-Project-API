@@ -24,19 +24,24 @@ namespace T217_Capstone_Project_API
 
         public StakeholderRisksContext(DbContextOptions options) : base (options) { }
 
-        // For SQLite
-        //public string DbPath { get; }
-
-        //public StakeholderRisksContext()
-        //{
-        //    var folder = Environment.SpecialFolder.LocalApplicationData;
-        //    var path = Environment.GetFolderPath(folder);           
-        //    DbPath = System.IO.Path.Join(path, "stakeholderRisks.db");
-        //}
-
-        //// The following configures EF to create a Sqlite database file in the
-        //// special "local" folder for your platform.
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //    => options.UseSqlite($"Data Source={DbPath}");
+        // Dalek (very important, do not delete!)
+        //        (\. -- ./)
+        //        O-0)))--|     \
+        //          |____________|
+        //           -|--|--|--|-
+        //           _T ~_T~_T~_T_
+        //          |____________|
+        //          |_o_|____|_o_|
+        //       .-~/  :  |   %  \
+        //.-..-~   /  :   |  %:   \
+        //`-'     /   :   | %  :   \
+        //       /   :    |#   :    \
+        //      /    :    |     :    \
+        //     /    :     |     :     \
+        // . -/     :     |      :     \- .
+        //|\  ~-.  :      |      :   .-~  /|
+        //\ ~-.   ~ - .  _|_. - ~   .-~ /
+        //  ~-.  ~ -  . _ _ _.  - ~  .-~
+        //       ~ -  . _ _ _.  - ~
     }
 }

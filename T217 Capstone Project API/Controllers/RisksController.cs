@@ -157,9 +157,9 @@ namespace T217_Capstone_Project_API.Controllers
             return personRisk;
         }
 
-        [HttpGet("GetProjectRiskByStakeholder/{id}")]
+        [HttpGet("GetProjectRisksByProjectID/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<ProjectRisk>> GetProjectRiskByStakeholder(int id)
+        public async Task<ActionResult<ProjectRisk>> GetProjectRisksByProjectID(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
