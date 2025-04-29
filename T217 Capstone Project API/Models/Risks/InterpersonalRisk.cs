@@ -17,7 +17,7 @@ namespace T217_Capstone_Project_API.Models.Risks
         public int StakeholderID { get; set; }
 
         [JsonIgnore]
-        public Stakeholder Stakeholder { get; set; }
+        public Stakeholder? Stakeholder { get; set; }
 
         public int Support { get; set; }
 

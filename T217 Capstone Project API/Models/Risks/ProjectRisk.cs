@@ -17,7 +17,7 @@ namespace T217_Capstone_Project_API.Models.Risks
         public int ProjectID { get; set; }
 
         [JsonIgnore]
-        public Project Project { get; set; }
+        public Project? Project { get; set; }
 
         public int TypeOfChange { get; set; }
 
