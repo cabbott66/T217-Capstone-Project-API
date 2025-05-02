@@ -26,6 +26,8 @@ namespace T217_Capstone_Project_API.Models.Projects
 
         public int BlobID { get; set; }
 
+        public string Description { get; set; }
+
         public DateTime CreatedDateTime { get; set; }
         public DateTime EditDateTime { get; set; }
     }

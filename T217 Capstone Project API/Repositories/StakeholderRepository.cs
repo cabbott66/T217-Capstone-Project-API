@@ -98,6 +98,8 @@ namespace T217_Capstone_Project_API.Repositories
                 stakeholder.StakeholderName = stakeholderDTO.StakeholderName;
                 stakeholder.ProjectID = stakeholderDTO.ProjectID;
                 stakeholder.CaFI = stakeholderDTO.CaFI;
+                stakeholder.BlobID = stakeholderDTO.BlobID;
+                stakeholder.Description = stakeholderDTO.Description;
                 stakeholder.CreatedDateTime = DateTime.Now;
                 stakeholder.EditDateTime = DateTime.Now;
 
