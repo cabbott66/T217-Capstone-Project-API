@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using T217_Capstone_Project_API;
 
@@ -11,9 +12,11 @@ using T217_Capstone_Project_API;
 namespace T217_Capstone_Project_API.Migrations
 {
     [DbContext(typeof(StakeholderRisksContext))]
-    partial class StakeholderRisksContextModelSnapshot : ModelSnapshot
+    [Migration("20250502064318_stakeholder_description")]
+    partial class stakeholder_description
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,16 +141,10 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("ChangeVolume")
                         .HasColumnType("int");
 
-                    b.Property<int>("Culture")
-                        .HasColumnType("int");
-
                     b.Property<int>("Industry")
                         .HasColumnType("int");
 
                     b.Property<int>("Infrastructure")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Location")
                         .HasColumnType("int");
 
                     b.Property<int>("OfficePolitics")
@@ -231,6 +228,9 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Property<int>("Kpi")
                         .HasColumnType("int");
 
+                    b.Property<int>("Location")
+                        .HasColumnType("int");
+
                     b.Property<int>("Personalities")
                         .HasColumnType("int");
 
@@ -268,6 +268,9 @@ namespace T217_Capstone_Project_API.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProjectRiskID"));
 
                     b.Property<int>("CulturalAlignment")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Culture")
                         .HasColumnType("int");
 
                     b.Property<int>("Priority")

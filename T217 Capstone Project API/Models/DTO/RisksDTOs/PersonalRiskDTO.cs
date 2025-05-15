@@ -8,8 +8,6 @@ namespace T217_Capstone_Project_API.Models.Risks
     {
         public int StakeholderID { get; set; }
 
-        public int Location {  get; set; }
-
         public int Workload { get; set; }
 
         public int Involvement { get; set; }

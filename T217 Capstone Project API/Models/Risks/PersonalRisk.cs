@@ -19,8 +19,6 @@ namespace T217_Capstone_Project_API.Models.Risks
         [JsonIgnore]
         public Stakeholder? Stakeholder { get; set; }
 
-        public int Location {  get; set; }
-
         public int Workload { get; set; }
 
         public int Involvement { get; set; }

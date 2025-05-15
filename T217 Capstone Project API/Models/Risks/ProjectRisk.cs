@@ -23,8 +23,6 @@ namespace T217_Capstone_Project_API.Models.Risks
 
         public int ProjectLength { get; set; }
 
-        public int Culture { get; set; }
-
         public int CulturalAlignment { get; set; }
 
         public int Resourcing { get; set; }

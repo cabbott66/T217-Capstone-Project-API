@@ -48,6 +48,8 @@ namespace T217_Capstone_Project_API.Repositories
                 newEnvRisk.Infrastructure = environmentalRisk.Infrastructure;
                 newEnvRisk.Industry = environmentalRisk.Industry;
                 newEnvRisk.OfficePolitics = environmentalRisk.OfficePolitics;
+                newEnvRisk.Location = environmentalRisk.Location;
+                newEnvRisk.Culture = environmentalRisk.Culture;
 
                 _context.Add(newEnvRisk);
                 await _context.SaveChangesAsync();
@@ -116,7 +118,6 @@ namespace T217_Capstone_Project_API.Repositories
             if (await query.FirstOrDefaultAsync() != null)
             {
                 newPersonRisk.StakeholderID = personalRisk.StakeholderID;
-                newPersonRisk.Location = personalRisk.Location;
                 newPersonRisk.Workload = personalRisk.Workload;
                 newPersonRisk.Involvement = personalRisk.Involvement;
                 newPersonRisk.EducationTraining = personalRisk.EducationTraining;
@@ -161,7 +162,6 @@ namespace T217_Capstone_Project_API.Repositories
                 newProjectRisk.ProjectID = projectRisk.ProjectID;
                 newProjectRisk.TypeOfChange = projectRisk.TypeOfChange;
                 newProjectRisk.ProjectLength = projectRisk.ProjectLength;
-                newProjectRisk.Culture = projectRisk.Culture;
                 newProjectRisk.CulturalAlignment = projectRisk.CulturalAlignment;
                 newProjectRisk.Resourcing = projectRisk.Resourcing;
                 newProjectRisk.ProjectGoals = projectRisk.ProjectGoals;
