@@ -17,6 +17,12 @@ namespace T217_Capstone_Project_API
 
             // Add services to the container.
 
+            // Configure Kestrel to listen on port 5000 (internal HTTP)
+            builder.WebHost.ConfigureKestrel(serverOptions =>
+            {
+                serverOptions.ListenAnyIP(5000);
+            });
+
             builder.Services.AddControllers();
 
             // Database Context.
@@ -88,8 +94,8 @@ namespace T217_Capstone_Project_API
                     .AllowAnyHeader()
             );
 
-
-            app.UseHttpsRedirection();
+            // We can't use this for our setup
+            // app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
