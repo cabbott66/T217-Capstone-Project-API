@@ -27,7 +27,7 @@ namespace T217_Capstone_Project_API
 
             // Database Context.
             var connectionString = builder.Configuration.GetConnectionString("stakeholderRisksDb");
-            var serverVersion = ServerVersion.AutoDetect(connectionString);
+            var serverVersion = GetServerVersionWithRetry(connectionString);
 
             builder.Services.AddDbContext<StakeholderRisksContext>(
                 dbContextOptions => dbContextOptions
@@ -107,6 +107,27 @@ namespace T217_Capstone_Project_API
             app.MapControllers();
 
             app.Run();
+        }
+
+        private static ServerVersion GetServerVersionWithRetry(string connectionString)
+        {
+            var retryCount = 5;
+            var delay = TimeSpan.FromSeconds(5);
+
+            for (var i = 0; i < retryCount; i++)
+            {
+                try
+                {
+                    return ServerVersion.AutoDetect(connectionString);
+                }
+                catch (Exception ex) when (i < retryCount - 1)
+                {
+                    Console.WriteLine($"Server version detection attempt {i + 1} failed: {ex.Message}. Retrying in {delay.TotalSeconds} seconds...");
+                    Thread.Sleep(delay);
+                }
+            }
+
+            throw new Exception("Could not detect the server version after several attempts.");
         }
     }
 }
