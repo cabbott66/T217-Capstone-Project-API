@@ -88,8 +88,12 @@ namespace T217_Capstone_Project_API
                 app.UseSwaggerUI();
             }
 
+            // Use an environment variable for the allowed origins
+            var allowedOrigins = builder.Configuration["AllowedOrigins"];
+            string[] allowedOriginsArray = allowedOrigins?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? new string[] { "http://localhost:3000" };
+
             app.UseCors(policy =>
-                policy.WithOrigins("http://localhost:3000")
+                policy.WithOrigins(allowedOriginsArray)
                     .AllowAnyMethod()
                     .AllowAnyHeader()
             );
