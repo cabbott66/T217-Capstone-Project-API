@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using T217_Capstone_Project_API;
 using T217_Capstone_Project_API.Authentication;
 using T217_Capstone_Project_API.Models;
-using T217_Capstone_Project_API.Models.DTO;
 using T217_Capstone_Project_API.Models.DTO.UserDTOs;
 using T217_Capstone_Project_API.Repositories;
 using T217_Capstone_Project_API.Repositories.Interfaces;
@@ -79,7 +78,7 @@ namespace T217_Capstone_Project_API.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult<User>> PostUser(UserLoginDTO user)
+        public async Task<ActionResult<User>> PostUser(CreateUserDTO user)
         {
             var newUser = await _repo.CreateUserAsync(user);
 

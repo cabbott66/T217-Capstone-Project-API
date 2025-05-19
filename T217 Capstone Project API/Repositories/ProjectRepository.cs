@@ -1,7 +1,7 @@
 ﻿using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 using Microsoft.EntityFrameworkCore;
 using T217_Capstone_Project_API.Models;
-using T217_Capstone_Project_API.Models.DTO;
+using T217_Capstone_Project_API.Models.DTO.ProjectDTOs;
 using T217_Capstone_Project_API.Models.Projects;
 using T217_Capstone_Project_API.Repositories.Interfaces;
 

@@ -46,7 +46,7 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         /// </summary>
         /// <param name="user">The UserDTO to be added to the database.</param>
         /// <returns></returns>
-        public abstract Task<User> CreateUserAsync(UserLoginDTO user);
+        public abstract Task<User> CreateUserAsync(CreateUserDTO user);
 
         /// <summary>
         /// Updates the User on the database with the specified ID with new values.

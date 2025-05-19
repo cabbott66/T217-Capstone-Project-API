@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace T217_Capstone_Project_API.Models.DTO
+namespace T217_Capstone_Project_API.Models.DTO.ProjectDTOs
 {
     public class StakeholderDTO
     {

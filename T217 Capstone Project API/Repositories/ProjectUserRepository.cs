@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 using T217_Capstone_Project_API.Models.DTO;
+using T217_Capstone_Project_API.Models.DTO.ProjectDTOs;
 using T217_Capstone_Project_API.Models.Projects;
 using T217_Capstone_Project_API.Repositories.Interfaces;
 
@@ -11,7 +13,8 @@ namespace T217_Capstone_Project_API.Repositories
         {
             Success,
             BadRequest,
-            NotFound
+            NotFound,
+            NotAuthorized
         }
 
         private readonly StakeholderRisksContext _context;
@@ -42,8 +45,26 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUserList;
         }
 
-        public async Task<List<ProjectUser>> GetProjectUserListByProjectAsync(int id)
+        public async Task<List<ProjectUser>> GetProjectUserListByProjectAsync(int id, string apiKey)
         {
+            var userId = await GetUserIdFromApiKey(apiKey);
+
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == id
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.IsAdmin == true
+                        select projectUsers;
+
+            var user = await query.FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return null;
+            }
+
             var projectUserList = await _context.ProjectUsers.Where(x => x.ProjectID == id).OrderBy(x => x.ProjectUserID).ToListAsync();
 
             return projectUserList;
@@ -64,12 +85,77 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUser;
         }
 
-        public async Task<int> UpdateProjectUserAsync(int id, ProjectUser projectUser)
+        public async Task<ProjectUser> AddNewProjectUserAsync(int projectID, int newUserID, string apiKey, ProjectUserPermissionsDTO projectUserPermissions)
         {
-            if (id != projectUser.ProjectUserID)
+            var userId = await GetUserIdFromApiKey(apiKey);
+            ProjectUser newProjectUser = new ProjectUser();
+
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == projectID
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.IsAdmin == true
+                        select projectUsers;
+
+            var projectUser = await query.FirstOrDefaultAsync();
+
+            if (projectUser == null)
             {
-                return (int)UpdateStatus.BadRequest;
+                newProjectUser.ProjectUserID = -1;
+                return newProjectUser;
             }
+
+            var user = await _context.Users.Where(x => x.UserID == newUserID).FirstAsync();
+
+            if (user == null)
+            {
+                newProjectUser.ProjectUserID = -2;
+                return newProjectUser;
+            }
+            newProjectUser.UserID = newUserID;
+            newProjectUser.ProjectID = projectID;
+            newProjectUser.CanWrite = projectUserPermissions.CanWrite;
+            newProjectUser.CanRead = projectUserPermissions.CanRead;
+            newProjectUser.CanEdit = projectUserPermissions.CanEdit;
+            newProjectUser.IsAdmin = false;
+
+            _context.ProjectUsers.Add(newProjectUser);
+            await _context.SaveChangesAsync();
+
+            return newProjectUser;
+        }
+
+        public async Task<int> UpdateProjectUserAsync(int id, string apiKey, ProjectUserPermissionsDTO projectUserPermissions)
+        {
+            var userId = await GetUserIdFromApiKey(apiKey);
+            var projectUser = await _context.ProjectUsers.FindAsync(id);
+
+            if (projectUser == null) 
+            {
+                return (int)UpdateStatus.NotFound;
+            }
+
+            var query = from projects in _context.Projects
+                        join projectUsers in _context.ProjectUsers
+                            on projects.ProjectID equals projectUsers.ProjectID
+                        where projects.ProjectID == projectUser.ProjectID
+                        where projectUsers.ProjectID == projects.ProjectID
+                        where projectUsers.UserID == userId
+                        where projectUsers.IsAdmin == true
+                        select projectUsers;
+
+            var user = await query.FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return (int)UpdateStatus.NotAuthorized;
+            }
+
+            projectUser.CanWrite = projectUserPermissions.CanWrite;
+            projectUser.CanRead = projectUserPermissions.CanRead;
+            projectUser.CanEdit = projectUserPermissions.CanEdit;
 
             _context.ProjectUsers.Entry(projectUser).State = EntityState.Modified;
 
@@ -91,24 +177,61 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<bool> DeleteProjectUserAsync(int id)
+        public async Task<int> DeleteProjectUserAsync(int id, string apiKey)
         {
+            var userId = await GetUserIdFromApiKey(apiKey);
             var projectUser = await _context.ProjectUsers.FindAsync(id);
+
             if (projectUser == null)
             {
-                return false;
+                return (int)UpdateStatus.NotFound;
+            }
+            else if (projectUser.UserID == userId)
+            {
+                return (int)UpdateStatus.BadRequest;
+            }
+
+                var query = from projects in _context.Projects
+                            join projectUsers in _context.ProjectUsers
+                                on projects.ProjectID equals projectUsers.ProjectID
+                            where projects.ProjectID == projectUser.ProjectID
+                            where projectUsers.ProjectID == projects.ProjectID
+                            where projectUsers.UserID == userId
+                            where projectUsers.IsAdmin == true
+                            select projectUsers;
+
+            var user = await query.FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return (int)UpdateStatus.NotAuthorized;
             }
 
             _context.Remove(projectUser);
             await _context.SaveChangesAsync();
 
-            return true;
+            return (int)UpdateStatus.Success;
         }
 
         // Checks the database if a User with the matching ID exists.
         private bool ProjectUserExists(int id)
         {
             return _context.ProjectUsers.Any(e => e.ProjectUserID == id);
+        }
+
+        // Finds the User with the matching API key and returns their UserID.
+        private async Task<int> GetUserIdFromApiKey(string apiKey)
+        {
+            var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstAsync();
+
+            if (user == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return user.UserID;
+            }
         }
     }
 }

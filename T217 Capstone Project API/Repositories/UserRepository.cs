@@ -77,7 +77,7 @@ namespace T217_Capstone_Project_API.Repositories
             return userList;
         }
 
-        public async Task<User> CreateUserAsync(UserLoginDTO user)
+        public async Task<User> CreateUserAsync(CreateUserDTO user)
         {
             User newUser = new User();
 

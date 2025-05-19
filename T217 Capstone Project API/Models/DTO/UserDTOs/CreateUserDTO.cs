@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace T217_Capstone_Project_API.Models.DTO.UserDTOs
 {
-    public class UserLoginDTO
+    public class CreateUserDTO
     {
         public string UserEmail { get; set; }
         public string UserFirstName { get; set; }
