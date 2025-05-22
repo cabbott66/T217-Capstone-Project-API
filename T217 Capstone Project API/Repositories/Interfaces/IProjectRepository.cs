@@ -3,6 +3,9 @@ using T217_Capstone_Project_API.Models.Projects;
 
 namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
+    /// <summary>
+    /// Repository used to connect the application to the Projects table in the Database.
+    /// </summary>
     public interface IProjectRepository
     {
         // TODO: Update XML commenting.
@@ -21,14 +24,7 @@ namespace T217_Capstone_Project_API.Repositories.Interfaces
         public abstract Task<List<Project>> GetProjectListAsync(string apiKey);
 
         /// <summary>
-        /// Returns a list of all Projects that match the supplied list of IDs.
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        //public abstract Task<List<Project>> GetProjectListByBatchIdsAsync(List<int> ids);
-
-        /// <summary>
-        /// Creates a new Project in the database.
+        /// Creates a new Project and associated ProjectUser in the database.
         /// </summary>
         /// <param name="project">The ProjectDTO to be added.</param>
         /// <returns></returns>

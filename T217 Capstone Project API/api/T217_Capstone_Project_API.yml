@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API
+  commentId: N:T217_Capstone_Project_API
+  id: T217_Capstone_Project_API
+  children:
+  - T217_Capstone_Project_API.Program
+  - T217_Capstone_Project_API.StakeholderRisksContext
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API
+  nameWithType: T217_Capstone_Project_API
+  fullName: T217_Capstone_Project_API
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Program
+  commentId: T:T217_Capstone_Project_API.Program
+  href: T217_Capstone_Project_API.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: T217_Capstone_Project_API.Program
+- uid: T217_Capstone_Project_API.StakeholderRisksContext
+  commentId: T:T217_Capstone_Project_API.StakeholderRisksContext
+  parent: T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.StakeholderRisksContext.html
+  name: StakeholderRisksContext
+  nameWithType: StakeholderRisksContext
+  fullName: T217_Capstone_Project_API.StakeholderRisksContext
+- uid: T217_Capstone_Project_API
+  commentId: N:T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API
+  nameWithType: T217_Capstone_Project_API
+  fullName: T217_Capstone_Project_API

@@ -7,6 +7,7 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
+    /// <inheritdoc/>
     public class ProjectUserRepository : IProjectUserRepository
     {
         enum UpdateStatus
@@ -19,11 +20,13 @@ namespace T217_Capstone_Project_API.Repositories
 
         private readonly StakeholderRisksContext _context;
 
+        /// <inheritdoc/>
         public ProjectUserRepository(StakeholderRisksContext context)
         {
             _context = context;
         }
 
+        /// <inheritdoc/>
         public async Task<ProjectUser> GetProjectUserAsync(int id)
         {
             var projectUser = await _context.ProjectUsers.FindAsync(id);
@@ -31,6 +34,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUser;
         }
 
+        /// <inheritdoc/>
         public async Task<List<ProjectUser>> GetProjectUserListAsync()
         {
             var projectUserList = await _context.ProjectUsers.OrderBy(x => x.ProjectUserID).ToListAsync();
@@ -38,6 +42,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUserList;
         }
 
+        /// <inheritdoc/>
         public async Task<List<ProjectUser>> GetProjectUserListByUserAsync(int id)
         {
             var projectUserList = await _context.ProjectUsers.Where(x => x.UserID == id).OrderBy(x => x.ProjectUserID).ToListAsync();
@@ -45,6 +50,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUserList;
         }
 
+        /// <inheritdoc/>
         public async Task<List<ProjectUser>> GetProjectUserListByProjectAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -70,6 +76,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUserList;
         }
 
+        /// <inheritdoc/>
         public async Task<ProjectUser> GetProjectUserByUserAndProjectAsync(int userId, int projectId)
         {
             var projectUser = await _context.ProjectUsers.Where(x => x.UserID == userId && x.ProjectID == projectId).FirstAsync();
@@ -77,6 +84,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUser;
         }
 
+        /// <inheritdoc/>
         public async Task<ProjectUser> CreateProjectUserAsync(ProjectUser projectUser)
         {
             _context.ProjectUsers.Add(projectUser);
@@ -85,6 +93,7 @@ namespace T217_Capstone_Project_API.Repositories
             return projectUser;
         }
 
+        /// <inheritdoc/>
         public async Task<ProjectUser> AddNewProjectUserAsync(int projectID, int newUserID, string apiKey, ProjectUserPermissionsDTO projectUserPermissions)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -127,6 +136,7 @@ namespace T217_Capstone_Project_API.Repositories
             return newProjectUser;
         }
 
+        /// <inheritdoc/>
         public async Task<int> UpdateProjectUserAsync(int id, string apiKey, ProjectUserPermissionsDTO projectUserPermissions)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -177,6 +187,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteProjectUserAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);

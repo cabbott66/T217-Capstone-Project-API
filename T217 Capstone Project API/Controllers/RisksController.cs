@@ -8,6 +8,9 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Controllers
 {
+    /// <summary>
+    /// API endpoint controller that manages all endpoints related to the Risks.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class RisksController : ControllerBase
@@ -19,10 +22,15 @@ namespace T217_Capstone_Project_API.Controllers
             _repo = repo;
         }
 
-        // GET: api/<RisksController>
+        // GET: api/<RisksController>/GetEnvironmentalRisk/5
+        /// <summary>
+        /// Gets the EnvironmentalRisks with the matching ID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the EnvironmentalRisks.</param>
+        /// <returns>The EnvironmentalRisks with the matching ID, or a 404 Not Found status code.</returns>
         [HttpGet("GetEnvironmentalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> GetEnvironmentalRisk(int id)
+        public async Task<ActionResult<EnvironmentalRisks>> GetEnvironmentalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -36,9 +44,15 @@ namespace T217_Capstone_Project_API.Controllers
             return envRisk;
         }
 
+        // GET: api/<RisksController>/GetInterpersonalRisk/5
+        /// <summary>
+        /// Gets the InterpersonalRisks with the matching ID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the InterpersonalRisks.</param>
+        /// <returns>The InterpersonalRisks with the matching ID, or a 404 Not Found status code.</returns>
         [HttpGet("GetInterpersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRisk(int id)
+        public async Task<ActionResult<InterpersonalRisks>> GetInterpersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -52,9 +66,15 @@ namespace T217_Capstone_Project_API.Controllers
             return interRisk;
         }
 
+        // GET: api/<RisksController>/GetPersonalRisk/5
+        /// <summary>
+        /// Gets the PersonalRisks with the matching ID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the PersonalRisks.</param>
+        /// <returns>The PersonalRisks with the matching ID, or a 404 Not Found status code.</returns>
         [HttpGet("GetPersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<PersonalRisk>> GetPersonalRisk(int id)
+        public async Task<ActionResult<PersonalRisks>> GetPersonalRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -68,9 +88,15 @@ namespace T217_Capstone_Project_API.Controllers
             return personRisk;
         }
 
+        // GET: api/<RisksController>/GetProjectRisk/5
+        /// <summary>
+        /// Gets the ProjectRisks with the matching ID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the ProjectRisks.</param>
+        /// <returns>The ProjectRisks with the matching ID, or a 404 Not Found status code.</returns>
         [HttpGet("GetProjectRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<ProjectRisk>> GetProjectRisk(int id)
+        public async Task<ActionResult<ProjectRisks>> GetProjectRisk(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -84,7 +110,13 @@ namespace T217_Capstone_Project_API.Controllers
             return projectRisk;
         }
 
-        // GET: api/<RisksController>
+        // GET: api/<RisksController>/GetStakeholderRisksByStakeholder/5
+        /// <summary>
+        /// Gets the EnvironmentalRisks, InterpersonalRisks, and PersonalRisks associated with the supplied StakeholderID 
+        /// if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder</param>
+        /// <returns>The EnvironmentalRisks, InterpersonalRisks, and PersonalRisks associated with the StakeholderID, or a 404 Not Found status code.</returns>
         [HttpGet("GetStakeholderRisksByStakeholder/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<StakeholderRisksDTO>> GetStakeholderRisksByStakeholder(int id)
@@ -108,10 +140,15 @@ namespace T217_Capstone_Project_API.Controllers
             return stakeholderRisks;
         }
 
-        // GET: api/<RisksController>
+        // GET: api/<RisksController>/GetEnvironmentalRiskByStakeholder/5
+        /// <summary>
+        /// Gets the EnvironmentalRisks associated with the suppled StakeholderID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder</param>
+        /// <returns>The EnvironmentalRisks associated with the Stakeholder, or a 404 Not Found status code.</returns>
         [HttpGet("GetEnvironmentalRiskByStakeholder/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> GetEnvironmentalRiskByStakeholder(int id)
+        public async Task<ActionResult<EnvironmentalRisks>> GetEnvironmentalRiskByStakeholder(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -125,9 +162,15 @@ namespace T217_Capstone_Project_API.Controllers
             return envRisk;
         }
 
+        // GET: api/<RisksController>/GetInterpersonalRiskByStakeholder/5
+        /// <summary>
+        /// Gets the InterpersonalRisks associated with the suppled StakeholderID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder</param>
+        /// <returns>The InterpersonalRisks associated with the Stakeholder, or a 404 Not Found status code.</returns>
         [HttpGet("GetInterpersonalRiskByStakeholder/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<InterpersonalRisk>> GetInterpersonalRiskByStakeholder(int id)
+        public async Task<ActionResult<InterpersonalRisks>> GetInterpersonalRiskByStakeholder(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -141,9 +184,15 @@ namespace T217_Capstone_Project_API.Controllers
             return interRisk;
         }
 
+        // GET: api/<RisksController>/GetPersonalRiskByStakeholder/5
+        /// <summary>
+        /// Gets the PersonalRisks associated with the suppled StakeholderID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder</param>
+        /// <returns>The PersonalRisks associated with the Stakeholder, or a 404 Not Found status code.</returns>
         [HttpGet("GetPersonalRiskByStakeholder/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<PersonalRisk>> GetPersonalRiskByStakeholder(int id)
+        public async Task<ActionResult<PersonalRisks>> GetPersonalRiskByStakeholder(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -157,9 +206,15 @@ namespace T217_Capstone_Project_API.Controllers
             return personRisk;
         }
 
+        // GET: api/<RisksController>/GetProjectRisksByProjectID/5
+        /// <summary>
+        /// Gets the ProjectRisks associated with the suppled ProjectID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Project</param>
+        /// <returns>The ProjectRisks associated with the Project, or a 404 Not Found status code.</returns>
         [HttpGet("GetProjectRisksByProjectID/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<ProjectRisk>> GetProjectRisksByProjectID(int id)
+        public async Task<ActionResult<ProjectRisks>> GetProjectRisksByProjectID(int id)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -173,10 +228,15 @@ namespace T217_Capstone_Project_API.Controllers
             return projectRisk;
         }
 
-        // POST api/<RisksController>
+        // POST api/<RisksController>/PostEnvironmentalRisk
+        /// <summary>
+        /// Creates a new EnvironmentalRisks with values supplied in the EnvironmentalRisksDTO if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="envRisk">The EnvironmentalRisksDTO that will be used to create the EnvironmentalRisks</param>
+        /// <returns>The newly created EnvironmentalRisks</returns>
         [HttpPost("PostEnvironmentalRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<EnvironmentalRisk>> PostEnvironmentalRisk(EnvironmentalRiskDTO envRisk)
+        public async Task<ActionResult<EnvironmentalRisks>> PostEnvironmentalRisk(EnvironmentalRisksDTO envRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -185,10 +245,15 @@ namespace T217_Capstone_Project_API.Controllers
             return CreatedAtAction(nameof(GetEnvironmentalRisk), new { id = newEnvRisk.EnvironmentalRiskID }, newEnvRisk);
         }
 
-        // POST api/<RisksController>
+        // POST api/<RisksController>/PostInterpersonalRisk
+        /// <summary>
+        /// Creates a new InterpersonalRisks with values supplied in the InterpersonalRisksDTO if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="interRisk">The InterpersonalRisksDTO that will be used to create the InterpersonalRisks</param>
+        /// <returns>The newly created InterpersonalRisks</returns>
         [HttpPost("PostInterpersonalRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<InterpersonalRisk>> PostInterpersonalRisk(InterpersonalRiskDTO interRisk)
+        public async Task<ActionResult<InterpersonalRisks>> PostInterpersonalRisk(InterpersonalRisksDTO interRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -197,10 +262,15 @@ namespace T217_Capstone_Project_API.Controllers
             return CreatedAtAction(nameof(GetInterpersonalRisk), new { id = newInterRisk.InterpersonalRiskID }, newInterRisk);
         }
 
-        // POST api/<RisksController>
+        // POST api/<RisksController>/PostPersonalRisk
+        /// <summary>
+        /// Creates a new PersonalRisks with values supplied in the PersonalRisksDTO if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="personRisk">The PersonalRisksDTO that will be used to create the PersonalRisks</param>
+        /// <returns>The newly created PersonalRisks</returns>
         [HttpPost("PostPersonalRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<PersonalRisk>> PostPersonalRisk(PersonalRiskDTO personRisk)
+        public async Task<ActionResult<PersonalRisks>> PostPersonalRisk(PersonalRisksDTO personRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -209,10 +279,15 @@ namespace T217_Capstone_Project_API.Controllers
             return CreatedAtAction(nameof(GetPersonalRisk), new { id = newPersonalRisk.PersonalRiskID }, newPersonalRisk);
         }
 
-        // POST api/<RisksController>
+        // POST api/<RisksController>/PostProjectRisk
+        /// <summary>
+        /// Creates a new ProjectRisks with values supplied in the ProjectRisksDTO if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="projectRisk">The ProjectRisksDTO that will be used to create the ProjectRisks</param>
+        /// <returns>The newly created ProjectRisks</returns>
         [HttpPost("PostProjectRisk")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<ProjectRisk>> PostProjectRisk(ProjectRiskDTO projectRisk)
+        public async Task<ActionResult<ProjectRisks>> PostProjectRisk(ProjectRisksDTO projectRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -221,10 +296,16 @@ namespace T217_Capstone_Project_API.Controllers
             return CreatedAtAction(nameof(GetPersonalRisk), new { id = newProjectRisk.ProjectRiskID }, newProjectRisk);
         }
 
-        // PUT api/<RisksController>/5
+        // POST api/<RisksController>/PutEnvironmentalRisk/5
+        /// <summary>
+        /// Updates the EnvironmentalRisks with the supplied ID with the new EnvironmentalRisks if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="id">The ID of the EnvironmentalRisks that will be replaced.</param>
+        /// <param name="environmentalRisk">The new EnvironmentalRisks that will replace the existing one</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("PutEnvironmentalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<IActionResult> PutEnvironmentalRisk(int id, EnvironmentalRisk environmentalRisk)
+        public async Task<IActionResult> PutEnvironmentalRisk(int id, EnvironmentalRisks environmentalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -245,10 +326,16 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // PUT api/<RisksController>/5
+        // POST api/<RisksController>/PutInterpersonalRisk/5
+        /// <summary>
+        /// Updates the InterpersonalRisks with the supplied ID with the new InterpersonalRisks if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="id">The ID of the InterpersonalRisks that will be replaced.</param>
+        /// <param name="interpersonalRisk">The new InterpersonalRisks that will replace the existing one</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("PutInterpersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<IActionResult> PutInterpersonalRisk(int id, InterpersonalRisk interpersonalRisk)
+        public async Task<IActionResult> PutInterpersonalRisk(int id, InterpersonalRisks interpersonalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -269,10 +356,16 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // PUT api/<RisksController>/5
+        // POST api/<RisksController>/PutPersonalRisk/5
+        /// <summary>
+        /// Updates the PersonalRisks with the supplied ID with the new PersonalRisks if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="id">The ID of the PersonalRisks that will be replaced.</param>
+        /// <param name="personalRisk">The new PersonalRisks that will replace the existing one</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("PutPersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<IActionResult> PutPersonalRisk(int id, PersonalRisk personalRisk)
+        public async Task<IActionResult> PutPersonalRisk(int id, PersonalRisks personalRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -293,10 +386,16 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // PUT api/<RisksController>/5
+        // POST api/<RisksController>/PutProjectRisk/5
+        /// <summary>
+        /// Updates the PutProjectRisk with the supplied ID with the new PutProjectRisk if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="id">The ID of the PutProjectRisk that will be replaced.</param>
+        /// <param name="projectRisk">The new PutProjectRisk that will replace the existing one</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("PutProjectRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult> PutProjectRisk(int id, ProjectRisk projectRisk)
+        public async Task<ActionResult> PutProjectRisk(int id, ProjectRisks projectRisk)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -317,7 +416,12 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // DELETE api/<RisksController>/5
+        // DELETE api/<RisksController>/DeleteEnvironmentalRisk/5
+        /// <summary>
+        /// Removes the EnvironmentalRisks with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the EnvironmentalRisks to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("DeleteEnvironmentalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteEnvironmentalRisk(int id)
@@ -340,7 +444,12 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // DELETE api/<RisksController>/5
+        // DELETE api/<RisksController>/DeleteInterpersonalRisk/5
+        /// <summary>
+        /// Removes the InterpersonalRisks with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the InterpersonalRisks to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("DeleteInterpersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteInterpersonalRisk(int id)
@@ -363,7 +472,12 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // DELETE api/<RisksController>/5
+        // DELETE api/<RisksController>/DeletePersonalRisk/5
+        /// <summary>
+        /// Removes the PersonalRisks with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the PersonalRisks to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("DeletePersonalRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeletePersonalRisk(int id)
@@ -386,7 +500,12 @@ namespace T217_Capstone_Project_API.Controllers
             }
         }
 
-        // DELETE api/<RisksController>/5
+        // DELETE api/<RisksController>/DeleteProjectRisk/5
+        /// <summary>
+        /// Removes the ProjectRisks with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the ProjectRisks to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("DeleteProjectRisk/{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult> DeleteProjectRisk(int id)

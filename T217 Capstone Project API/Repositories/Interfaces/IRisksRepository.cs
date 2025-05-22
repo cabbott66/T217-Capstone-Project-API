@@ -2,156 +2,159 @@
 
 namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
+    /// <summary>
+    /// Repository used to connect the application to the Risks tables in the Database.
+    /// </summary>
     public interface IRisksRepository
     {
         #region PersonalRisk
         /// <summary>
-        /// Returns the PersonalRisk from the database with the matching ID.
+        /// Returns the PersonalRisks from the database with the matching ID.
         /// </summary>
-        /// <param name="id">The ID of the desired PersonalRisk.</param>
+        /// <param name="id">The ID of the desired PersonalRisks.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> GetPersonalRiskAsync(int id, string apiKey);
+        public abstract Task<PersonalRisks> GetPersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
-        /// Returns the PersonalRisk from the database with the matching StakeholderID.
+        /// Returns the PersonalRisks from the database with the matching StakeholderID.
         /// </summary>
         /// <param name="id">The ID of the Stakeholder.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+        public abstract Task<PersonalRisks> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
 
         /// <summary>
-        /// Creates a new PersonalRisk in the database.
+        /// Creates a new PersonalRisks in the database.
         /// </summary>
-        /// <param name="personalRisk">The PersonalRisk to be added.</param>
+        /// <param name="personalRisk">The PersonalRisks to be added.</param>
         /// <returns></returns>
-        public abstract Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRiskDTO personalRisk, string apiKey);
+        public abstract Task<PersonalRisks> CreatePersonalRiskAsync(PersonalRisksDTO personalRisk, string apiKey);
 
         /// <summary>
-        /// Updates the PersonalRisk with the matching ID with new values.
+        /// Updates the PersonalRisks with the matching ID with new values.
         /// </summary>
-        /// <param name="id">The ID of the PersonalRisk to be updated.</param>
-        /// <param name="personalRisk">The replacement PersonalRisk.</param>
+        /// <param name="id">The ID of the PersonalRisks to be updated.</param>
+        /// <param name="personalRisk">The replacement PersonalRisks.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdatePersonalRiskAsync(int id, PersonalRisk personalRisk, string apiKey);
+        public abstract Task<int> UpdatePersonalRiskAsync(int id, PersonalRisks personalRisk, string apiKey);
 
         /// <summary>
-        /// Deletes a PersonalRisk from the database.
+        /// Deletes a PersonalRisks from the database.
         /// </summary>
-        /// <param name="id">The ID of the PersonalRisk to be deleted.</param>
+        /// <param name="id">The ID of the PersonalRisks to be deleted.</param>
         /// <returns></returns>
         public abstract Task<int> DeletePersonalRiskAsync(int id, string apiKey);
         #endregion
 
         #region ProjectRisk
         /// <summary>
-        /// Returns the ProjectRisk from the database with the matching ID.
+        /// Returns the ProjectRisks from the database with the matching ID.
         /// </summary>
-        /// <param name="id">The ID of the desired ProjectRisk.</param>
+        /// <param name="id">The ID of the desired ProjectRisks.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> GetProjectRiskAsync(int id, string apiKey);
+        public abstract Task<ProjectRisks> GetProjectRiskAsync(int id, string apiKey);
 
         /// <summary>
-        /// Returns the ProjectRisk from the database with the matching ProjectID.
+        /// Returns the ProjectRisks from the database with the matching ProjectID.
         /// </summary>
         /// <param name="id">The ID of the Project.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> GetProjectRiskFromProjectAsync(int projectId, string apiKey);
+        public abstract Task<ProjectRisks> GetProjectRiskFromProjectAsync(int projectId, string apiKey);
 
         /// <summary>
-        /// Creates a new ProjectRisk in the database.
+        /// Creates a new ProjectRisks in the database.
         /// </summary>
-        /// <param name="projectRisk">The ProjectRisk to be added.</param>
+        /// <param name="projectRisk">The ProjectRisks to be added.</param>
         /// <returns></returns>
-        public abstract Task<ProjectRisk> CreateProjectRiskAsync(ProjectRiskDTO projectRisk, string apiKey);
+        public abstract Task<ProjectRisks> CreateProjectRiskAsync(ProjectRisksDTO projectRisk, string apiKey);
 
         /// <summary>
-        /// Updates the ProjectRisk with the matching ID with new values.
+        /// Updates the ProjectRisks with the matching ID with new values.
         /// </summary>
-        /// <param name="id">The ID of the ProjectRisk to be updated.</param>
-        /// <param name="projectRisk">The replacement ProjectRisk.</param>
+        /// <param name="id">The ID of the ProjectRisks to be updated.</param>
+        /// <param name="projectRisk">The replacement ProjectRisks.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateProjectRiskAsync(int id, ProjectRisk projectRisk, string apiKey);
+        public abstract Task<int> UpdateProjectRiskAsync(int id, ProjectRisks projectRisk, string apiKey);
 
         /// <summary>
-        /// Deletes a ProjectRisk from the database.
+        /// Deletes a ProjectRisks from the database.
         /// </summary>
-        /// <param name="id">The ID of the ProjectRisk to be deleted.</param>
+        /// <param name="id">The ID of the ProjectRisks to be deleted.</param>
         /// <returns></returns>
         public abstract Task<int> DeleteProjectRiskAsync(int id, string apiKey);
         #endregion
 
         #region InterpersonalRisk
         /// <summary>
-        /// Returns the InterpersonalRisk from the database with the matching ID.
+        /// Returns the InterpersonalRisks from the database with the matching ID.
         /// </summary>
-        /// <param name="id">The ID of the desired InterpersonalRisk.</param>
+        /// <param name="id">The ID of the desired InterpersonalRisks.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> GetInterpersonalRiskAsync(int id, string apiKey);
+        public abstract Task<InterpersonalRisks> GetInterpersonalRiskAsync(int id, string apiKey);
 
         /// <summary>
-        /// Returns the InterpersonalRisk from the database with the matching StakeholderID.
+        /// Returns the InterpersonalRisks from the database with the matching StakeholderID.
         /// </summary>
         /// <param name="id">The ID of the Stakeholder.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+        public abstract Task<InterpersonalRisks> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
 
         /// <summary>
-        /// Creates a new InterpersonalRisk in the database.
+        /// Creates a new InterpersonalRisks in the database.
         /// </summary>
-        /// <param name="interpersonalRisk">The InterpersonalRisk to be added.</param>
+        /// <param name="interpersonalRisk">The InterpersonalRisks to be added.</param>
         /// <returns></returns>
-        public abstract Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRiskDTO interpersonalRisk, string apiKey);
+        public abstract Task<InterpersonalRisks> CreateInterpersonalRiskAsync(InterpersonalRisksDTO interpersonalRisk, string apiKey);
 
         /// <summary>
-        /// Updates the InterpersonalRisk with the matching ID with new values.
+        /// Updates the InterpersonalRisks with the matching ID with new values.
         /// </summary>
-        /// <param name="id">The ID of the InterpersonalRisk to be updated.</param>
-        /// <param name="interpersonalRisk">The replacement InterpersonalRisk.</param>
+        /// <param name="id">The ID of the InterpersonalRisks to be updated.</param>
+        /// <param name="interpersonalRisk">The replacement InterpersonalRisks.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisk interpersonalRisk, string apiKey);
+        public abstract Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisks interpersonalRisk, string apiKey);
 
         /// <summary>
-        /// Deletes a InterpersonalRisk from the database.
+        /// Deletes a InterpersonalRisks from the database.
         /// </summary>
-        /// <param name="id">The ID of the InterpersonalRisk to be deleted.</param>
+        /// <param name="id">The ID of the InterpersonalRisks to be deleted.</param>
         /// <returns></returns>
         public abstract Task<int> DeleteInterpersonalRiskAsync(int id, string apiKey);
         #endregion
 
         #region EnvironmentalRisk
         /// <summary>
-        /// Returns the EnvironmentalRisk from the database with the matching ID.
+        /// Returns the EnvironmentalRisks from the database with the matching ID.
         /// </summary>
-        /// <param name="id">The ID of the desired EnvironmentalRisk.</param>
+        /// <param name="id">The ID of the desired EnvironmentalRisks.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskAsync(int id, string apiKey);
+        public abstract Task<EnvironmentalRisks> GetEnvironmentalRiskAsync(int id, string apiKey);
 
         /// <summary>
-        /// Returns the EnvironmentalRisk from the database with the matching StakeholderID.
+        /// Returns the EnvironmentalRisks from the database with the matching StakeholderID.
         /// </summary>
         /// <param name="id">The ID of the Stakeholder.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
+        public abstract Task<EnvironmentalRisks> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey);
 
         /// <summary>
-        /// Creates a new EnvironmentalRisk in the database.
+        /// Creates a new EnvironmentalRisks in the database.
         /// </summary>
-        /// <param name="environmentalRisk">The EnvironmentalRisk to be added.</param>
+        /// <param name="environmentalRisk">The EnvironmentalRisks to be added.</param>
         /// <returns></returns>
-        public abstract Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRiskDTO environmentalRisk, string apiKey);
+        public abstract Task<EnvironmentalRisks> CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO environmentalRisk, string apiKey);
 
         /// <summary>
-        /// Updates the EnvironmentalRisk with the matching ID with new values.
+        /// Updates the EnvironmentalRisks with the matching ID with new values.
         /// </summary>
-        /// <param name="id">The ID of the EnvironmentalRisk to be updated.</param>
-        /// <param name="environmentalRisk">The replacement EnvironmentalRisk.</param>
+        /// <param name="id">The ID of the EnvironmentalRisks to be updated.</param>
+        /// <param name="environmentalRisk">The replacement EnvironmentalRisks.</param>
         /// <returns></returns>
-        public abstract Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisk environmentalRisk, string apiKey);
+        public abstract Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisks environmentalRisk, string apiKey);
 
         /// <summary>
-        /// Deletes a EnvironmentalRisk from the database.
+        /// Deletes a EnvironmentalRisks from the database.
         /// </summary>
-        /// <param name="id">The ID of the EnvironmentalRisk to be deleted.</param>
+        /// <param name="id">The ID of the EnvironmentalRisks to be deleted.</param>
         /// <returns></returns>
         public abstract Task<int> DeleteEnvironmentalRiskAsync(int id, string apiKey);
         #endregion

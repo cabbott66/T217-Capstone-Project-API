@@ -7,6 +7,7 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
+    /// <inheritdoc/>
     public class ProjectRepository : IProjectRepository
     {
         enum UpdateStatus
@@ -24,6 +25,7 @@ namespace T217_Capstone_Project_API.Repositories
             _context = context;
         }
 
+        /// <inheritdoc/>
         public async Task<Project> GetProjectAsync(int id, string apiKey)
         {
             
@@ -48,6 +50,7 @@ namespace T217_Capstone_Project_API.Repositories
             return new Project();
         }
 
+        /// <inheritdoc/>
         public async Task<List<Project>> GetProjectListAsync(string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -66,6 +69,7 @@ namespace T217_Capstone_Project_API.Repositories
         }
 
 
+        /// <inheritdoc/>
         public async Task<Project> CreateProjectAsync(ProjectDTO project, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -86,6 +90,7 @@ namespace T217_Capstone_Project_API.Repositories
             return newProject;
         }
 
+        /// <inheritdoc/>
         public async Task<int> UpdateProjectAsync(int id, Project project, string apiKey)
         {
             if (id != project.ProjectID)
@@ -133,6 +138,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteProjectAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);

@@ -3,6 +3,9 @@ using T217_Capstone_Project_API.Models.Projects;
 
 namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
+    /// <summary>
+    /// Repository used to connect the application to the Stakeholders table in the Database.
+    /// </summary>
     public interface IStakeholderRepository
     {
         // TODO: Update XML Commenting.

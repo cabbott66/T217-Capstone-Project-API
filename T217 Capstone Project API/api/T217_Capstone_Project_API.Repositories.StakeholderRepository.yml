@@ -1,0 +1,1225 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.StakeholderRepository
+  id: StakeholderRepository
+  parent: T217_Capstone_Project_API.Repositories
+  children:
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync(System.String)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  langs:
+  - csharp
+  - vb
+  name: StakeholderRepository
+  nameWithType: StakeholderRepository
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  type: Class
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: StakeholderRepository
+    path: Repositories/StakeholderRepository.cs
+    startLine: 9
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
+  example: []
+  syntax:
+    content: 'public class StakeholderRepository : IStakeholderRepository'
+    content.vb: Public Class StakeholderRepository Implements IStakeholderRepository
+  inheritance:
+  - System.Object
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  id: '#ctor(T217_Capstone_Project_API.StakeholderRisksContext)'
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: StakeholderRepository(StakeholderRisksContext)
+  nameWithType: StakeholderRepository.StakeholderRepository(StakeholderRisksContext)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.StakeholderRepository(T217_Capstone_Project_API.StakeholderRisksContext)
+  type: Constructor
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: .ctor
+    path: Repositories/StakeholderRepository.cs
+    startLine: 21
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  syntax:
+    content: public StakeholderRepository(StakeholderRisksContext context)
+    parameters:
+    - id: context
+      type: T217_Capstone_Project_API.StakeholderRisksContext
+    content.vb: Public Sub New(context As StakeholderRisksContext)
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor*
+  nameWithType.vb: StakeholderRepository.New(StakeholderRisksContext)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.New(T217_Capstone_Project_API.StakeholderRisksContext)
+  name.vb: New(StakeholderRisksContext)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  id: GetStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetStakeholderAsync(int, string)
+  nameWithType: StakeholderRepository.GetStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetStakeholderAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 27
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the Stakeholder from the database with the matching ID.
+  example: []
+  syntax:
+    content: public Task<Stakeholder> GetStakeholderAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired Stakeholder.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Projects.Stakeholder}
+      description: ''
+    content.vb: Public Function GetStakeholderAsync(id As Integer, apiKey As String) As Task(Of Stakeholder)
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  nameWithType.vb: StakeholderRepository.GetStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync(Integer, String)
+  name.vb: GetStakeholderAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync(System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync(System.String)
+  id: GetStakeholderListAsync(System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetStakeholderListAsync(string)
+  nameWithType: StakeholderRepository.GetStakeholderListAsync(string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync(string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetStakeholderListAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 50
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns a list of all Stakeholder from the database.
+  example: []
+  syntax:
+    content: public Task<List<Stakeholder>> GetStakeholderListAsync(string apiKey)
+    parameters:
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.Projects.Stakeholder}}
+      description: ''
+    content.vb: Public Function GetStakeholderListAsync(apiKey As String) As Task(Of List(Of Stakeholder))
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(System.String)
+  nameWithType.vb: StakeholderRepository.GetStakeholderListAsync(String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync(String)
+  name.vb: GetStakeholderListAsync(String)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  id: GetStakeholderListByProjectAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetStakeholderListByProjectAsync(int, string)
+  nameWithType: StakeholderRepository.GetStakeholderListByProjectAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetStakeholderListByProjectAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 68
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns a list of all Stakeholder that the User has access to.
+  example: []
+  syntax:
+    content: public Task<List<Stakeholder>> GetStakeholderListByProjectAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the current Project.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.Projects.Stakeholder}}
+      description: ''
+    content.vb: Public Function GetStakeholderListByProjectAsync(id As Integer, apiKey As String) As Task(Of List(Of Stakeholder))
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  nameWithType.vb: StakeholderRepository.GetStakeholderListByProjectAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync(Integer, String)
+  name.vb: GetStakeholderListByProjectAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  id: CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateStakeholderAsync(StakeholderDTO, string)
+  nameWithType: StakeholderRepository.CreateStakeholderAsync(StakeholderDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreateStakeholderAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 87
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Creates a new Stakeholder in the database.
+  example: []
+  syntax:
+    content: public Task<Stakeholder> CreateStakeholderAsync(StakeholderDTO stakeholderDTO, string apiKey)
+    parameters:
+    - id: stakeholderDTO
+      type: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+      description: The StakeholderDTO to be added..
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Projects.Stakeholder}
+      description: ''
+    content.vb: Public Function CreateStakeholderAsync(stakeholderDTO As StakeholderDTO, apiKey As String) As Task(Of Stakeholder)
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  nameWithType.vb: StakeholderRepository.CreateStakeholderAsync(StakeholderDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO, String)
+  name.vb: CreateStakeholderAsync(StakeholderDTO, String)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  id: UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateStakeholderAsync(int, Stakeholder, string)
+  nameWithType: StakeholderRepository.UpdateStakeholderAsync(int, Stakeholder, string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync(int, T217_Capstone_Project_API.Models.Projects.Stakeholder, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdateStakeholderAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 119
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Updates the Stakeholder with the matching ID with new values.
+  example: []
+  syntax:
+    content: public Task<int> UpdateStakeholderAsync(int id, Stakeholder stakeholder, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the Stakeholder to be updated.
+    - id: stakeholder
+      type: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function UpdateStakeholderAsync(id As Integer, stakeholder As Stakeholder, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  nameWithType.vb: StakeholderRepository.UpdateStakeholderAsync(Integer, Stakeholder, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync(Integer, T217_Capstone_Project_API.Models.Projects.Stakeholder, String)
+  name.vb: UpdateStakeholderAsync(Integer, Stakeholder, String)
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  id: DeleteStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteStakeholderAsync(int, string)
+  nameWithType: StakeholderRepository.DeleteStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/StakeholderRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeleteStakeholderAsync
+    path: Repositories/StakeholderRepository.cs
+    startLine: 159
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Deletes a Stakeholder from the database.
+  example: []
+  syntax:
+    content: public Task<int> DeleteStakeholderAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the Stakeholder to be deleted.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function DeleteStakeholderAsync(id As Integer, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  nameWithType.vb: StakeholderRepository.DeleteStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync(Integer, String)
+  name.vb: DeleteStakeholderAsync(Integer, String)
+references:
+- uid: T217_Capstone_Project_API.Repositories
+  commentId: N:T217_Capstone_Project_API.Repositories
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories
+  nameWithType: T217_Capstone_Project_API.Repositories
+  fullName: T217_Capstone_Project_API.Repositories
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html
+  name: IStakeholderRepository
+  nameWithType: IStakeholderRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  commentId: N:T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  nameWithType: T217_Capstone_Project_API.Repositories.Interfaces
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.#ctor
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository__ctor_T217_Capstone_Project_API_StakeholderRisksContext_
+  name: StakeholderRepository
+  nameWithType: StakeholderRepository.StakeholderRepository
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.StakeholderRepository
+  nameWithType.vb: StakeholderRepository.New
+  fullName.vb: T217_Capstone_Project_API.Repositories.StakeholderRepository.New
+  name.vb: New
+- uid: T217_Capstone_Project_API.StakeholderRisksContext
+  commentId: T:T217_Capstone_Project_API.StakeholderRisksContext
+  parent: T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.StakeholderRisksContext.html
+  name: StakeholderRisksContext
+  nameWithType: StakeholderRisksContext
+  fullName: T217_Capstone_Project_API.StakeholderRisksContext
+- uid: T217_Capstone_Project_API
+  commentId: N:T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API
+  nameWithType: T217_Capstone_Project_API
+  fullName: T217_Capstone_Project_API
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_GetStakeholderAsync_System_Int32_System_String_
+  name: GetStakeholderAsync
+  nameWithType: StakeholderRepository.GetStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderAsync_System_Int32_System_String_
+  name: GetStakeholderAsync(int, string)
+  nameWithType: IStakeholderRepository.GetStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(int, string)
+  nameWithType.vb: IStakeholderRepository.GetStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(Integer, String)
+  name.vb: GetStakeholderAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+    name: GetStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderAsync(System.Int32,System.String)
+    name: GetStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Projects.Stakeholder}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Projects.Stakeholder}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Stakeholder>
+  nameWithType: Task<Stakeholder>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.Projects.Stakeholder>
+  nameWithType.vb: Task(Of Stakeholder)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.Projects.Stakeholder)
+  name.vb: Task(Of Stakeholder)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_GetStakeholderListAsync_System_String_
+  name: GetStakeholderListAsync
+  nameWithType: StakeholderRepository.GetStakeholderListAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListAsync_System_String_
+  name: GetStakeholderListAsync(string)
+  nameWithType: IStakeholderRepository.GetStakeholderListAsync(string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(string)
+  nameWithType.vb: IStakeholderRepository.GetStakeholderListAsync(String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(String)
+  name.vb: GetStakeholderListAsync(String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(System.String)
+    name: GetStakeholderListAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListAsync_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListAsync(System.String)
+    name: GetStakeholderListAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListAsync_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.Projects.Stakeholder}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.Projects.Stakeholder}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<Stakeholder>>
+  nameWithType: Task<List<Stakeholder>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<T217_Capstone_Project_API.Models.Projects.Stakeholder>>
+  nameWithType.vb: Task(Of List(Of Stakeholder))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of T217_Capstone_Project_API.Models.Projects.Stakeholder))
+  name.vb: Task(Of List(Of Stakeholder))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: )
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_GetStakeholderListByProjectAsync_System_Int32_System_String_
+  name: GetStakeholderListByProjectAsync
+  nameWithType: StakeholderRepository.GetStakeholderListByProjectAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.GetStakeholderListByProjectAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListByProjectAsync_System_Int32_System_String_
+  name: GetStakeholderListByProjectAsync(int, string)
+  nameWithType: IStakeholderRepository.GetStakeholderListByProjectAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(int, string)
+  nameWithType.vb: IStakeholderRepository.GetStakeholderListByProjectAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(Integer, String)
+  name.vb: GetStakeholderListByProjectAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+    name: GetStakeholderListByProjectAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListByProjectAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.GetStakeholderListByProjectAsync(System.Int32,System.String)
+    name: GetStakeholderListByProjectAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_GetStakeholderListByProjectAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_CreateStakeholderAsync_T217_Capstone_Project_API_Models_DTO_ProjectDTOs_StakeholderDTO_System_String_
+  name: CreateStakeholderAsync
+  nameWithType: StakeholderRepository.CreateStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.CreateStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_CreateStakeholderAsync_T217_Capstone_Project_API_Models_DTO_ProjectDTOs_StakeholderDTO_System_String_
+  name: CreateStakeholderAsync(StakeholderDTO, string)
+  nameWithType: IStakeholderRepository.CreateStakeholderAsync(StakeholderDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO, string)
+  nameWithType.vb: IStakeholderRepository.CreateStakeholderAsync(StakeholderDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO, String)
+  name.vb: CreateStakeholderAsync(StakeholderDTO, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+    name: CreateStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_CreateStakeholderAsync_T217_Capstone_Project_API_Models_DTO_ProjectDTOs_StakeholderDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+    name: StakeholderDTO
+    href: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.CreateStakeholderAsync(T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO,System.String)
+    name: CreateStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_CreateStakeholderAsync_T217_Capstone_Project_API_Models_DTO_ProjectDTOs_StakeholderDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+    name: StakeholderDTO
+    href: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+  commentId: T:T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+  parent: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  href: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO.html
+  name: StakeholderDTO
+  nameWithType: StakeholderDTO
+  fullName: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+- uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  commentId: N:T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  nameWithType: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  fullName: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+    name: ProjectDTOs
+    href: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+    name: ProjectDTOs
+    href: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.html
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_UpdateStakeholderAsync_System_Int32_T217_Capstone_Project_API_Models_Projects_Stakeholder_System_String_
+  name: UpdateStakeholderAsync
+  nameWithType: StakeholderRepository.UpdateStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.UpdateStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_UpdateStakeholderAsync_System_Int32_T217_Capstone_Project_API_Models_Projects_Stakeholder_System_String_
+  name: UpdateStakeholderAsync(int, Stakeholder, string)
+  nameWithType: IStakeholderRepository.UpdateStakeholderAsync(int, Stakeholder, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(int, T217_Capstone_Project_API.Models.Projects.Stakeholder, string)
+  nameWithType.vb: IStakeholderRepository.UpdateStakeholderAsync(Integer, Stakeholder, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(Integer, T217_Capstone_Project_API.Models.Projects.Stakeholder, String)
+  name.vb: UpdateStakeholderAsync(Integer, Stakeholder, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+    name: UpdateStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_UpdateStakeholderAsync_System_Int32_T217_Capstone_Project_API_Models_Projects_Stakeholder_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.UpdateStakeholderAsync(System.Int32,T217_Capstone_Project_API.Models.Projects.Stakeholder,System.String)
+    name: UpdateStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_UpdateStakeholderAsync_System_Int32_T217_Capstone_Project_API_Models_Projects_Stakeholder_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+  commentId: T:T217_Capstone_Project_API.Models.Projects.Stakeholder
+  parent: T217_Capstone_Project_API.Models.Projects
+  href: T217_Capstone_Project_API.Models.Projects.Stakeholder.html
+  name: Stakeholder
+  nameWithType: Stakeholder
+  fullName: T217_Capstone_Project_API.Models.Projects.Stakeholder
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Projects
+  commentId: N:T217_Capstone_Project_API.Models.Projects
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models.Projects
+  nameWithType: T217_Capstone_Project_API.Models.Projects
+  fullName: T217_Capstone_Project_API.Models.Projects
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.Projects
+    name: Projects
+    href: T217_Capstone_Project_API.Models.Projects.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.Projects
+    name: Projects
+    href: T217_Capstone_Project_API.Models.Projects.html
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html#T217_Capstone_Project_API_Repositories_StakeholderRepository_DeleteStakeholderAsync_System_Int32_System_String_
+  name: DeleteStakeholderAsync
+  nameWithType: StakeholderRepository.DeleteStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository.DeleteStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_DeleteStakeholderAsync_System_Int32_System_String_
+  name: DeleteStakeholderAsync(int, string)
+  nameWithType: IStakeholderRepository.DeleteStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(int, string)
+  nameWithType.vb: IStakeholderRepository.DeleteStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(Integer, String)
+  name.vb: DeleteStakeholderAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+    name: DeleteStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_DeleteStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.DeleteStakeholderAsync(System.Int32,System.String)
+    name: DeleteStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IStakeholderRepository_DeleteStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

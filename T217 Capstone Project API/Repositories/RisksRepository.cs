@@ -6,6 +6,7 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
+    /// <inheritdoc/>
     public class RisksRepository : IRisksRepository
     {
         enum UpdateStatus
@@ -23,9 +24,10 @@ namespace T217_Capstone_Project_API.Repositories
             _context = context;
         }
 
-        public async Task<EnvironmentalRisk> CreateEnvironmentalRiskAsync(EnvironmentalRiskDTO environmentalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<EnvironmentalRisks> CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO environmentalRisk, string apiKey)
         {
-            EnvironmentalRisk newEnvRisk = new EnvironmentalRisk();
+            EnvironmentalRisks newEnvRisk = new EnvironmentalRisks();
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -57,12 +59,13 @@ namespace T217_Capstone_Project_API.Repositories
                 return newEnvRisk;
             }
 
-            return new EnvironmentalRisk();
+            return new EnvironmentalRisks();
         }
 
-        public async Task<InterpersonalRisk> CreateInterpersonalRiskAsync(InterpersonalRiskDTO interpersonalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<InterpersonalRisks> CreateInterpersonalRiskAsync(InterpersonalRisksDTO interpersonalRisk, string apiKey)
         {
-            InterpersonalRisk newInterRisk = new InterpersonalRisk();
+            InterpersonalRisks newInterRisk = new InterpersonalRisks();
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -94,12 +97,13 @@ namespace T217_Capstone_Project_API.Repositories
                 return newInterRisk;
             }
 
-            return new InterpersonalRisk();
+            return new InterpersonalRisks();
         }
 
-        public async Task<PersonalRisk> CreatePersonalRiskAsync(PersonalRiskDTO personalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<PersonalRisks> CreatePersonalRiskAsync(PersonalRisksDTO personalRisk, string apiKey)
         {
-            PersonalRisk newPersonRisk = new PersonalRisk();
+            PersonalRisks newPersonRisk = new PersonalRisks();
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -139,12 +143,13 @@ namespace T217_Capstone_Project_API.Repositories
                 return newPersonRisk;
             }
 
-            return new PersonalRisk();
+            return new PersonalRisks();
         }
 
-        public async Task<ProjectRisk> CreateProjectRiskAsync(ProjectRiskDTO projectRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<ProjectRisks> CreateProjectRiskAsync(ProjectRisksDTO projectRisk, string apiKey)
         {
-            ProjectRisk newProjectRisk = new ProjectRisk(); 
+            ProjectRisks newProjectRisk = new ProjectRisks(); 
 
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -173,9 +178,10 @@ namespace T217_Capstone_Project_API.Repositories
                 return newProjectRisk;
             }
 
-            return new ProjectRisk();
+            return new ProjectRisks();
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteEnvironmentalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -214,6 +220,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteInterpersonalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -252,6 +259,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeletePersonalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -290,6 +298,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteProjectRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -325,7 +334,8 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<EnvironmentalRisk> GetEnvironmentalRiskAsync(int id, string apiKey)
+        /// <inheritdoc/>
+        public async Task<EnvironmentalRisks> GetEnvironmentalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -348,10 +358,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return envRisk;
             }
 
-            return new EnvironmentalRisk();
+            return new EnvironmentalRisks();
         }
 
-        public async Task<InterpersonalRisk> GetInterpersonalRiskAsync(int id, string apiKey)
+        /// <inheritdoc/>
+        public async Task<InterpersonalRisks> GetInterpersonalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -374,10 +385,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return interRisk;
             }
 
-            return new InterpersonalRisk();
+            return new InterpersonalRisks();
         }
 
-        public async Task<PersonalRisk> GetPersonalRiskAsync(int id, string apiKey)
+        /// <inheritdoc/>
+        public async Task<PersonalRisks> GetPersonalRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -400,10 +412,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return personRisk;
             }
 
-            return new PersonalRisk();
+            return new PersonalRisks();
         }
 
-        public async Task<ProjectRisk> GetProjectRiskAsync(int id, string apiKey)
+        /// <inheritdoc/>
+        public async Task<ProjectRisks> GetProjectRiskAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -423,10 +436,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return projectRisk;
             }
 
-            return new ProjectRisk();
+            return new ProjectRisks();
         }
 
-        public async Task<EnvironmentalRisk> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        /// <inheritdoc/>
+        public async Task<EnvironmentalRisks> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -449,10 +463,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return envRisk;
             }
 
-            return new EnvironmentalRisk();
+            return new EnvironmentalRisks();
         }
 
-        public async Task<InterpersonalRisk> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        /// <inheritdoc/>
+        public async Task<InterpersonalRisks> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -475,10 +490,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return interRisk;
             }
 
-            return new InterpersonalRisk();
+            return new InterpersonalRisks();
         }
 
-        public async Task<PersonalRisk> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+        /// <inheritdoc/>
+        public async Task<PersonalRisks> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -501,10 +517,11 @@ namespace T217_Capstone_Project_API.Repositories
                 return personRisk;
             }
 
-            return new PersonalRisk();
+            return new PersonalRisks();
         }
 
-        public async Task<ProjectRisk> GetProjectRiskFromProjectAsync(int projectId, string apiKey)
+        /// <inheritdoc/>
+        public async Task<ProjectRisks> GetProjectRiskFromProjectAsync(int projectId, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
 
@@ -524,12 +541,12 @@ namespace T217_Capstone_Project_API.Repositories
                 return projectRisk;
             }
 
-            return new ProjectRisk();
+            return new ProjectRisks();
         }
 
         // TODO: Update project edit datetime on update.
-
-        public async Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisk environmentalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisks environmentalRisk, string apiKey)
         {
             if (id != environmentalRisk.EnvironmentalRiskID)
             {
@@ -577,7 +594,8 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisk interpersonalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisks interpersonalRisk, string apiKey)
         {
             if (id != interpersonalRisk.InterpersonalRiskID)
             {
@@ -625,7 +643,8 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<int> UpdatePersonalRiskAsync(int id, PersonalRisk personalRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<int> UpdatePersonalRiskAsync(int id, PersonalRisks personalRisk, string apiKey)
         {
             if (id != personalRisk.PersonalRiskID)
             {
@@ -673,7 +692,8 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
-        public async Task<int> UpdateProjectRiskAsync(int id, ProjectRisk projectRisk, string apiKey)
+        /// <inheritdoc/>
+        public async Task<int> UpdateProjectRiskAsync(int id, ProjectRisks projectRisk, string apiKey)
         {
             if (id != projectRisk.ProjectRiskID)
             {
@@ -718,6 +738,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        // Finds the User with the matching API key and returns their UserID.
         private async Task<int> GetUserIdFromApiKey(string apiKey)
         {
             var user = await _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefaultAsync();

@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace T217_Capstone_Project_API.Authentication
 {
+    /// <summary>
+    /// AuthenticationFilter to verify that the User has supplied an API key in the headers, and that the User exists.
+    /// </summary>
     public class UserAuthenticationFilter : IAuthorizationFilter
     {
         private readonly IConfiguration _configuration;
@@ -16,6 +19,10 @@ namespace T217_Capstone_Project_API.Authentication
             _repo = repo;
         }
 
+        /// <summary>
+        /// Tries to extract the API key from the headers, then checks the database if the User associated with the key exists.
+        /// </summary>
+        /// <param name="context"></param>
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             if (!context.HttpContext.Request.Headers.TryGetValue("x-api-key", out var apiKey))

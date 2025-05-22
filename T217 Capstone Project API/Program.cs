@@ -16,10 +16,10 @@ namespace T217_Capstone_Project_API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
 
-            // Database Context.
+            // Database Context (setup for MariaDB).
+            // Change connection string in appsettings.json.
             var connectionString = builder.Configuration.GetConnectionString("stakeholderRisksDb");
             var serverVersion = ServerVersion.AutoDetect(connectionString);
 
@@ -42,7 +42,7 @@ namespace T217_Capstone_Project_API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(x =>
             {
-                x.AddSecurityDefinition("ApiKey", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                x.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
                 {
                     Description = "The API access key",
                     Type = SecuritySchemeType.ApiKey,
@@ -65,6 +65,10 @@ namespace T217_Capstone_Project_API
                     { scheme, new List<string> {} }
                 };
                 x.AddSecurityRequirement(requirement);
+
+                // Adds XML comments to Swagger.
+                var xmlFile = Path.Combine(AppContext.BaseDirectory, "T217 Capstone Project API.xml");
+                x.IncludeXmlComments(xmlFile);
             });
 
             var app = builder.Build();
@@ -92,7 +96,6 @@ namespace T217_Capstone_Project_API
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

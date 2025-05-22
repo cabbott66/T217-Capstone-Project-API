@@ -127,7 +127,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.ToTable("Stakeholders");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks", b =>
                 {
                     b.Property<int>("EnvironmentalRiskID")
                         .ValueGeneratedOnAdd()
@@ -163,7 +163,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.ToTable("EnvironmentalRisks");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.InterpersonalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.InterpersonalRisks", b =>
                 {
                     b.Property<int>("InterpersonalRiskID")
                         .ValueGeneratedOnAdd()
@@ -199,7 +199,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.ToTable("InterpersonalRisks");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.PersonalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.PersonalRisks", b =>
                 {
                     b.Property<int>("PersonalRiskID")
                         .ValueGeneratedOnAdd()
@@ -259,7 +259,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.ToTable("PersonalRisks");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisks", b =>
                 {
                     b.Property<int>("ProjectRiskID")
                         .ValueGeneratedOnAdd()
@@ -358,7 +358,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks", b =>
                 {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
@@ -369,7 +369,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Navigation("Stakeholder");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.InterpersonalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.InterpersonalRisks", b =>
                 {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
@@ -380,7 +380,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Navigation("Stakeholder");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.PersonalRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.PersonalRisks", b =>
                 {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Stakeholder", "Stakeholder")
                         .WithMany()
@@ -391,7 +391,7 @@ namespace T217_Capstone_Project_API.Migrations
                     b.Navigation("Stakeholder");
                 });
 
-            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisk", b =>
+            modelBuilder.Entity("T217_Capstone_Project_API.Models.Risks.ProjectRisks", b =>
                 {
                     b.HasOne("T217_Capstone_Project_API.Models.Projects.Project", "Project")
                         .WithMany()

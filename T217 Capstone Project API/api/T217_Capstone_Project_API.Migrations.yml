@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Migrations
+  commentId: N:T217_Capstone_Project_API.Migrations
+  id: T217_Capstone_Project_API.Migrations
+  children:
+  - T217_Capstone_Project_API.Migrations.initial
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API.Migrations
+  nameWithType: T217_Capstone_Project_API.Migrations
+  fullName: T217_Capstone_Project_API.Migrations
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Migrations.initial
+  commentId: T:T217_Capstone_Project_API.Migrations.initial
+  href: T217_Capstone_Project_API.Migrations.initial.html
+  name: initial
+  nameWithType: initial
+  fullName: T217_Capstone_Project_API.Migrations.initial

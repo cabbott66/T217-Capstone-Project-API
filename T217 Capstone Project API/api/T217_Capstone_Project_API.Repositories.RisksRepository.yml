@@ -1,0 +1,2614 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.RisksRepository
+  id: RisksRepository
+  parent: T217_Capstone_Project_API.Repositories
+  children:
+  - T217_Capstone_Project_API.Repositories.RisksRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  - T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  langs:
+  - csharp
+  - vb
+  name: RisksRepository
+  nameWithType: RisksRepository
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository
+  type: Class
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: RisksRepository
+    path: Repositories/RisksRepository.cs
+    startLine: 9
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
+  example: []
+  syntax:
+    content: 'public class RisksRepository : IRisksRepository'
+    content.vb: Public Class RisksRepository Implements IRisksRepository
+  inheritance:
+  - System.Object
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.#ctor(T217_Capstone_Project_API.StakeholderRisksContext)
+  id: '#ctor(T217_Capstone_Project_API.StakeholderRisksContext)'
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: RisksRepository(StakeholderRisksContext)
+  nameWithType: RisksRepository.RisksRepository(StakeholderRisksContext)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.RisksRepository(T217_Capstone_Project_API.StakeholderRisksContext)
+  type: Constructor
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: .ctor
+    path: Repositories/RisksRepository.cs
+    startLine: 21
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  syntax:
+    content: public RisksRepository(StakeholderRisksContext context)
+    parameters:
+    - id: context
+      type: T217_Capstone_Project_API.StakeholderRisksContext
+    content.vb: Public Sub New(context As StakeholderRisksContext)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.#ctor*
+  nameWithType.vb: RisksRepository.New(StakeholderRisksContext)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.New(T217_Capstone_Project_API.StakeholderRisksContext)
+  name.vb: New(StakeholderRisksContext)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  id: CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, string)
+  nameWithType: RisksRepository.CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreateEnvironmentalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 27
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Creates a new EnvironmentalRisks in the database.
+  example: []
+  syntax:
+    content: public Task<EnvironmentalRisks> CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO environmentalRisk, string apiKey)
+    parameters:
+    - id: environmentalRisk
+      type: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+      description: The EnvironmentalRisks to be added.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks}
+      description: ''
+    content.vb: Public Function CreateEnvironmentalRiskAsync(environmentalRisk As EnvironmentalRisksDTO, apiKey As String) As Task(Of EnvironmentalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  nameWithType.vb: RisksRepository.CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO, String)
+  name.vb: CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  id: CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateInterpersonalRiskAsync(InterpersonalRisksDTO, string)
+  nameWithType: RisksRepository.CreateInterpersonalRiskAsync(InterpersonalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreateInterpersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 65
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Creates a new InterpersonalRisks in the database.
+  example: []
+  syntax:
+    content: public Task<InterpersonalRisks> CreateInterpersonalRiskAsync(InterpersonalRisksDTO interpersonalRisk, string apiKey)
+    parameters:
+    - id: interpersonalRisk
+      type: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+      description: The InterpersonalRisks to be added.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.InterpersonalRisks}
+      description: ''
+    content.vb: Public Function CreateInterpersonalRiskAsync(interpersonalRisk As InterpersonalRisksDTO, apiKey As String) As Task(Of InterpersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  nameWithType.vb: RisksRepository.CreateInterpersonalRiskAsync(InterpersonalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO, String)
+  name.vb: CreateInterpersonalRiskAsync(InterpersonalRisksDTO, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  id: CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: CreatePersonalRiskAsync(PersonalRisksDTO, string)
+  nameWithType: RisksRepository.CreatePersonalRiskAsync(PersonalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreatePersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 103
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Creates a new PersonalRisks in the database.
+  example: []
+  syntax:
+    content: public Task<PersonalRisks> CreatePersonalRiskAsync(PersonalRisksDTO personalRisk, string apiKey)
+    parameters:
+    - id: personalRisk
+      type: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+      description: The PersonalRisks to be added.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.PersonalRisks}
+      description: ''
+    content.vb: Public Function CreatePersonalRiskAsync(personalRisk As PersonalRisksDTO, apiKey As String) As Task(Of PersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  nameWithType.vb: RisksRepository.CreatePersonalRiskAsync(PersonalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO, String)
+  name.vb: CreatePersonalRiskAsync(PersonalRisksDTO, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  id: CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateProjectRiskAsync(ProjectRisksDTO, string)
+  nameWithType: RisksRepository.CreateProjectRiskAsync(ProjectRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreateProjectRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 149
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Creates a new ProjectRisks in the database.
+  example: []
+  syntax:
+    content: public Task<ProjectRisks> CreateProjectRiskAsync(ProjectRisksDTO projectRisk, string apiKey)
+    parameters:
+    - id: projectRisk
+      type: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+      description: The ProjectRisks to be added.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.ProjectRisks}
+      description: ''
+    content.vb: Public Function CreateProjectRiskAsync(projectRisk As ProjectRisksDTO, apiKey As String) As Task(Of ProjectRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  nameWithType.vb: RisksRepository.CreateProjectRiskAsync(ProjectRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO, String)
+  name.vb: CreateProjectRiskAsync(ProjectRisksDTO, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  id: DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteEnvironmentalRiskAsync(int, string)
+  nameWithType: RisksRepository.DeleteEnvironmentalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeleteEnvironmentalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 184
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Deletes a EnvironmentalRisks from the database.
+  example: []
+  syntax:
+    content: public Task<int> DeleteEnvironmentalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the EnvironmentalRisks to be deleted.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function DeleteEnvironmentalRiskAsync(id As Integer, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.DeleteEnvironmentalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync(Integer, String)
+  name.vb: DeleteEnvironmentalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  id: DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteInterpersonalRiskAsync(int, string)
+  nameWithType: RisksRepository.DeleteInterpersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeleteInterpersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 223
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Deletes a InterpersonalRisks from the database.
+  example: []
+  syntax:
+    content: public Task<int> DeleteInterpersonalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the InterpersonalRisks to be deleted.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function DeleteInterpersonalRiskAsync(id As Integer, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.DeleteInterpersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync(Integer, String)
+  name.vb: DeleteInterpersonalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  id: DeletePersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: DeletePersonalRiskAsync(int, string)
+  nameWithType: RisksRepository.DeletePersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeletePersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 262
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Deletes a PersonalRisks from the database.
+  example: []
+  syntax:
+    content: public Task<int> DeletePersonalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the PersonalRisks to be deleted.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function DeletePersonalRiskAsync(id As Integer, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.DeletePersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync(Integer, String)
+  name.vb: DeletePersonalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  id: DeleteProjectRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteProjectRiskAsync(int, string)
+  nameWithType: RisksRepository.DeleteProjectRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeleteProjectRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 301
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Deletes a ProjectRisks from the database.
+  example: []
+  syntax:
+    content: public Task<int> DeleteProjectRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the ProjectRisks to be deleted.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function DeleteProjectRiskAsync(id As Integer, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.DeleteProjectRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync(Integer, String)
+  name.vb: DeleteProjectRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  id: GetEnvironmentalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetEnvironmentalRiskAsync(int, string)
+  nameWithType: RisksRepository.GetEnvironmentalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetEnvironmentalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 337
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the EnvironmentalRisks from the database with the matching ID.
+  example: []
+  syntax:
+    content: public Task<EnvironmentalRisks> GetEnvironmentalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired EnvironmentalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks}
+      description: ''
+    content.vb: Public Function GetEnvironmentalRiskAsync(id As Integer, apiKey As String) As Task(Of EnvironmentalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetEnvironmentalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync(Integer, String)
+  name.vb: GetEnvironmentalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  id: GetInterpersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetInterpersonalRiskAsync(int, string)
+  nameWithType: RisksRepository.GetInterpersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetInterpersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 364
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the InterpersonalRisks from the database with the matching ID.
+  example: []
+  syntax:
+    content: public Task<InterpersonalRisks> GetInterpersonalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired InterpersonalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.InterpersonalRisks}
+      description: ''
+    content.vb: Public Function GetInterpersonalRiskAsync(id As Integer, apiKey As String) As Task(Of InterpersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetInterpersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync(Integer, String)
+  name.vb: GetInterpersonalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  id: GetPersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetPersonalRiskAsync(int, string)
+  nameWithType: RisksRepository.GetPersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetPersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 391
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the PersonalRisks from the database with the matching ID.
+  example: []
+  syntax:
+    content: public Task<PersonalRisks> GetPersonalRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired PersonalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.PersonalRisks}
+      description: ''
+    content.vb: Public Function GetPersonalRiskAsync(id As Integer, apiKey As String) As Task(Of PersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetPersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync(Integer, String)
+  name.vb: GetPersonalRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  id: GetProjectRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetProjectRiskAsync(int, string)
+  nameWithType: RisksRepository.GetProjectRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetProjectRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 418
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the ProjectRisks from the database with the matching ID.
+  example: []
+  syntax:
+    content: public Task<ProjectRisks> GetProjectRiskAsync(int id, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired ProjectRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.ProjectRisks}
+      description: ''
+    content.vb: Public Function GetProjectRiskAsync(id As Integer, apiKey As String) As Task(Of ProjectRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetProjectRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync(Integer, String)
+  name.vb: GetProjectRiskAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  id: GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  nameWithType: RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetEnvironmentalRiskFromStakeholderAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 442
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the EnvironmentalRisks from the database with the matching StakeholderID.
+  example: []
+  syntax:
+    content: public Task<EnvironmentalRisks> GetEnvironmentalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+    parameters:
+    - id: stakeholderId
+      type: System.Int32
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks}
+      description: ''
+    content.vb: Public Function GetEnvironmentalRiskFromStakeholderAsync(stakeholderId As Integer, apiKey As String) As Task(Of EnvironmentalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  id: GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetInterpersonalRiskFromStakeholderAsync(int, string)
+  nameWithType: RisksRepository.GetInterpersonalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetInterpersonalRiskFromStakeholderAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 469
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the InterpersonalRisks from the database with the matching StakeholderID.
+  example: []
+  syntax:
+    content: public Task<InterpersonalRisks> GetInterpersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+    parameters:
+    - id: stakeholderId
+      type: System.Int32
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.InterpersonalRisks}
+      description: ''
+    content.vb: Public Function GetInterpersonalRiskFromStakeholderAsync(stakeholderId As Integer, apiKey As String) As Task(Of InterpersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  id: GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetPersonalRiskFromStakeholderAsync(int, string)
+  nameWithType: RisksRepository.GetPersonalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetPersonalRiskFromStakeholderAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 496
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the PersonalRisks from the database with the matching StakeholderID.
+  example: []
+  syntax:
+    content: public Task<PersonalRisks> GetPersonalRiskFromStakeholderAsync(int stakeholderId, string apiKey)
+    parameters:
+    - id: stakeholderId
+      type: System.Int32
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.PersonalRisks}
+      description: ''
+    content.vb: Public Function GetPersonalRiskFromStakeholderAsync(stakeholderId As Integer, apiKey As String) As Task(Of PersonalRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetPersonalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetPersonalRiskFromStakeholderAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  id: GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: GetProjectRiskFromProjectAsync(int, string)
+  nameWithType: RisksRepository.GetProjectRiskFromProjectAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetProjectRiskFromProjectAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 523
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Returns the ProjectRisks from the database with the matching ProjectID.
+  example: []
+  syntax:
+    content: public Task<ProjectRisks> GetProjectRiskFromProjectAsync(int projectId, string apiKey)
+    parameters:
+    - id: projectId
+      type: System.Int32
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.ProjectRisks}
+      description: ''
+    content.vb: Public Function GetProjectRiskFromProjectAsync(projectId As Integer, apiKey As String) As Task(Of ProjectRisks)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  nameWithType.vb: RisksRepository.GetProjectRiskFromProjectAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync(Integer, String)
+  name.vb: GetProjectRiskFromProjectAsync(Integer, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  id: UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateEnvironmentalRiskAsync(int, EnvironmentalRisks, string)
+  nameWithType: RisksRepository.UpdateEnvironmentalRiskAsync(int, EnvironmentalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdateEnvironmentalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 548
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Updates the EnvironmentalRisks with the matching ID with new values.
+  example: []
+  syntax:
+    content: public Task<int> UpdateEnvironmentalRiskAsync(int id, EnvironmentalRisks environmentalRisk, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the EnvironmentalRisks to be updated.
+    - id: environmentalRisk
+      type: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+      description: The replacement EnvironmentalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function UpdateEnvironmentalRiskAsync(id As Integer, environmentalRisk As EnvironmentalRisks, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  nameWithType.vb: RisksRepository.UpdateEnvironmentalRiskAsync(Integer, EnvironmentalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks, String)
+  name.vb: UpdateEnvironmentalRiskAsync(Integer, EnvironmentalRisks, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  id: UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateInterpersonalRiskAsync(int, InterpersonalRisks, string)
+  nameWithType: RisksRepository.UpdateInterpersonalRiskAsync(int, InterpersonalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.InterpersonalRisks, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdateInterpersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 597
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Updates the InterpersonalRisks with the matching ID with new values.
+  example: []
+  syntax:
+    content: public Task<int> UpdateInterpersonalRiskAsync(int id, InterpersonalRisks interpersonalRisk, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the InterpersonalRisks to be updated.
+    - id: interpersonalRisk
+      type: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+      description: The replacement InterpersonalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function UpdateInterpersonalRiskAsync(id As Integer, interpersonalRisk As InterpersonalRisks, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  nameWithType.vb: RisksRepository.UpdateInterpersonalRiskAsync(Integer, InterpersonalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.InterpersonalRisks, String)
+  name.vb: UpdateInterpersonalRiskAsync(Integer, InterpersonalRisks, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  id: UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdatePersonalRiskAsync(int, PersonalRisks, string)
+  nameWithType: RisksRepository.UpdatePersonalRiskAsync(int, PersonalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.PersonalRisks, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdatePersonalRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 646
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Updates the PersonalRisks with the matching ID with new values.
+  example: []
+  syntax:
+    content: public Task<int> UpdatePersonalRiskAsync(int id, PersonalRisks personalRisk, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the PersonalRisks to be updated.
+    - id: personalRisk
+      type: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+      description: The replacement PersonalRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function UpdatePersonalRiskAsync(id As Integer, personalRisk As PersonalRisks, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  nameWithType.vb: RisksRepository.UpdatePersonalRiskAsync(Integer, PersonalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.PersonalRisks, String)
+  name.vb: UpdatePersonalRiskAsync(Integer, PersonalRisks, String)
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  id: UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.RisksRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateProjectRiskAsync(int, ProjectRisks, string)
+  nameWithType: RisksRepository.UpdateProjectRiskAsync(int, ProjectRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync(int, T217_Capstone_Project_API.Models.Risks.ProjectRisks, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/RisksRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdateProjectRiskAsync
+    path: Repositories/RisksRepository.cs
+    startLine: 695
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories
+  summary: Updates the ProjectRisks with the matching ID with new values.
+  example: []
+  syntax:
+    content: public Task<int> UpdateProjectRiskAsync(int id, ProjectRisks projectRisk, string apiKey)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the ProjectRisks to be updated.
+    - id: projectRisk
+      type: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+      description: The replacement ProjectRisks.
+    - id: apiKey
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Public Function UpdateProjectRiskAsync(id As Integer, projectRisk As ProjectRisks, apiKey As String) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync*
+  implements:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  nameWithType.vb: RisksRepository.UpdateProjectRiskAsync(Integer, ProjectRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.ProjectRisks, String)
+  name.vb: UpdateProjectRiskAsync(Integer, ProjectRisks, String)
+references:
+- uid: T217_Capstone_Project_API.Repositories
+  commentId: N:T217_Capstone_Project_API.Repositories
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories
+  nameWithType: T217_Capstone_Project_API.Repositories
+  fullName: T217_Capstone_Project_API.Repositories
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html
+  name: IRisksRepository
+  nameWithType: IRisksRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  commentId: N:T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  nameWithType: T217_Capstone_Project_API.Repositories.Interfaces
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.#ctor*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.#ctor
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository__ctor_T217_Capstone_Project_API_StakeholderRisksContext_
+  name: RisksRepository
+  nameWithType: RisksRepository.RisksRepository
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.RisksRepository
+  nameWithType.vb: RisksRepository.New
+  fullName.vb: T217_Capstone_Project_API.Repositories.RisksRepository.New
+  name.vb: New
+- uid: T217_Capstone_Project_API.StakeholderRisksContext
+  commentId: T:T217_Capstone_Project_API.StakeholderRisksContext
+  parent: T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.StakeholderRisksContext.html
+  name: StakeholderRisksContext
+  nameWithType: StakeholderRisksContext
+  fullName: T217_Capstone_Project_API.StakeholderRisksContext
+- uid: T217_Capstone_Project_API
+  commentId: N:T217_Capstone_Project_API
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API
+  nameWithType: T217_Capstone_Project_API
+  fullName: T217_Capstone_Project_API
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_CreateEnvironmentalRiskAsync_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisksDTO_System_String_
+  name: CreateEnvironmentalRiskAsync
+  nameWithType: RisksRepository.CreateEnvironmentalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateEnvironmentalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateEnvironmentalRiskAsync_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisksDTO_System_String_
+  name: CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, string)
+  nameWithType: IRisksRepository.CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO, string)
+  nameWithType.vb: IRisksRepository.CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO, String)
+  name.vb: CreateEnvironmentalRiskAsync(EnvironmentalRisksDTO, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+    name: CreateEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateEnvironmentalRiskAsync_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+    name: EnvironmentalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateEnvironmentalRiskAsync(T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO,System.String)
+    name: CreateEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateEnvironmentalRiskAsync_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+    name: EnvironmentalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+  commentId: T:T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO.html
+  name: EnvironmentalRisksDTO
+  nameWithType: EnvironmentalRisksDTO
+  fullName: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<EnvironmentalRisks>
+  nameWithType: Task<EnvironmentalRisks>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks>
+  nameWithType.vb: Task(Of EnvironmentalRisks)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks)
+  name.vb: Task(Of EnvironmentalRisks)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+    name: EnvironmentalRisks
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+    name: EnvironmentalRisks
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks.html
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks
+  commentId: N:T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models.Risks
+  nameWithType: T217_Capstone_Project_API.Models.Risks
+  fullName: T217_Capstone_Project_API.Models.Risks
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.Risks
+    name: Risks
+    href: T217_Capstone_Project_API.Models.Risks.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.Risks
+    name: Risks
+    href: T217_Capstone_Project_API.Models.Risks.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_CreateInterpersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_InterpersonalRisksDTO_System_String_
+  name: CreateInterpersonalRiskAsync
+  nameWithType: RisksRepository.CreateInterpersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateInterpersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateInterpersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_InterpersonalRisksDTO_System_String_
+  name: CreateInterpersonalRiskAsync(InterpersonalRisksDTO, string)
+  nameWithType: IRisksRepository.CreateInterpersonalRiskAsync(InterpersonalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO, string)
+  nameWithType.vb: IRisksRepository.CreateInterpersonalRiskAsync(InterpersonalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO, String)
+  name.vb: CreateInterpersonalRiskAsync(InterpersonalRisksDTO, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+    name: CreateInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateInterpersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_InterpersonalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+    name: InterpersonalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateInterpersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO,System.String)
+    name: CreateInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateInterpersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_InterpersonalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+    name: InterpersonalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+  commentId: T:T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO.html
+  name: InterpersonalRisksDTO
+  nameWithType: InterpersonalRisksDTO
+  fullName: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.InterpersonalRisks}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.InterpersonalRisks}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<InterpersonalRisks>
+  nameWithType: Task<InterpersonalRisks>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.Risks.InterpersonalRisks>
+  nameWithType.vb: Task(Of InterpersonalRisks)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.Risks.InterpersonalRisks)
+  name.vb: Task(Of InterpersonalRisks)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+    name: InterpersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+    name: InterpersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks.html
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_CreatePersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_PersonalRisksDTO_System_String_
+  name: CreatePersonalRiskAsync
+  nameWithType: RisksRepository.CreatePersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreatePersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreatePersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_PersonalRisksDTO_System_String_
+  name: CreatePersonalRiskAsync(PersonalRisksDTO, string)
+  nameWithType: IRisksRepository.CreatePersonalRiskAsync(PersonalRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO, string)
+  nameWithType.vb: IRisksRepository.CreatePersonalRiskAsync(PersonalRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO, String)
+  name.vb: CreatePersonalRiskAsync(PersonalRisksDTO, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+    name: CreatePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreatePersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_PersonalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+    name: PersonalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreatePersonalRiskAsync(T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO,System.String)
+    name: CreatePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreatePersonalRiskAsync_T217_Capstone_Project_API_Models_Risks_PersonalRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+    name: PersonalRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+  commentId: T:T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO.html
+  name: PersonalRisksDTO
+  nameWithType: PersonalRisksDTO
+  fullName: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.PersonalRisks}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.PersonalRisks}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PersonalRisks>
+  nameWithType: Task<PersonalRisks>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.Risks.PersonalRisks>
+  nameWithType.vb: Task(Of PersonalRisks)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.Risks.PersonalRisks)
+  name.vb: Task(Of PersonalRisks)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+    name: PersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisks.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+    name: PersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisks.html
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_CreateProjectRiskAsync_T217_Capstone_Project_API_Models_Risks_ProjectRisksDTO_System_String_
+  name: CreateProjectRiskAsync
+  nameWithType: RisksRepository.CreateProjectRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.CreateProjectRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateProjectRiskAsync_T217_Capstone_Project_API_Models_Risks_ProjectRisksDTO_System_String_
+  name: CreateProjectRiskAsync(ProjectRisksDTO, string)
+  nameWithType: IRisksRepository.CreateProjectRiskAsync(ProjectRisksDTO, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO, string)
+  nameWithType.vb: IRisksRepository.CreateProjectRiskAsync(ProjectRisksDTO, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO, String)
+  name.vb: CreateProjectRiskAsync(ProjectRisksDTO, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+    name: CreateProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateProjectRiskAsync_T217_Capstone_Project_API_Models_Risks_ProjectRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+    name: ProjectRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.CreateProjectRiskAsync(T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO,System.String)
+    name: CreateProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_CreateProjectRiskAsync_T217_Capstone_Project_API_Models_Risks_ProjectRisksDTO_System_String_
+  - name: (
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+    name: ProjectRisksDTO
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+  commentId: T:T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO.html
+  name: ProjectRisksDTO
+  nameWithType: ProjectRisksDTO
+  fullName: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.ProjectRisks}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.Risks.ProjectRisks}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ProjectRisks>
+  nameWithType: Task<ProjectRisks>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.Risks.ProjectRisks>
+  nameWithType.vb: Task(Of ProjectRisks)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.Risks.ProjectRisks)
+  name.vb: Task(Of ProjectRisks)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+    name: ProjectRisks
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisks.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+    name: ProjectRisks
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisks.html
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_DeleteEnvironmentalRiskAsync_System_Int32_System_String_
+  name: DeleteEnvironmentalRiskAsync
+  nameWithType: RisksRepository.DeleteEnvironmentalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteEnvironmentalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteEnvironmentalRiskAsync_System_Int32_System_String_
+  name: DeleteEnvironmentalRiskAsync(int, string)
+  nameWithType: IRisksRepository.DeleteEnvironmentalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.DeleteEnvironmentalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(Integer, String)
+  name.vb: DeleteEnvironmentalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+    name: DeleteEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteEnvironmentalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteEnvironmentalRiskAsync(System.Int32,System.String)
+    name: DeleteEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteEnvironmentalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_DeleteInterpersonalRiskAsync_System_Int32_System_String_
+  name: DeleteInterpersonalRiskAsync
+  nameWithType: RisksRepository.DeleteInterpersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteInterpersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteInterpersonalRiskAsync_System_Int32_System_String_
+  name: DeleteInterpersonalRiskAsync(int, string)
+  nameWithType: IRisksRepository.DeleteInterpersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.DeleteInterpersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(Integer, String)
+  name.vb: DeleteInterpersonalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+    name: DeleteInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteInterpersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteInterpersonalRiskAsync(System.Int32,System.String)
+    name: DeleteInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteInterpersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_DeletePersonalRiskAsync_System_Int32_System_String_
+  name: DeletePersonalRiskAsync
+  nameWithType: RisksRepository.DeletePersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeletePersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeletePersonalRiskAsync_System_Int32_System_String_
+  name: DeletePersonalRiskAsync(int, string)
+  nameWithType: IRisksRepository.DeletePersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.DeletePersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(Integer, String)
+  name.vb: DeletePersonalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+    name: DeletePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeletePersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeletePersonalRiskAsync(System.Int32,System.String)
+    name: DeletePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeletePersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_DeleteProjectRiskAsync_System_Int32_System_String_
+  name: DeleteProjectRiskAsync
+  nameWithType: RisksRepository.DeleteProjectRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.DeleteProjectRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteProjectRiskAsync_System_Int32_System_String_
+  name: DeleteProjectRiskAsync(int, string)
+  nameWithType: IRisksRepository.DeleteProjectRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.DeleteProjectRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(Integer, String)
+  name.vb: DeleteProjectRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+    name: DeleteProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteProjectRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.DeleteProjectRiskAsync(System.Int32,System.String)
+    name: DeleteProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_DeleteProjectRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetEnvironmentalRiskAsync_System_Int32_System_String_
+  name: GetEnvironmentalRiskAsync
+  nameWithType: RisksRepository.GetEnvironmentalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskAsync_System_Int32_System_String_
+  name: GetEnvironmentalRiskAsync(int, string)
+  nameWithType: IRisksRepository.GetEnvironmentalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetEnvironmentalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(Integer, String)
+  name.vb: GetEnvironmentalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+    name: GetEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskAsync(System.Int32,System.String)
+    name: GetEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetInterpersonalRiskAsync_System_Int32_System_String_
+  name: GetInterpersonalRiskAsync
+  nameWithType: RisksRepository.GetInterpersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskAsync_System_Int32_System_String_
+  name: GetInterpersonalRiskAsync(int, string)
+  nameWithType: IRisksRepository.GetInterpersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetInterpersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(Integer, String)
+  name.vb: GetInterpersonalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+    name: GetInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskAsync(System.Int32,System.String)
+    name: GetInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetPersonalRiskAsync_System_Int32_System_String_
+  name: GetPersonalRiskAsync
+  nameWithType: RisksRepository.GetPersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskAsync_System_Int32_System_String_
+  name: GetPersonalRiskAsync(int, string)
+  nameWithType: IRisksRepository.GetPersonalRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetPersonalRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(Integer, String)
+  name.vb: GetPersonalRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+    name: GetPersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskAsync(System.Int32,System.String)
+    name: GetPersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetProjectRiskAsync_System_Int32_System_String_
+  name: GetProjectRiskAsync
+  nameWithType: RisksRepository.GetProjectRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskAsync_System_Int32_System_String_
+  name: GetProjectRiskAsync(int, string)
+  nameWithType: IRisksRepository.GetProjectRiskAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetProjectRiskAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(Integer, String)
+  name.vb: GetProjectRiskAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+    name: GetProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskAsync(System.Int32,System.String)
+    name: GetProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetEnvironmentalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetEnvironmentalRiskFromStakeholderAsync
+  nameWithType: RisksRepository.GetEnvironmentalRiskFromStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetEnvironmentalRiskFromStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  nameWithType: IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetEnvironmentalRiskFromStakeholderAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetEnvironmentalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetEnvironmentalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetEnvironmentalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetEnvironmentalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetInterpersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetInterpersonalRiskFromStakeholderAsync
+  nameWithType: RisksRepository.GetInterpersonalRiskFromStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetInterpersonalRiskFromStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetInterpersonalRiskFromStakeholderAsync(int, string)
+  nameWithType: IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetInterpersonalRiskFromStakeholderAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetInterpersonalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetInterpersonalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetInterpersonalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetInterpersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetPersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetPersonalRiskFromStakeholderAsync
+  nameWithType: RisksRepository.GetPersonalRiskFromStakeholderAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetPersonalRiskFromStakeholderAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  name: GetPersonalRiskFromStakeholderAsync(int, string)
+  nameWithType: IRisksRepository.GetPersonalRiskFromStakeholderAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetPersonalRiskFromStakeholderAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(Integer, String)
+  name.vb: GetPersonalRiskFromStakeholderAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetPersonalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetPersonalRiskFromStakeholderAsync(System.Int32,System.String)
+    name: GetPersonalRiskFromStakeholderAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetPersonalRiskFromStakeholderAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_GetProjectRiskFromProjectAsync_System_Int32_System_String_
+  name: GetProjectRiskFromProjectAsync
+  nameWithType: RisksRepository.GetProjectRiskFromProjectAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.GetProjectRiskFromProjectAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskFromProjectAsync_System_Int32_System_String_
+  name: GetProjectRiskFromProjectAsync(int, string)
+  nameWithType: IRisksRepository.GetProjectRiskFromProjectAsync(int, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(int, string)
+  nameWithType.vb: IRisksRepository.GetProjectRiskFromProjectAsync(Integer, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(Integer, String)
+  name.vb: GetProjectRiskFromProjectAsync(Integer, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+    name: GetProjectRiskFromProjectAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskFromProjectAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.GetProjectRiskFromProjectAsync(System.Int32,System.String)
+    name: GetProjectRiskFromProjectAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_GetProjectRiskFromProjectAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_UpdateEnvironmentalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisks_System_String_
+  name: UpdateEnvironmentalRiskAsync
+  nameWithType: RisksRepository.UpdateEnvironmentalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateEnvironmentalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateEnvironmentalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisks_System_String_
+  name: UpdateEnvironmentalRiskAsync(int, EnvironmentalRisks, string)
+  nameWithType: IRisksRepository.UpdateEnvironmentalRiskAsync(int, EnvironmentalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks, string)
+  nameWithType.vb: IRisksRepository.UpdateEnvironmentalRiskAsync(Integer, EnvironmentalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks, String)
+  name.vb: UpdateEnvironmentalRiskAsync(Integer, EnvironmentalRisks, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+    name: UpdateEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateEnvironmentalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+    name: EnvironmentalRisks
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateEnvironmentalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks,System.String)
+    name: UpdateEnvironmentalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateEnvironmentalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_EnvironmentalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+    name: EnvironmentalRisks
+    href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+  commentId: T:T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks.html
+  name: EnvironmentalRisks
+  nameWithType: EnvironmentalRisks
+  fullName: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_UpdateInterpersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_InterpersonalRisks_System_String_
+  name: UpdateInterpersonalRiskAsync
+  nameWithType: RisksRepository.UpdateInterpersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateInterpersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateInterpersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_InterpersonalRisks_System_String_
+  name: UpdateInterpersonalRiskAsync(int, InterpersonalRisks, string)
+  nameWithType: IRisksRepository.UpdateInterpersonalRiskAsync(int, InterpersonalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.InterpersonalRisks, string)
+  nameWithType.vb: IRisksRepository.UpdateInterpersonalRiskAsync(Integer, InterpersonalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.InterpersonalRisks, String)
+  name.vb: UpdateInterpersonalRiskAsync(Integer, InterpersonalRisks, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+    name: UpdateInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateInterpersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_InterpersonalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+    name: InterpersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateInterpersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.InterpersonalRisks,System.String)
+    name: UpdateInterpersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateInterpersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_InterpersonalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+    name: InterpersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+  commentId: T:T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks.html
+  name: InterpersonalRisks
+  nameWithType: InterpersonalRisks
+  fullName: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_UpdatePersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_PersonalRisks_System_String_
+  name: UpdatePersonalRiskAsync
+  nameWithType: RisksRepository.UpdatePersonalRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdatePersonalRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdatePersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_PersonalRisks_System_String_
+  name: UpdatePersonalRiskAsync(int, PersonalRisks, string)
+  nameWithType: IRisksRepository.UpdatePersonalRiskAsync(int, PersonalRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(int, T217_Capstone_Project_API.Models.Risks.PersonalRisks, string)
+  nameWithType.vb: IRisksRepository.UpdatePersonalRiskAsync(Integer, PersonalRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.PersonalRisks, String)
+  name.vb: UpdatePersonalRiskAsync(Integer, PersonalRisks, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+    name: UpdatePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdatePersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_PersonalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+    name: PersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdatePersonalRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.PersonalRisks,System.String)
+    name: UpdatePersonalRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdatePersonalRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_PersonalRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+    name: PersonalRisks
+    href: T217_Capstone_Project_API.Models.Risks.PersonalRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+  commentId: T:T217_Capstone_Project_API.Models.Risks.PersonalRisks
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.PersonalRisks.html
+  name: PersonalRisks
+  nameWithType: PersonalRisks
+  fullName: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html#T217_Capstone_Project_API_Repositories_RisksRepository_UpdateProjectRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_ProjectRisks_System_String_
+  name: UpdateProjectRiskAsync
+  nameWithType: RisksRepository.UpdateProjectRiskAsync
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository.UpdateProjectRiskAsync
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  isExternal: true
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateProjectRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_ProjectRisks_System_String_
+  name: UpdateProjectRiskAsync(int, ProjectRisks, string)
+  nameWithType: IRisksRepository.UpdateProjectRiskAsync(int, ProjectRisks, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(int, T217_Capstone_Project_API.Models.Risks.ProjectRisks, string)
+  nameWithType.vb: IRisksRepository.UpdateProjectRiskAsync(Integer, ProjectRisks, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(Integer, T217_Capstone_Project_API.Models.Risks.ProjectRisks, String)
+  name.vb: UpdateProjectRiskAsync(Integer, ProjectRisks, String)
+  spec.csharp:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+    name: UpdateProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateProjectRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_ProjectRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+    name: ProjectRisks
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.UpdateProjectRiskAsync(System.Int32,T217_Capstone_Project_API.Models.Risks.ProjectRisks,System.String)
+    name: UpdateProjectRiskAsync
+    href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IRisksRepository_UpdateProjectRiskAsync_System_Int32_T217_Capstone_Project_API_Models_Risks_ProjectRisks_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+    name: ProjectRisks
+    href: T217_Capstone_Project_API.Models.Risks.ProjectRisks.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+  commentId: T:T217_Capstone_Project_API.Models.Risks.ProjectRisks
+  parent: T217_Capstone_Project_API.Models.Risks
+  href: T217_Capstone_Project_API.Models.Risks.ProjectRisks.html
+  name: ProjectRisks
+  nameWithType: ProjectRisks
+  fullName: T217_Capstone_Project_API.Models.Risks.ProjectRisks

@@ -14,6 +14,9 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Controllers
 {
+    /// <summary>
+    /// API endpoint controller that manages all endpoints related to Stakeholders.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class StakeholdersController : ControllerBase
@@ -26,6 +29,10 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // GET: api/Stakeholders
+        /// <summary>
+        /// Gets a list of all the Stakeholders that the user associated with the included API Key in the header has access to read.
+        /// </summary>
+        /// <returns>An list of the Stakeholders the user has access to, or a 404 Not Found status code.</returns>
         [HttpGet]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<IEnumerable<Stakeholder>>> GetStakeholders()
@@ -42,9 +49,15 @@ namespace T217_Capstone_Project_API.Controllers
             return stakeholders;
         }
 
+        // GET: api/Stakeholders/GetByProjectID
+        /// <summary>
+        /// Gets a list of Stakeholders associated with the ProjectID, and returns it if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="projectId">The ID of the associated Project.</param>
+        /// <returns>The list of Stakeholders associated with the ProjectID, or a 404 Not Found status code.</returns>
         [HttpGet("GetByProjectID")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
-        public async Task<ActionResult<IEnumerable<Stakeholder>>> GetStakeholderGroupsByProjectID(int projectId)
+        public async Task<ActionResult<IEnumerable<Stakeholder>>> GetStakeholderByProjectID(int projectId)
         {
             if (!Request.Headers.TryGetValue("x-api-key", out var apiKey)) { return BadRequest(); }
 
@@ -59,6 +72,11 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // GET: api/Stakeholders/5
+        /// <summary>
+        /// Gets the Stakeholder with the associated ID, and returns it if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the desired Stakeholder.</param>
+        /// <returns>The Stakeholder with the matching ID, or a 404 Not Found status code.</returns>
         [HttpGet("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Stakeholder>> GetStakeholder(int id)
@@ -77,6 +95,13 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT: api/Stakeholders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Updates the Stakeholder with the supplied ID with the new Stakeholder if the user has the required authorisation. 
+        /// The ID must match the StakeholderID of the supplied Stakeholder.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder to be updated.</param>
+        /// <param name="stakeholder">The new Stakeholder that will replace the existing one.</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutStakeholder(int id, Stakeholder stakeholder)
@@ -107,6 +132,11 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST: api/Stakeholders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Creates a new Stakeholder with the values supplied in the StakeholderDTO.
+        /// </summary>
+        /// <param name="stakeholder">The StakeholderDTO to be created.</param>
+        /// <returns>The newly created Stakeholder.</returns>
         [HttpPost]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<Stakeholder>> PostStakeholder(StakeholderDTO stakeholder)
@@ -119,6 +149,11 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // DELETE: api/Stakeholders/5
+        /// <summary>
+        /// Removes the Stakeholder with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Stakeholder to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> DeleteStakeholder(int id)

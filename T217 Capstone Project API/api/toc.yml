@@ -1,0 +1,169 @@
+### YamlMime:TableOfContent
+items:
+- uid: T217_Capstone_Project_API
+  name: T217_Capstone_Project_API
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Program
+    name: Program
+    type: Class
+  - uid: T217_Capstone_Project_API.StakeholderRisksContext
+    name: StakeholderRisksContext
+    type: Class
+- uid: T217_Capstone_Project_API.Authentication
+  name: T217_Capstone_Project_API.Authentication
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Authentication.UserAuthenticationFilter
+    name: UserAuthenticationFilter
+    type: Class
+- uid: T217_Capstone_Project_API.Controllers
+  name: T217_Capstone_Project_API.Controllers
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Controllers.ProjectUsersController
+    name: ProjectUsersController
+    type: Class
+  - uid: T217_Capstone_Project_API.Controllers.ProjectsController
+    name: ProjectsController
+    type: Class
+  - uid: T217_Capstone_Project_API.Controllers.RisksController
+    name: RisksController
+    type: Class
+  - uid: T217_Capstone_Project_API.Controllers.StakeholdersController
+    name: StakeholdersController
+    type: Class
+  - uid: T217_Capstone_Project_API.Controllers.UsersController
+    name: UsersController
+    type: Class
+- uid: T217_Capstone_Project_API.Migrations
+  name: T217_Capstone_Project_API.Migrations
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Migrations.initial
+    name: initial
+    type: Class
+- uid: T217_Capstone_Project_API.Models
+  name: T217_Capstone_Project_API.Models
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.User
+    name: User
+    type: Class
+- uid: T217_Capstone_Project_API.Models.DTO
+  name: T217_Capstone_Project_API.Models.DTO
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO
+    name: ProjectUserPermissionsDTO
+    type: Class
+- uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  name: T217_Capstone_Project_API.Models.DTO.ProjectDTOs
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.ProjectDTO
+    name: ProjectDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.DTO.ProjectDTOs.StakeholderDTO
+    name: StakeholderDTO
+    type: Class
+- uid: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  name: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO
+    name: StakeholderRisksDTO
+    type: Class
+- uid: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  name: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO
+    name: CreateUserDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.DTO.UserDTOs.LoginDTO
+    name: LoginDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.DTO.UserDTOs.UserDetailsDTO
+    name: UserDetailsDTO
+    type: Class
+- uid: T217_Capstone_Project_API.Models.Projects
+  name: T217_Capstone_Project_API.Models.Projects
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.Projects.Project
+    name: Project
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Projects.ProjectUser
+    name: ProjectUser
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Projects.Stakeholder
+    name: Stakeholder
+    type: Class
+- uid: T217_Capstone_Project_API.Models.Risks
+  name: T217_Capstone_Project_API.Models.Risks
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisks
+    name: EnvironmentalRisks
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.EnvironmentalRisksDTO
+    name: EnvironmentalRisksDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisks
+    name: InterpersonalRisks
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.InterpersonalRisksDTO
+    name: InterpersonalRisksDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisks
+    name: PersonalRisks
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.PersonalRisksDTO
+    name: PersonalRisksDTO
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisks
+    name: ProjectRisks
+    type: Class
+  - uid: T217_Capstone_Project_API.Models.Risks.ProjectRisksDTO
+    name: ProjectRisksDTO
+    type: Class
+- uid: T217_Capstone_Project_API.Repositories
+  name: T217_Capstone_Project_API.Repositories
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Repositories.ProjectRepository
+    name: ProjectRepository
+    type: Class
+  - uid: T217_Capstone_Project_API.Repositories.ProjectUserRepository
+    name: ProjectUserRepository
+    type: Class
+  - uid: T217_Capstone_Project_API.Repositories.RisksRepository
+    name: RisksRepository
+    type: Class
+  - uid: T217_Capstone_Project_API.Repositories.StakeholderRepository
+    name: StakeholderRepository
+    type: Class
+  - uid: T217_Capstone_Project_API.Repositories.UserRepository
+    name: UserRepository
+    type: Class
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  type: Namespace
+  items:
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository
+    name: IProjectRepository
+    type: Interface
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository
+    name: IProjectUserRepository
+    type: Interface
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+    name: IRisksRepository
+    type: Interface
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+    name: IStakeholderRepository
+    type: Interface
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+    name: IUserRepository
+    type: Interface
+memberLayout: SamePage

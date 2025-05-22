@@ -6,6 +6,7 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Repositories
 {
+    /// <inheritdoc/>
     public class StakeholderRepository : IStakeholderRepository
     {
         enum UpdateStatus
@@ -23,6 +24,7 @@ namespace T217_Capstone_Project_API.Repositories
             _context = context;
         }
 
+        /// <inheritdoc/>
         public async Task<Stakeholder> GetStakeholderAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -45,6 +47,7 @@ namespace T217_Capstone_Project_API.Repositories
             return new Stakeholder();
         }
 
+        /// <inheritdoc/>
         public async Task<List<Stakeholder>> GetStakeholderListAsync(string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -62,6 +65,7 @@ namespace T217_Capstone_Project_API.Repositories
             return stakeholderList;
         }
 
+        /// <inheritdoc/>
         public async Task<List<Stakeholder>> GetStakeholderListByProjectAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);
@@ -80,7 +84,7 @@ namespace T217_Capstone_Project_API.Repositories
             return stakeholderList;
         }
 
-
+        /// <inheritdoc/>
         public async Task<Stakeholder> CreateStakeholderAsync(StakeholderDTO stakeholderDTO, string apiKey)
         {
             Stakeholder stakeholder = new Stakeholder();
@@ -112,6 +116,7 @@ namespace T217_Capstone_Project_API.Repositories
             return stakeholder;
         }
 
+        /// <inheritdoc/>
         public async Task<int> UpdateStakeholderAsync(int id, Stakeholder stakeholder, string apiKey)
         {
             if (id != stakeholder.StakeholderID)
@@ -151,6 +156,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<int> DeleteStakeholderAsync(int id, string apiKey)
         {
             var userId = await GetUserIdFromApiKey(apiKey);

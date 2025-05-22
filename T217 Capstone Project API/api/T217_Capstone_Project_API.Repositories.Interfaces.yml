@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  commentId: N:T217_Capstone_Project_API.Repositories.Interfaces
+  id: T217_Capstone_Project_API.Repositories.Interfaces
+  children:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository
+  - T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository
+  - T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  - T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  nameWithType: T217_Capstone_Project_API.Repositories.Interfaces
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository.html
+  name: IProjectRepository
+  nameWithType: IProjectRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IProjectRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository.html
+  name: IProjectUserRepository
+  nameWithType: IProjectUserRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IProjectUserRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository.html
+  name: IRisksRepository
+  nameWithType: IRisksRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IRisksRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository.html
+  name: IStakeholderRepository
+  nameWithType: IStakeholderRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IStakeholderRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html
+  name: IUserRepository
+  nameWithType: IUserRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  commentId: N:T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  nameWithType: T217_Capstone_Project_API.Repositories.Interfaces
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html

@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Models.DTO
+  commentId: N:T217_Capstone_Project_API.Models.DTO
+  id: T217_Capstone_Project_API.Models.DTO
+  children:
+  - T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API.Models.DTO
+  nameWithType: T217_Capstone_Project_API.Models.DTO
+  fullName: T217_Capstone_Project_API.Models.DTO
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO
+  commentId: T:T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO
+  parent: T217_Capstone_Project_API.Models.DTO
+  href: T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO.html
+  name: ProjectUserPermissionsDTO
+  nameWithType: ProjectUserPermissionsDTO
+  fullName: T217_Capstone_Project_API.Models.DTO.ProjectUserPermissionsDTO
+- uid: T217_Capstone_Project_API.Models.DTO
+  commentId: N:T217_Capstone_Project_API.Models.DTO
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models.DTO
+  nameWithType: T217_Capstone_Project_API.Models.DTO
+  fullName: T217_Capstone_Project_API.Models.DTO
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html

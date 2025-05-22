@@ -1,0 +1,770 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  id: IUserRepository
+  parent: T217_Capstone_Project_API.Repositories.Interfaces
+  children:
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync(T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync(System.String,System.String)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync(System.Int32)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync(System.String)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync(System.String)
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync
+  - T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync(System.Int32,T217_Capstone_Project_API.Models.User)
+  langs:
+  - csharp
+  - vb
+  name: IUserRepository
+  nameWithType: IUserRepository
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  type: Interface
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: IUserRepository
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 9
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Repository used to connect the application to the Users table in the Database.
+  example: []
+  syntax:
+    content: public interface IUserRepository
+    content.vb: Public Interface IUserRepository
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync(System.Int32)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync(System.Int32)
+  id: GetUserAsync(System.Int32)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUserAsync(int)
+  nameWithType: IUserRepository.GetUserAsync(int)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync(int)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetUserAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 16
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Returns the User from the database with the matching ID.
+  example: []
+  syntax:
+    content: Task<User> GetUserAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the desired User.
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.User}
+      description: ''
+    content.vb: Function GetUserAsync(id As Integer) As Task(Of User)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync*
+  nameWithType.vb: IUserRepository.GetUserAsync(Integer)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync(Integer)
+  name.vb: GetUserAsync(Integer)
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync(System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync(System.String)
+  id: GetUserByEmailAsync(System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUserByEmailAsync(string)
+  nameWithType: IUserRepository.GetUserByEmailAsync(string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync(string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetUserByEmailAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 23
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Returns the User from the database with the matching email.
+  example: []
+  syntax:
+    content: Task<User> GetUserByEmailAsync(string email)
+    parameters:
+    - id: email
+      type: System.String
+      description: The email of the desired User.
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.User}
+      description: ''
+    content.vb: Function GetUserByEmailAsync(email As String) As Task(Of User)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync*
+  nameWithType.vb: IUserRepository.GetUserByEmailAsync(String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync(String)
+  name.vb: GetUserByEmailAsync(String)
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync(System.String,System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync(System.String,System.String)
+  id: GetApiKeyAsync(System.String,System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetApiKeyAsync(string, string)
+  nameWithType: IUserRepository.GetApiKeyAsync(string, string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync(string, string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetApiKeyAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 31
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Returns the API key of the User from the database with the matching email and password.
+  example: []
+  syntax:
+    content: Task<string> GetApiKeyAsync(string email, string password)
+    parameters:
+    - id: email
+      type: System.String
+      description: The email of the desired User.
+    - id: password
+      type: System.String
+      description: The password of the desired User.
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: ''
+    content.vb: Function GetApiKeyAsync(email As String, password As String) As Task(Of String)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync*
+  nameWithType.vb: IUserRepository.GetApiKeyAsync(String, String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync(String, String)
+  name.vb: GetApiKeyAsync(String, String)
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync(System.String)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync(System.String)
+  id: GetUserByApiKeyAsync(System.String)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUserByApiKeyAsync(string)
+  nameWithType: IUserRepository.GetUserByApiKeyAsync(string)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync(string)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetUserByApiKeyAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 38
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Returns the User from the database with the matching API key.
+  example: []
+  syntax:
+    content: User GetUserByApiKeyAsync(string apiKey)
+    parameters:
+    - id: apiKey
+      type: System.String
+      description: The API key of the desired User.
+    return:
+      type: T217_Capstone_Project_API.Models.User
+      description: ''
+    content.vb: Function GetUserByApiKeyAsync(apiKey As String) As User
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync*
+  nameWithType.vb: IUserRepository.GetUserByApiKeyAsync(String)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync(String)
+  name.vb: GetUserByApiKeyAsync(String)
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync
+  id: GetUserListAsync
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetUserListAsync()
+  nameWithType: IUserRepository.GetUserListAsync()
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync()
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: GetUserListAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 44
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Returns a list of all Users from the database.
+  example: []
+  syntax:
+    content: Task<List<User>> GetUserListAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.User}}
+      description: ''
+    content.vb: Function GetUserListAsync() As Task(Of List(Of User))
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync*
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync(T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync(T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO)
+  id: CreateUserAsync(T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateUserAsync(CreateUserDTO)
+  nameWithType: IUserRepository.CreateUserAsync(CreateUserDTO)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync(T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: CreateUserAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 51
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Creates a new User in the database.
+  example: []
+  syntax:
+    content: Task<User> CreateUserAsync(CreateUserDTO user)
+    parameters:
+    - id: user
+      type: T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO
+      description: The UserDTO to be added to the database.
+    return:
+      type: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.User}
+      description: ''
+    content.vb: Function CreateUserAsync(user As CreateUserDTO) As Task(Of User)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync*
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync(System.Int32,T217_Capstone_Project_API.Models.User)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync(System.Int32,T217_Capstone_Project_API.Models.User)
+  id: UpdateUserAsync(System.Int32,T217_Capstone_Project_API.Models.User)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserAsync(int, User)
+  nameWithType: IUserRepository.UpdateUserAsync(int, User)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync(int, T217_Capstone_Project_API.Models.User)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: UpdateUserAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 59
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Updates the User on the database with the specified ID with new values.
+  example: []
+  syntax:
+    content: Task<int> UpdateUserAsync(int id, User user)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the User to be updated.
+    - id: user
+      type: T217_Capstone_Project_API.Models.User
+      description: The replacement User.
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: ''
+    content.vb: Function UpdateUserAsync(id As Integer, user As User) As Task(Of Integer)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync*
+  nameWithType.vb: IUserRepository.UpdateUserAsync(Integer, User)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync(Integer, T217_Capstone_Project_API.Models.User)
+  name.vb: UpdateUserAsync(Integer, User)
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  commentId: M:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync(System.Int32)
+  id: DeleteUserAsync(System.Int32)
+  parent: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository
+  langs:
+  - csharp
+  - vb
+  name: DeleteUserAsync(int)
+  nameWithType: IUserRepository.DeleteUserAsync(int)
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync(int)
+  type: Method
+  source:
+    remote:
+      path: T217 Capstone Project API/Repositories/Interfaces/IUserRepository.cs
+      branch: master
+      repo: https://github.com/Meara1179/T217-Capstone-Project-API
+    id: DeleteUserAsync
+    path: Repositories/Interfaces/IUserRepository.cs
+    startLine: 66
+  assemblies:
+  - T217 Capstone Project API
+  namespace: T217_Capstone_Project_API.Repositories.Interfaces
+  summary: Deletes the User from the database with the matching ID.
+  example: []
+  syntax:
+    content: Task<bool> DeleteUserAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: The ID of the User to be deleted.
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: ''
+    content.vb: Function DeleteUserAsync(id As Integer) As Task(Of Boolean)
+  overload: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync*
+  nameWithType.vb: IUserRepository.DeleteUserAsync(Integer)
+  fullName.vb: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync(Integer)
+  name.vb: DeleteUserAsync(Integer)
+references:
+- uid: T217_Capstone_Project_API.Repositories.Interfaces
+  commentId: N:T217_Capstone_Project_API.Repositories.Interfaces
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Repositories.Interfaces
+  nameWithType: T217_Capstone_Project_API.Repositories.Interfaces
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories
+    name: Repositories
+    href: T217_Capstone_Project_API.Repositories.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Repositories.Interfaces
+    name: Interfaces
+    href: T217_Capstone_Project_API.Repositories.Interfaces.html
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_GetUserAsync_System_Int32_
+  name: GetUserAsync
+  nameWithType: IUserRepository.GetUserAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.User}
+  commentId: T:System.Threading.Tasks.Task{T217_Capstone_Project_API.Models.User}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<User>
+  nameWithType: Task<User>
+  fullName: System.Threading.Tasks.Task<T217_Capstone_Project_API.Models.User>
+  nameWithType.vb: Task(Of User)
+  fullName.vb: System.Threading.Tasks.Task(Of T217_Capstone_Project_API.Models.User)
+  name.vb: Task(Of User)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.User
+    name: User
+    href: T217_Capstone_Project_API.Models.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.User
+    name: User
+    href: T217_Capstone_Project_API.Models.User.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_GetUserByEmailAsync_System_String_
+  name: GetUserByEmailAsync
+  nameWithType: IUserRepository.GetUserByEmailAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByEmailAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_GetApiKeyAsync_System_String_System_String_
+  name: GetApiKeyAsync
+  nameWithType: IUserRepository.GetApiKeyAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetApiKeyAsync
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_GetUserByApiKeyAsync_System_String_
+  name: GetUserByApiKeyAsync
+  nameWithType: IUserRepository.GetUserByApiKeyAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserByApiKeyAsync
+- uid: T217_Capstone_Project_API.Models.User
+  commentId: T:T217_Capstone_Project_API.Models.User
+  parent: T217_Capstone_Project_API.Models
+  href: T217_Capstone_Project_API.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: T217_Capstone_Project_API.Models.User
+- uid: T217_Capstone_Project_API.Models
+  commentId: N:T217_Capstone_Project_API.Models
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models
+  nameWithType: T217_Capstone_Project_API.Models
+  fullName: T217_Capstone_Project_API.Models
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_GetUserListAsync
+  name: GetUserListAsync
+  nameWithType: IUserRepository.GetUserListAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.GetUserListAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.User}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{T217_Capstone_Project_API.Models.User}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<User>>
+  nameWithType: Task<List<User>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<T217_Capstone_Project_API.Models.User>>
+  nameWithType.vb: Task(Of List(Of User))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of T217_Capstone_Project_API.Models.User))
+  name.vb: Task(Of List(Of User))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: T217_Capstone_Project_API.Models.User
+    name: User
+    href: T217_Capstone_Project_API.Models.User.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: T217_Capstone_Project_API.Models.User
+    name: User
+    href: T217_Capstone_Project_API.Models.User.html
+  - name: )
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_CreateUserAsync_T217_Capstone_Project_API_Models_DTO_UserDTOs_CreateUserDTO_
+  name: CreateUserAsync
+  nameWithType: IUserRepository.CreateUserAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.CreateUserAsync
+- uid: T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO
+  commentId: T:T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO
+  parent: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  href: T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO.html
+  name: CreateUserDTO
+  nameWithType: CreateUserDTO
+  fullName: T217_Capstone_Project_API.Models.DTO.UserDTOs.CreateUserDTO
+- uid: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  commentId: N:T217_Capstone_Project_API.Models.DTO.UserDTOs
+  href: T217_Capstone_Project_API.html
+  name: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  nameWithType: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  fullName: T217_Capstone_Project_API.Models.DTO.UserDTOs
+  spec.csharp:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO.UserDTOs
+    name: UserDTOs
+    href: T217_Capstone_Project_API.Models.DTO.UserDTOs.html
+  spec.vb:
+  - uid: T217_Capstone_Project_API
+    name: T217_Capstone_Project_API
+    href: T217_Capstone_Project_API.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models
+    name: Models
+    href: T217_Capstone_Project_API.Models.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO
+    name: DTO
+    href: T217_Capstone_Project_API.Models.DTO.html
+  - name: .
+  - uid: T217_Capstone_Project_API.Models.DTO.UserDTOs
+    name: UserDTOs
+    href: T217_Capstone_Project_API.Models.DTO.UserDTOs.html
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_UpdateUserAsync_System_Int32_T217_Capstone_Project_API_Models_User_
+  name: UpdateUserAsync
+  nameWithType: IUserRepository.UpdateUserAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.UpdateUserAsync
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync*
+  commentId: Overload:T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync
+  href: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.html#T217_Capstone_Project_API_Repositories_Interfaces_IUserRepository_DeleteUserAsync_System_Int32_
+  name: DeleteUserAsync
+  nameWithType: IUserRepository.DeleteUserAsync
+  fullName: T217_Capstone_Project_API.Repositories.Interfaces.IUserRepository.DeleteUserAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )

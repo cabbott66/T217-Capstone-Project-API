@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Repositories
+  commentId: N:T217_Capstone_Project_API.Repositories
+  id: T217_Capstone_Project_API.Repositories
+  children:
+  - T217_Capstone_Project_API.Repositories.ProjectRepository
+  - T217_Capstone_Project_API.Repositories.ProjectUserRepository
+  - T217_Capstone_Project_API.Repositories.RisksRepository
+  - T217_Capstone_Project_API.Repositories.StakeholderRepository
+  - T217_Capstone_Project_API.Repositories.UserRepository
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API.Repositories
+  nameWithType: T217_Capstone_Project_API.Repositories
+  fullName: T217_Capstone_Project_API.Repositories
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Repositories.ProjectRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.ProjectRepository
+  href: T217_Capstone_Project_API.Repositories.ProjectRepository.html
+  name: ProjectRepository
+  nameWithType: ProjectRepository
+  fullName: T217_Capstone_Project_API.Repositories.ProjectRepository
+- uid: T217_Capstone_Project_API.Repositories.ProjectUserRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.ProjectUserRepository
+  href: T217_Capstone_Project_API.Repositories.ProjectUserRepository.html
+  name: ProjectUserRepository
+  nameWithType: ProjectUserRepository
+  fullName: T217_Capstone_Project_API.Repositories.ProjectUserRepository
+- uid: T217_Capstone_Project_API.Repositories.RisksRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.RisksRepository
+  href: T217_Capstone_Project_API.Repositories.RisksRepository.html
+  name: RisksRepository
+  nameWithType: RisksRepository
+  fullName: T217_Capstone_Project_API.Repositories.RisksRepository
+- uid: T217_Capstone_Project_API.Repositories.StakeholderRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.StakeholderRepository
+  href: T217_Capstone_Project_API.Repositories.StakeholderRepository.html
+  name: StakeholderRepository
+  nameWithType: StakeholderRepository
+  fullName: T217_Capstone_Project_API.Repositories.StakeholderRepository
+- uid: T217_Capstone_Project_API.Repositories.UserRepository
+  commentId: T:T217_Capstone_Project_API.Repositories.UserRepository
+  href: T217_Capstone_Project_API.Repositories.UserRepository.html
+  name: UserRepository
+  nameWithType: UserRepository
+  fullName: T217_Capstone_Project_API.Repositories.UserRepository

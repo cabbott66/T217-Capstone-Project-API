@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  commentId: N:T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  id: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  children:
+  - T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO
+  langs:
+  - csharp
+  - vb
+  name: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  nameWithType: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  fullName: T217_Capstone_Project_API.Models.DTO.RisksDTOs
+  type: Namespace
+  assemblies:
+  - T217 Capstone Project API
+references:
+- uid: T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO
+  commentId: T:T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO
+  href: T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO.html
+  name: StakeholderRisksDTO
+  nameWithType: StakeholderRisksDTO
+  fullName: T217_Capstone_Project_API.Models.DTO.RisksDTOs.StakeholderRisksDTO

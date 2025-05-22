@@ -4,6 +4,9 @@ using T217_Capstone_Project_API.Models.DTO.UserDTOs;
 
 namespace T217_Capstone_Project_API.Repositories.Interfaces
 {
+    /// <summary>
+    /// Repository used to connect the application to the Users table in the Database.
+    /// </summary>
     public interface IUserRepository
     {
         /// <summary>

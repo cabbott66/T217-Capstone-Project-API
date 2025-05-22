@@ -11,6 +11,7 @@ using T217_Capstone_Project_API.Models.DTO.UserDTOs;
 
 namespace T217_Capstone_Project_API.Repositories
 {
+    /// <inheritdoc/>
     public class UserRepository : IUserRepository
     {
         enum UpdateStatus
@@ -27,6 +28,7 @@ namespace T217_Capstone_Project_API.Repositories
             _context = context;
         }
 
+        /// <inheritdoc/>
         public async Task<User> GetUserAsync(int id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -34,6 +36,7 @@ namespace T217_Capstone_Project_API.Repositories
             return user;
         }
 
+        /// <inheritdoc/>
         public async Task<User> GetUserByEmailAsync(string email)
         {
             var user = await _context.Users.Where(x => x.UserEmail == email).FirstOrDefaultAsync();
@@ -45,6 +48,7 @@ namespace T217_Capstone_Project_API.Repositories
             return user;
         }
 
+        /// <inheritdoc/>
         public async Task<string> GetApiKeyAsync(string email, string password)
         {
             var user = await _context.Users.Where(x => x.UserEmail == email).FirstOrDefaultAsync();
@@ -63,6 +67,7 @@ namespace T217_Capstone_Project_API.Repositories
             return key;
         }
 
+        /// <inheritdoc/>
         public User GetUserByApiKeyAsync(string apiKey)
         {
             var user = _context.Users.Where(x => x.ApiKey == apiKey).FirstOrDefault();
@@ -70,6 +75,7 @@ namespace T217_Capstone_Project_API.Repositories
             return user;
         }
 
+        /// <inheritdoc/>
         public async Task<List<User>> GetUserListAsync()
         {
             var userList = await _context.Users.OrderBy(x => x.UserID).ToListAsync();
@@ -77,6 +83,7 @@ namespace T217_Capstone_Project_API.Repositories
             return userList;
         }
 
+        /// <inheritdoc/>
         public async Task<User> CreateUserAsync(CreateUserDTO user)
         {
             User newUser = new User();
@@ -99,6 +106,7 @@ namespace T217_Capstone_Project_API.Repositories
             return newUser;
         }
 
+        /// <inheritdoc/>
         public async Task<int> UpdateUserAsync(int id, User user)
         {
             if (id != user.UserID)
@@ -126,6 +134,7 @@ namespace T217_Capstone_Project_API.Repositories
             return (int)UpdateStatus.Success;
         }
 
+        /// <inheritdoc/>
         public async Task<bool> DeleteUserAsync(int id)
         {
             var user = await _context.Users.FindAsync(id);

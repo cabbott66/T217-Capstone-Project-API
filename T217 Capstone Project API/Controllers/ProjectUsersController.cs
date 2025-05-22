@@ -13,6 +13,9 @@ using T217_Capstone_Project_API.Repositories.Interfaces;
 
 namespace T217_Capstone_Project_API.Controllers
 {
+    /// <summary>
+    /// API endpoint controller that manages all endpoints related to ProjectUsers.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ProjectUsersController : ControllerBase
@@ -25,6 +28,11 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // GET: api/ProjectUsers/5
+        /// <summary>
+        /// Returns all the ProjectUsers associated with the supplied Project ID if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the Project.</param>
+        /// <returns>A list of all ProjectUsers for the associated Project, or a 404 Not Found status code.</returns>
         [HttpGet("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<IEnumerable<ProjectUser>>> GetProjectUsersByProjectID(int id)
@@ -43,6 +51,13 @@ namespace T217_Capstone_Project_API.Controllers
 
         // PUT: api/ProjectUsers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Updates the ProjectUser with the supplied ID with the new ProjectUser if the user has the required authorisation. 
+        /// The ID must match the ProjectUser ID of the supplied ProjectUser.
+        /// </summary>
+        /// <param name="id">The ID of the ProjectUser to be updated.</param>
+        /// <param name="projectUserPermissions">The new permissions to replace the existing ProjectUser.</param>
+        /// <returns>A status code depending on the results of the update.</returns>
         [HttpPut("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> PutProjectUser(int id, ProjectUserPermissionsDTO projectUserPermissions)
@@ -68,6 +83,14 @@ namespace T217_Capstone_Project_API.Controllers
 
         // POST: api/ProjectUsers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Creates a new ProjectUser associated with the supplied User ID and Project ID, with the supplied permissions 
+        /// if the user has the required authorisation. 
+        /// </summary>
+        /// <param name="projectID">The ID of the Project which the ProjectUser will be created for.</param>
+        /// <param name="userID">The ID of the User which the ProjectUser will be created for.</param>
+        /// <param name="projectUserPermissions">The permissions of the ProjectUser</param>
+        /// <returns>Returns a 201 Created status message.</returns>
         [HttpPost]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<ActionResult<ProjectUser>> AddProjectUserToProject(int projectID, int userID, ProjectUserPermissionsDTO projectUserPermissions)
@@ -80,6 +103,11 @@ namespace T217_Capstone_Project_API.Controllers
         }
 
         // DELETE: api/ProjectUsers/5
+        /// <summary>
+        /// Removes the ProjectUser with the matching ID from the database if the user has the required authorisation.
+        /// </summary>
+        /// <param name="id">The ID of the ProjectUser to be deleted.</param>
+        /// <returns>A status code depending on the results of the deletion.</returns>
         [HttpDelete("{id}")]
         [ServiceFilter(typeof(UserAuthenticationFilter))]
         public async Task<IActionResult> DeleteProjectUser(int id)
