@@ -32,7 +32,7 @@ jobs:
         dotnet-version: 8.x
 
     - run: dotnet tool update -g docfx
-    - run: docfx T217_Capstone_Project_API/docfx.json
+    - run: docfx T217 Capstone Project API/docfx.json
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
