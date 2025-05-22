@@ -32,13 +32,13 @@ jobs:
         dotnet-version: 8.x
 
     - run: dotnet tool update -g docfx
-    - run: docfx docfx.json
+    - run: docfx T217_Capstone_Project_API/docfx.json
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         # Upload entire repository
-        path: '/_site'
+        path: 'T217 Capstone Project API/_site'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
