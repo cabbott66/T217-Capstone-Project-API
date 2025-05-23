@@ -1,4 +1,4 @@
-# StakeholderRisk API
+# StakeholderRisk API 
 
 Code documentation is automatically created and published to a [GitHub Page](https://meara1179.github.io/T217-Capstone-Project-API/) 
 > [!WARNING]
