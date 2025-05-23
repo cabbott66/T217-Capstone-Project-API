@@ -1,6 +1,6 @@
 # StakeholderRisk API 
 
-Code documentation is automatically created and published to a [GitHub Page](https://meara1179.github.io/T217-Capstone-Project-API/) 
+Code documentation is automatically created and published to a [GitHub Page](https://cabbott66.github.io/T217-Capstone-Project-API/) 
 > [!WARNING]
 > Update the GitHub Page URL when transferring ownership of the repository.
 
